@@ -1,5 +1,7 @@
 from django.http import HttpResponse
+from .models import Menu
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're here")
+    Menu.object.all()
+    
