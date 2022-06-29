@@ -1,8 +1,11 @@
+import os
+
 from django.core.files.storage import FileSystemStorage
 from django.db import models
 from django.utils.datetime_safe import datetime
+from pathlib import Path
 
-fs = FileSystemStorage(location='/media/photos')
+uploads = 'media'
 
 
 # Create your models here.
@@ -28,7 +31,7 @@ class FooterMenu(models.Model):
 
 # banner table has been created to load the data from database
 class Banner(models.Model):
-    banner_image = models.ImageField(max_length=200, storage=fs)
+    banner_image = models.ImageField(max_length=200, upload_to=uploads)
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
@@ -37,30 +40,27 @@ class Banner(models.Model):
 
 # homedata table has been created to load the data from database
 class HomeData(models.Model):
-    info_text = models.CharField(max_length=500)
-    spotlight_text1 = models.CharField(max_length=500)
-    spotlight_text2 = models.CharField(max_length=500)
-    spotlight_text3 = models.CharField(max_length=500)
-    slider_image = models.ImageField(max_length=200, storage=fs)
-    info_image = models.ImageField(max_length=200, storage=fs)
-    education_image = models.ImageField(max_length=200, storage=fs)
-    research_image = models.ImageField(max_length=200, storage=fs)
-    innovation_image = models.ImageField(max_length=200, storage=fs)
-    mission_image = models.ImageField(max_length=200, storage=fs)
-    policies_image = models.ImageField(max_length=200, storage=fs)
-    plans_image = models.ImageField(max_length=200, storage=fs)
+    info_text = models.TextField(null=True)
+    spotlight_text1 = models.TextField(null=True)
+    spotlight_text2 = models.TextField(null=True)
+    spotlight_text3 = models.TextField(null=True)
+    slider_image = models.ImageField(max_length=200, upload_to=uploads)
+    info_image = models.ImageField(max_length=200, upload_to=uploads)
+    education_image = models.ImageField(max_length=200, upload_to=uploads)
+    research_image = models.ImageField(max_length=200, upload_to=uploads)
+    innovation_image = models.ImageField(max_length=200, upload_to=uploads)
+    mission_image = models.ImageField(max_length=200, upload_to=uploads)
+    policies_image = models.ImageField(max_length=200, upload_to=uploads)
+    plans_image = models.ImageField(max_length=200, upload_to=uploads)
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return self.info_text, self.spotlight_text1, \
-               self.spotlight_text2, self.spotlight_text3, \
-               self.slider_image, self.info_image, self.education_image, self.research_image, \
-               self.innovation_image, self.mission_image, self.policies_image, self.plans_image, self.pub_date
+        return self.info_text
 
 
 # about page data will be stored here
 class AboutData(models.Model):
-    about_text = models.CharField(max_length=500)
+    about_text = models.TextField(null=True)
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):

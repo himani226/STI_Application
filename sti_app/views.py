@@ -1,15 +1,16 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from sti_app.models import HeaderMenu, FooterMenu, AboutData
+from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData
 
 
 def index(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
+    home_data = HomeData.objects.all()
 
-    return render(request, 'base.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+    return render(request, 'index.html',
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'home_data':home_data})
 
 
 def about(request):
