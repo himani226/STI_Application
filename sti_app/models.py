@@ -40,7 +40,7 @@ class Banner(models.Model):
 
 # homedata table has been created to load the data from database
 class HomeData(models.Model):
-    info_text = models.TextField(null=True)
+    home_info_text = models.TextField(null=True)
     spotlight_text1 = models.TextField(null=True)
     spotlight_text2 = models.TextField(null=True)
     spotlight_text3 = models.TextField(null=True)
@@ -55,7 +55,7 @@ class HomeData(models.Model):
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return self.info_text
+        return self.home_info_text
 
 
 # about page data will be stored here

@@ -1,0 +1,24 @@
+.body{
+ font-family: Roboto
+}
+.top-skip-bar{
+    font: normal 14px Roboto;
+
+}
+.top-skip-bar a{
+    color: #707070;
+    text-decoration:none;
+}
+
+.header-title{
+    padding: 40px 0 0 5px;
+    color: #3A3B3B;
+    font-size:18px;
+    font-weight:bold;
+}
+.banner-border {
+    max-width: 1170px;
+    border: none;
+    margin: 0px auto;
+    padding: 20px 0px;
+}
