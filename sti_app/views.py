@@ -21,32 +21,48 @@ def about(request):
 
 
 def indicators(request):
-    return render(request, 'indicators.html')
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    return render(request, 'indicators.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
 
 
 def incubators(request):
-    return render(request, 'incubators.html')
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    return render(request, 'incubators.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
 
 
 def instrumentation(request):
-    return render(request, 'instrumentation.html')
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    return render(request, 'instrumentation.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
 
 
 def researchers(request):
-    return render(request, 'researchers.html')
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    return render(request, 'researchers.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
 
 
 def portfolio(request):
-    return render(request, 'portfolio.html')
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    return render(request, 'portfolio.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
 
 
 def technology(request):
-    return render(request, 'technology.html')
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    return render(request, 'technology.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
 
 
 def challenges(request):
-    return render(request, 'challenges.html')
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    return render(request, 'challenges.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    return render(request, 'contact.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})

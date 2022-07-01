@@ -1,5 +1,13 @@
 .body{
  font-family: Roboto
+ margin:0;
+ padding:0;
+}
+.all{
+padding:5px 0 5px 0;
+}
+.top-bar{
+    padding:10px;
 }
 .top-skip-bar{
     font: normal 14px Roboto;
@@ -9,16 +17,124 @@
     color: #707070;
     text-decoration:none;
 }
-
 .header-title{
-    padding: 40px 0 0 5px;
+    padding: 55px 0 0 45px;
     color: #3A3B3B;
-    font-size:18px;
+    font-size:24px;
     font-weight:bold;
 }
-.banner-border {
-    max-width: 1170px;
-    border: none;
-    margin: 0px auto;
-    padding: 20px 0px;
+.icons{
+    padding: 5px;
+}
+
+.header-menu{
+    background: #0A7E3CCC 0% 0% no-repeat padding-box;
+    height:70px;
+}
+.header-menu a{
+   color: #FFFFFF;
+   font-size:18px;
+}
+.navbar-expand-lg{
+    padding:10px 0 0 105px;
+}
+.home_info_data{
+    padding-top: 35px;
+}
+.home_info{
+    font-size:16px;
+    padding-left: 15px;
+}
+.sti-data{
+    font-size:30px;
+    color: #3A3B3B;
+    font-weight:bold;
+    padding-top:20px;
+}
+.data-arch{
+    color: #1F884C;
+    font-size:20px;
+}
+.home-sti-data-img{
+    position:relative;
+}
+.home-sti-data-text{
+    position: absolute;
+    height: 100px;
+    background: #33716066;
+    opacity: 1.5;
+    color: #FFFFFF;
+    width: 22%;
+    margin: -102px 0 0px 3px;
+    font-size: 28px;
+    text-align: center;
+    padding-top: 25px;
+}
+.home-sti-data-text a, .home-sti-data-invo-text a{
+    color: #FFFFFF;
+}
+.home-sti-data-invo-text{
+    position: absolute;
+    height: 100px;
+    background: #33716066;
+    opacity: 1.5;
+    color: #FFFFFF;
+    width: 22%;
+    margin: -102px 0 0px 3px;
+    font-size: 28px;
+    text-align: center;
+    padding-top: 10px;
+}
+.more-frame{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #747474;
+    border-radius: 8px;
+    width: 204px;
+    height: 50px;
+    padding-top: 10px;
+    margin: 30px auto;
+}
+.more-frame a{
+    color: #137336;
+}
+.sti-high-text{
+    background: #EEFCF4 0% 0% no-repeat padding-box;
+    border: 1px solid #A8A8A8;
+    border-radius: 8px;
+    height:80%;
+}
+.sti-high-internal{
+    color: #198146;
+    font-size:30px;
+}
+
+ul.banner-border {
+    padding: 20px 0 0 0;
+}
+ul.banner-border li {
+	display: inline;
+	border-right-style: groove;
+}
+.footer{
+    position:relative;
+    font-size: 16px;
+}
+.footer-text{
+    position:absolute;
+    color: #FFFFFF;
+    bottom:30px;
+}
+.footer-menu{
+    position:absolute;
+    top: 40px;
+    color: #FFFFFF;
+    right: -350px;
+}
+.footer-menu a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.text-justify {
+  text-align: justify;
 }
