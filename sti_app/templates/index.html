@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
-    <title>Home</title>
+    <title>{% block title %}Home{% endblock %}</title>
     <script src="{% static 'js/boostrap.js' %}"></script> <!-- This is how to include a static file -->
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
@@ -78,10 +78,10 @@
         <div class="col-lg-12 col-md-12 home_info_data all">
             <div class="row g-0">
                 {% for homedata in home_data %}
-                     <div class="col-lg-3 col-md-3">
-                         <img src="{% static 'images/building.jpeg' %}" width="100%" height="100%"/>
+                     <div class="col-lg-4 col-md-4">
+                         <img src="{% static 'images/building.png' %}" width="100%" height="100%"/>
                      </div>
-                     <div class="col-lg-9 col-md-9 home_info text-justify">
+                     <div class="col-lg-8 col-md-8 home_info text-justify">
                             <p>{{homedata.home_info_text}}</p>
                      </div>
                  {% endfor %}
@@ -107,7 +107,7 @@
                  </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="col-lg-12 col-md-12 home-sti-data-img">
-                         <img src="{% static 'images/img2.png' %}" width="100%" height="100%"/>
+                         <img src="{% static 'images/research.png' %}" width="100%" height="100%"/>
                     </div>
                     <div class="col-lg-12 col-md-12 home-sti-data-text">
                         <a href="#" class="text-decoration-none">RESEARCH</a>
@@ -130,67 +130,107 @@
         <!-- STI Home page Infrastructure and Highlights starts -->
         <div class="col-lg-12 col-md-12 all">
              <div class="row">
-                 <div class="col-lg-9 col-md-9 sti-data text-center home_sti_infra_text">
+                 <div class="col-lg-8 col-md-8 sti-data home_sti_infra_text">
                      <span>STI INFRASTRUCTURE</span>
-                     <img src="{% static 'images/map_punjab.png' %}" width="100%" height="80%"/>
+                     <div class="col-lg-12 col-md-12 pb-img">
+                        <img src="{% static 'images/map_punjab.png' %}" width="100%" height="80%"/>
+                     </div>
+                     <div class="col-lg-12 col-md-12 text-start pb-text">
+                         <p><span class="pb-circle">34</span><span class="pb-circle-otext">UNIVERSITIES</span></p>
+                         <p><span class="pb-circle">20</span><span class="pb-circle-otext">R&D INSTITUTES</span></p>
+                         <p><span class="pb-circle">06</span><span class="pb-circle-otext">INSTITUTES OF NATIONAL IMPORTANCE</span></p>
+                         <p><span class="pb-circle">27</span><span class="pb-circle-otext">DSIR REGISTERED</span></p>
+                         <p><span class="pb-circle">29</span><span class="pb-circle-otext">INCUBATORS</span></p>
+                         <p><span class="pb-circle">16</span><span class="pb-circle-otext">CENTRES OF EXCELLENCE</span></p>
+
+                     </div>
                  </div>
-                <div class="sti-data text-center col-lg-3 col-md-3">
+                <div class="sti-data text-center col-lg-4 col-md-4">
                     <span>STI HIGHLIGHTS</span>
-                    <div class="sti-high-text">
-                        <span class="sti-high-internal">600+</span><span>STARTUPS</span><span>DPIIT Registered</span>
-                        <span>1500+</span><span>PATIENTS</span><span>Filed</span>
-                        <span>10+</span><span>INDUSTRIAL</span><span>Parks</span>
+                    <div class="col-lg-12 col-md-12">
+                        <div class="sti-high-text">
+                            <div class="col-lg-12 col-md-12 all text-center sti-high-border">
+                                <span  class="sti-high-internal-600">600+</span><span class="sti-high-internal">STARTUPS</span><p class="text-end">DPIIT Registered</p>
+                            </div>
+                            <div class="col-lg-12 col-md-12 all text-center sti-high-border">
+                                <span class="sti-high-internal-600">1500+</span><span class="sti-high-internal">PATIENTS</span><p class="text-end">Filed</p>
+                            </div>
+                            <div class="col-lg-12 col-md-12 all sti-high">
+                                <span class="sti-high-internal-600">10+</span><span class="sti-high-internal">INDUSTRIAL</span><p class="text-end">Parks</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
              </div>
         </div>
          <!-- STI Home page Infrastructure and Highlights ends -->
         <!-- STI Home page Plans and policies starts -->
-        <div class="col-lg-12 col-md-12 all">
-            <div class="col-lg-12 col-md-12">
+        <div class="col-lg-12 col-md-12">
+            <div class="col-lg-12 col-md-12 sti-data text-center">
                 <span class="text-uppercase">Plans & Policies</span>
             </div>
             <div class="row">
                  <div class="col-lg-4 col-md-4 home_plans_img">
-                     <img src="{% static 'images/pp_img1.png' %}" width="100%" height="100%"/>
-                     <span>MISSION</span>
+                     <div class="col-lg-12 col-md-12 home-sti-data-img">
+                         <img src="{% static 'images/pp_img1.png' %}" width="100%" height="100%"/>
+                    </div>
+                    <div class="col-lg-12 col-md-12 home-plans-text">
+                        <a href="#" class="text-decoration-none">MISSION</a>
+                    </div>
                  </div>
                 <div class="col-lg-4 col-md-4">
-                     <img src="{% static 'images/pp_img2.png' %}" width="100%" height="100%"/>
-                    <span>POLICIES</span>
+                     <div class="col-lg-12 col-md-12 home-sti-data-img">
+                         <img src="{% static 'images/pp_img2.png' %}" width="100%" height="100%"/>
+                    </div>
+                    <div class="col-lg-12 col-md-12 home-plans-text">
+                        <a href="#" class="text-decoration-none">POLICIES</a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
-                     <img src="{% static 'images/pp_img3.png' %}" width="100%" height="100%"/>
-                    <span>ACTION PLANS</span>
+                     <div class="col-lg-12 col-md-12 home-sti-data-img">
+                         <img src="{% static 'images/pp_img3.png' %}" width="100%" height="100%"/>
+                    </div>
+                    <div class="col-lg-12 col-md-12 home-plans-text">
+                        <a href="#" class="text-decoration-none">ACTION PLANS</a>
+                    </div>
                 </div>
              </div>
         </div>
         <!-- STI Home page Plans and policies ends -->
         <!-- STI Spotlight starts -->
-        <div class="col-lg-12 col-md-12 all">
-            <div class="col-lg-12 col-md-12">
+        <div class="col-lg-12 col-md-12">
+            <div class="col-lg-12 col-md-12 sti-data text-center">
                 <span class="text-uppercase">Spotlight</span>
             </div>
             <div class="row">
-                 <div class="col-lg-4 col-md-4 home_spt_img">
-                     <img src="{% static 'images/spt_1.png' %}" width="100%" height="100%"/>
-                     <span>Industrial Research Centre to be set up in Chandigarh</span><br/>
-                     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<a href="#">Read More</a></span>
+                 <div class="col-lg-4 col-md-4">
+                     <div class="col-lg-12 col-md-12 home_spt_img">
+                         <img src="{% static 'images/spt_1.png' %}" width="100%" height="70%"/>
+                    </div>
+                    <div class="col-lg-12 col-md-12 home_spt_text">
+                        <p class="spt-title">Industrial Research Centre to be set up in Chandigarh</p>
+                        <p class="spt-subtext">Lorem ipsum dolor sitidunt ut sed do eiusmod tempor incididunt ut  eiusmod tempor incididunt ut  <a href="#" class="text-decoration-none">Read More....</a></p>
+                    </div>
                  </div>
-                <div class="col-lg-4 col-md-4 home_spt_img">
-                     <img src="{% static 'images/spt_2.png' %}" width="100%" height="100%"/>
-                    <span>Launches PINK Project initiative for breast cancer treatment</span><br/>
-                     <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<a href="#">Read More</a></span>
+                <div class="col-lg-4 col-md-4 ">
+                     <div class="col-lg-12 col-md-12 home_spt_img">
+                         <img src="{% static 'images/spt_2.png' %}" width="100%" height="70%"/>
+                    </div>
+                    <div class="col-lg-12 col-md-12 home_spt_text">
+                        <p class="spt-title">Launches PINK Project initiative for breast cancer treatment</p>
+                        <p class="spt-subtext">Lorem ipsum dolor sit amet abore et dolore magna aliqua.  eiusmod tempor incididunt ut  <a href="#" class="text-decoration-none">Read More....</a></p>
+                    </div>
                 </div>
-                <div class="col-lg-4 col-md-4 home_spt_img">
-                     <img src="{% static 'images/tweets.png' %}" width="100%" height="100%"/>
+                <div class="col-lg-4 col-md-4">
+                     <div class="col-lg-12 col-md-12 home-sti-data-img">
+                         <img src="{% static 'images/tweets.png' %}" width="100%" height="100%"/>
+                     </div>
                 </div>
-             </div>
-            <div class="col-lg-12 col-md-12 all">
-                <a href="#">Browse all 120 initiatives</a>
+                <div class="col-lg-12 col-md-12 all init-browse text-center">
+                    <a href="#" class="text-decoration-none">Browse all 120 initiatives</a>
+                </div>
             </div>
         </div>
-         </div>
 </div>
          <!-- STI Spotlight ends -->
 {% endblock %}
@@ -209,13 +249,13 @@
                         <img src="{% static 'images/fl2.png' %}" alt="" />
                     </li>
                     <li>
-                        <img src="{% static 'images/fl3.png' %}" alt="" />
+                        <img src="{% static 'images/fl3.png' %}" alt="" width="18%"/>
                     </li>
                     <li>
-                        <img src="{% static 'images/fl4.png' %}" alt="" />
+                        <img src="{% static 'images/fl4.png' %}" alt="" width="18%" />
                     </li>
                     <li>
-                        <img src="{% static 'images/fl5.png' %}" alt="" />
+                        <img src="{% static 'images/fl5.png' %}" alt="" width="18%"/>
                     </li>
                     <li>
                         <img src="{% static 'images/fl6.png' %}" alt="" />
@@ -231,7 +271,7 @@
 <!-- Banners Ends -->
 <!-- Footer Starts -->
 <div class="container-fluid footer">
-    <img src="{% static 'images/footer.png' %}" alt="" width="100%" height="60%"/>
+    <img src="{% static 'images/footer.png' %}" alt="" width="100%" height="40%"/>
     <div class="container col-lg-12 col-md-12 all">
         <div class="row">
             <div class="col-lg-6 col-md-6 footer-text">

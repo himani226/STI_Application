@@ -2,6 +2,7 @@
  font-family: Roboto
  margin:0;
  padding:0;
+ overflow-x:hidden !important;
 }
 .all{
 padding:5px 0 5px 0;
@@ -62,9 +63,10 @@ padding:5px 0 5px 0;
     position: absolute;
     height: 100px;
     background: #33716066;
+    border-radius: 0px 0px 8px 8px;
     opacity: 1.5;
     color: #FFFFFF;
-    width: 22%;
+    width: 21.7%;
     margin: -102px 0 0px 3px;
     font-size: 28px;
     text-align: center;
@@ -77,9 +79,10 @@ padding:5px 0 5px 0;
     position: absolute;
     height: 100px;
     background: #33716066;
+    border-radius: 0px 0px 8px 8px;
     opacity: 1.5;
     color: #FFFFFF;
-    width: 22%;
+    width: 21.7%;
     margin: -102px 0 0px 3px;
     font-size: 28px;
     text-align: center;
@@ -97,23 +100,107 @@ padding:5px 0 5px 0;
 .more-frame a{
     color: #137336;
 }
+
+.home_sti_infra_text{
+    text-align:center;
+}
+
+.pb-img{
+    position:relative;
+}
+.pb-text{
+    position:absolute;
+    top: 1813px;
+    padding: 20px;
+    color:#254E37;
+}
+.pb-circle{
+    color: #198146;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #9E9E9E;
+    border-radius: 50%;
+    font-size: 38px;
+    padding: 8px;
+    margin: 6px;
+}
+.pb-circle-otext{
+    font-size: 25px;
+}
+
+
 .sti-high-text{
     background: #EEFCF4 0% 0% no-repeat padding-box;
     border: 1px solid #A8A8A8;
     border-radius: 8px;
     height:80%;
 }
+.sti-high{
+    padding:20px;
+}
+.sti-high-border{
+    border-bottom: 1px solid #A8A8A8;
+    padding:0 20px 0 20px;
+}
+.sti-high-internal-600{
+    color: #198146;
+    font-size:65px;
+    padding: 0 0 0 20px;
+}
 .sti-high-internal{
     color: #198146;
     font-size:30px;
 }
+.home-plans-text{
+    position: absolute;
+    height: 100px;
+    background: #1B2A25;
+    border-radius: 0px 0px 8px 8px;
+    opacity: 0.5;
+    width: 21.7%;
+    margin: -102px 0 0px 3px;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+}
+.home-plans-text a{
+    color: #FFFFFF;
+    font-weight:bold;
+}
+.home_spt_img{
+    border: 1px solid #707070;
+    border-radius: 8px 8px 0 0;
+}
+.home_spt_text{
+    border: 1px solid #707070;
+    border-radius:0 0 8px 8px;
+    height: 30%;
+}
+.spt-title{
+    text-align: center;
+    font-size: 28px;
+    color: #3D2514;
+}
+
+.spt-subtext{
+    text-align: left;
+    font: 20px;
+    color: #3D3D3D;
+    padding:0 10px 0 10px;
+}
+.init-browse{
+    padding: 20px 0 0 0;
+}
+.init-browse a{
+    color: #198146;
+    font-weight:bold;
+    font-size: 16px;
+}
 
 ul.banner-border {
-    padding: 20px 0 0 0;
+    margin: 20px 0 0 0;
 }
 ul.banner-border li {
 	display: inline;
-	border-right-style: groove;
 }
 .footer{
     position:relative;
@@ -122,7 +209,7 @@ ul.banner-border li {
 .footer-text{
     position:absolute;
     color: #FFFFFF;
-    bottom:30px;
+    bottom:70px;
 }
 .footer-menu{
     position:absolute;
