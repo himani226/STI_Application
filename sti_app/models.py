@@ -5,8 +5,6 @@ from django.db import models
 from django.utils.datetime_safe import datetime
 from pathlib import Path
 
-uploads = 'media'
-
 
 # Create your models here.
 # headermenu table has been created to load the data from database
@@ -31,27 +29,18 @@ class FooterMenu(models.Model):
 
 # banner table has been created to load the data from database
 class Banner(models.Model):
-    banner_image = models.ImageField(max_length=200, upload_to=uploads)
+    banner_title = models.CharField(null=True, max_length=200)
+    banner_image = models.ImageField(max_length=200, upload_to='banner_image')
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return self.banner_image
+        return self.banner_title
 
 
 # homedata table has been created to load the data from database
 class HomeData(models.Model):
     home_info_text = models.TextField(null=True)
-    spotlight_text1 = models.TextField(null=True)
-    spotlight_text2 = models.TextField(null=True)
-    spotlight_text3 = models.TextField(null=True)
-    slider_image = models.ImageField(max_length=200, upload_to=uploads)
-    info_image = models.ImageField(max_length=200, upload_to=uploads)
-    education_image = models.ImageField(max_length=200, upload_to=uploads)
-    research_image = models.ImageField(max_length=200, upload_to=uploads)
-    innovation_image = models.ImageField(max_length=200, upload_to=uploads)
-    mission_image = models.ImageField(max_length=200, upload_to=uploads)
-    policies_image = models.ImageField(max_length=200, upload_to=uploads)
-    plans_image = models.ImageField(max_length=200, upload_to=uploads)
+    home_info_image = models.ImageField(blank=True, upload_to='home_info_image')
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
@@ -65,3 +54,13 @@ class AboutData(models.Model):
 
     def __str__(self):
         return self.about_text
+
+
+class Spotlight(models.Model):
+    spotlight_image = models.ImageField(blank=True, upload_to='spotlight_image')
+    spotlight_title = models.TextField(null=True)
+    spotlight_text = models.TextField(null=True)
+    pub_date = models.DateTimeField(default=datetime.now, blank=True)
+
+    def __str__(self):
+        return self.spotlight_title

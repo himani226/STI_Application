@@ -7,6 +7,11 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 text-justify">
                 <p>Filters By Stage</p>
+                <form method="post">{% csrf_token %}
+                    <input type="checkbox"  name="pid" value="{{obj.pid}}"> pid
+                    <input type="checkbox" checked name="title" value="{{obj.title}}"> title
+                </form>
+
                 <p>STI Eduction</p>
                 <p>Research</p>
                 <p>Innovation & Commercialization</p>
