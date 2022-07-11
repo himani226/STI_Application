@@ -8,10 +8,12 @@
     <title>{% block title %}Home{% endblock %}</title>
     <script src="{% static 'js/boostrap.js' %}"></script> <!-- This is how to include a static file -->
     <script src="{% static 'js/countup.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
    <!-- <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+
 </head>
 <body>
 <div class="container-fluid ">
@@ -204,24 +206,18 @@
                 <span class="text-uppercase">Spotlight</span>
             </div>
             <div class="row">
-                 <div class="col-lg-4 col-md-4">
-                     <div class="col-lg-12 col-md-12 home_spt_img">
-                         <img src="{% static 'images/spt_1.png' %}" width="100%" height="70%"/>
-                    </div>
-                    <div class="col-lg-12 col-md-12 home_spt_text">
-                        <p class="spt-title">Industrial Research Centre to be set up in Chandigarh</p>
-                        <p class="spt-subtext">Lorem ipsum dolor sitidunt ut sed do eiusmod tempor incididunt ut  eiusmod tempor incididunt ut  <a href="#" class="text-decoration-none">Read More....</a></p>
-                    </div>
-                 </div>
-                <div class="col-lg-4 col-md-4 ">
-                     <div class="col-lg-12 col-md-12 home_spt_img">
-                         <img src="{% static 'images/spt_2.png' %}" width="100%" height="70%"/>
-                    </div>
-                    <div class="col-lg-12 col-md-12 home_spt_text">
-                        <p class="spt-title">Launches PINK Project initiative for breast cancer treatment</p>
-                        <p class="spt-subtext">Lorem ipsum dolor sit amet abore et dolore magna aliqua.  eiusmod tempor incididunt ut  <a href="#" class="text-decoration-none">Read More....</a></p>
-                    </div>
-                </div>
+                {% for spot in spotlight %}
+                     <div class="col-lg-4 col-md-4">
+                         <div class="col-lg-12 col-md-12 home_spt_img">
+                             <img src="{{ spot.spotlight_image.url }}" width="100%" height="70%"/>
+                        </div>
+                        <div class="col-lg-12 col-md-12 home_spt_text">
+                            <p class="spt-title">{{ spot.spotlight_title }}</p>
+                            <p class="spt-subtext">{{spot.spotlight_text}}<a href="#" class="text-decoration-none">Read More....</a></p>
+                        </div>
+                     </div>
+                 {% endfor %}
+
                 <div class="col-lg-4 col-md-4">
                      <div class="col-lg-12 col-md-12 home-sti-data-img">
                          <img src="{% static 'images/tweets.png' %}" width="100%" height="100%"/>
@@ -328,5 +324,15 @@
       };
     }
   </script>
+<script>
+   $('input.test').on('change', function() {
+    $('input.test').not(this).prop('checked', false);
+});
+
+$('input.test1').on('change', function() {
+    $('input.test1').not(this).prop('checked', false);
+});
+
+</script>
 </body>
 </html>

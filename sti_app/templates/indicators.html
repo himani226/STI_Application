@@ -6,31 +6,22 @@
         <h3>STI Indicators</h3>
         <div class="row">
             <div class="col-lg-4 col-md-4 text-justify">
-                <p>Filters By Stage</p>
                 <form method="post">{% csrf_token %}
-                    <input type="checkbox"  name="pid" value="{{obj.pid}}"> pid
-                    <input type="checkbox" checked name="title" value="{{obj.title}}"> title
+                    <p><strong>Filters By Stage</strong></p>
+                    {% for st in stage %}
+                    <p>{{ st.stage_title }} <input type="checkbox" name="{{ st.stage_title }}" value="{{ st.stage_title }}" class="test"></p>
+                    {% endfor %}
+                    <hr>
+                    <p><strong>Filters By Pillars</strong></p>
+                    {% for pi in pillar %}
+                    <p>{{ pi.pillar_title }} <input type="checkbox" name="{{ pi.pillar_title }}" value="{{ pi.pillar_title }}" class="test1"></p>
+                    {% endfor %}
                 </form>
-
-                <p>STI Eduction</p>
-                <p>Research</p>
-                <p>Innovation & Commercialization</p>
-                <hr>
-                <p>Filters By Pillars</p>
-                <p>Infrastructure</p>
-                <p>Human Resource</p>
-                <p>Finance</p>
-                <p>Policies and Programs</p>
-
-
             </div>
             <div>
 
             </div>
         </div>
-
     </div>
 </div>
  {% endblock %}
-
-

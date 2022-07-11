@@ -1,16 +1,17 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData
+from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData, Spotlight, Stage, Pillar, Indicator
 
 
 def index(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     home_data = HomeData.objects.all()
+    spotlight = Spotlight.objects.all()
 
     return render(request, 'index.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'home_data':home_data})
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'home_data':home_data, 'spotlight':spotlight})
 
 
 def about(request):
@@ -23,7 +24,15 @@ def about(request):
 def indicators(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
-    return render(request, 'indicators.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+    stage = Stage.objects.all()
+    pillar = Pillar.objects.all()
+    indicator = Indicator.objects.all()
+
+    
+
+
+    return render(request, 'indicators.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,'stage': stage,
+                                                       'pillar': pillar, 'indicator': indicator})
 
 
 def incubators(request):
