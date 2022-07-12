@@ -103,11 +103,16 @@ class Stage(models.Model):
 
 
 class Pillar(models.Model):
-    pillar_title = models.CharField(primary_key=True, max_length=200)
+    stage_title = models.ForeignKey(Stage,
+                                    on_delete=models.SET_NULL,
+                                    blank=True,
+                                    null=True,
+                                    )
+    pillar_title = models.CharField(max_length=200)
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return self.pillar_title
+        return self.stage_title + '-' + self.pillar_title
 
 
 class Indicator(models.Model):
@@ -125,20 +130,10 @@ class Indicator(models.Model):
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return f"{self.stage_title}, {self.pillar_title}, {self.indicator_title}"
+        return f"{self.pillar_title}, {self.indicator_title}"
 
 
 class IndicatorDefinition(models.Model):
-    stage_title = models.ForeignKey(Stage,
-                                    on_delete=models.SET_NULL,
-                                    blank=True,
-                                    null=True,
-                                    )
-    pillar_title = models.ForeignKey(Pillar,
-                                     on_delete=models.SET_NULL,
-                                     blank=True,
-                                     null=True,
-                                     )
     indicator_title = models.ForeignKey(Indicator,
                                      on_delete=models.SET_NULL,
                                      blank=True,
