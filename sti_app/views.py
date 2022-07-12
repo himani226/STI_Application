@@ -28,9 +28,6 @@ def indicators(request):
     pillar = Pillar.objects.all()
     indicator = Indicator.objects.all()
 
-    
-
-
     return render(request, 'indicators.html', context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,'stage': stage,
                                                        'pillar': pillar, 'indicator': indicator})
 
