@@ -39,12 +39,14 @@ def indicators(request):
 
 
 def indicatorslist(request):
-    stage = request.POST.get('name')
+    stage = request.GET.get('name')
     if stage:
-        pillar_title = Pillar.objects.get(stage_title=stage)
+        pillar_title = Pillar.objects.filter(stage_title=stage)
         if pillar_title:
+            all_pillar = []
             response = success_response()
-            response['message'] = 'Data deleted successfully'
+            response['pillar'] = [all_pillar.append(pillar.embed()) for pillar in pillar_title]
+            return HttpResponse(json.dumps(response))
         else:
             response = no_success_response()
     else:

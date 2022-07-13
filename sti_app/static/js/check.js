@@ -6,15 +6,21 @@ $(document).ready(function(){
             var check = $(this);
             var name = parseInt($(this).attr('name'));
             $.ajax({
-                type: "POST",
+                type: "GET",
                 url: HOST+'/indicatorslist/',
                 data: {
                     'name': name
                 },
                 success: function(context){
                    // process on data
-                   var tr = "Hello"
-                    document.write(tr)
+                    $.each(pillar,function(index,value){
+                        var checkbox_label = value;
+                        var checkbox_value =value;
+                        var checkbox_name = value;
+                        var template = '<input type="checkbox" name="'+checkbox_name+'" value="'+checkbox_value+'">'+checkbox_label;
+
+                      $("#append").append(template);
+                    });
                 }
             })
         $('input.test').not(this).prop('checked', false);

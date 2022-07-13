@@ -17,7 +17,9 @@
                  </form>
                  <p><strong>Filters By Pillars</strong></p>
                     <hr>
-                    <div id="append" name="append">Append here</div>
+                    {% for pi in pillar %}
+                    <p>{{ pi.pillar_title }} <input type="checkbox" name="{{ pi.pillar_title }}" value="{{ pi.pillar_title }}" class="test1"></p>
+                    {% endfor %}
 </form>
 
 
