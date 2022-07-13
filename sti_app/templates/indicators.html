@@ -1,4 +1,6 @@
 {% extends 'index.html' %}
+{% load static %}
+
 <title>{% block title %}STI Indicators{% endblock %}</title>
 {% block content %}
 <div class="container">
@@ -6,11 +8,10 @@
         <h3>STI Indicators</h3>
         <div class="row">
             <div class="col-lg-4 col-md-4 text-justify">
-                <form method="POST">  {% csrf_token %}
+                <form method="POST">
                     <p><strong>Filters By Stage</strong></p>
                         {% for st in stage %}
-                            <p>{{ st.stage_title }}  <input type="checkbox" class="test" name="{{ st.stage_title }}" id="{{ st.stage_title }}" value="{{ st.stage_title }}" >
-                            <input type="hidden" name="preference" value="email_msg">
+                    <p>{{ st.stage_title }}  <input type="checkbox" class="test" name="{{ st.stage_title }}"  value="{{ st.stage_title }}" ></p>
                         {% endfor %}
 
                  </form>
@@ -37,14 +38,5 @@
 
 
 {% block javascript %}
-<script>
-$('input.test').on('change', function() {
-    $('input.test').not(this).prop('checked', false);
-});
-
-$('input.test1').on('change', function() {
-    $('input.test1').not(this).prop('checked', false);
-});
-
-</script>
+<script src="{% static 'js/check.js' %}"></script>
 {% endblock javascript %}

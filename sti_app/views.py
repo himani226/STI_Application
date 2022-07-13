@@ -1,5 +1,10 @@
-from django.http import HttpResponse
+import json
+
+from django.http import HttpResponse, response
 from django.shortcuts import render
+
+from sti_app.responses.general_response import (no_success_response,
+                                                   success_response)
 
 from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData, Spotlight, Stage, Pillar, Indicator
 
@@ -31,6 +36,20 @@ def indicators(request):
     return render(request, 'indicators.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'stage': stage,
                            })
+
+
+def indicatorslist(request):
+    stage = request.POST.get('name')
+    if stage:
+        pillar_title = Pillar.objects.get(stage_title=stage)
+        if pillar_title:
+            response = success_response()
+            response['message'] = 'Data deleted successfully'
+        else:
+            response = no_success_response()
+    else:
+        response = no_success_response()
+    return HttpResponse(json.dumps(response))
 
 
 def incubators(request):
