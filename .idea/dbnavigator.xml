@@ -18,6 +18,7 @@
       <destination value="FILE" />
       <format value="EXCEL" />
       <charset value="windows-1252" />
+      <charset value="windows-1252" />
     </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -27,18 +28,19 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="063b7d10-0eb6-4217-888d-8f5a1a4004e3">
-      <console name="Connection" type="STANDARD" schema="information_schema" session="Main" />
+    <connection id="ab9521a0-3bff-44e3-bfd5-f0cf8571e2e9">
+      <console name="Connection 1" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="063b7d10-0eb6-4217-888d-8f5a1a4004e3" />
+    <connection id="ab9521a0-3bff-44e3-bfd5-f0cf8571e2e9" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="063b7d10-0eb6-4217-888d-8f5a1a4004e3" dataset="public.sti_app_menu" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="ab9521a0-3bff-44e3-bfd5-f0cf8571e2e9" dataset="main.sti_app_pillar" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="ab9521a0-3bff-44e3-bfd5-f0cf8571e2e9" dataset="main.sti_app_stage" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -69,23 +71,26 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="063b7d10-0eb6-4217-888d-8f5a1a4004e3" active="true" signed="false">
+      <connection id="ab9521a0-3bff-44e3-bfd5-f0cf8571e2e9" active="true" signed="true">
         <database>
-          <name value="Connection" />
+          <name value="Connection 1" />
           <description value="" />
-          <database-type value="POSTGRES" />
+          <database-type value="SQLITE" />
           <config-type value="BASIC" />
-          <database-version value="14.4" />
+          <database-version value="3.3" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
-          <url-type value="DATABASE" />
-          <host value="localhost" />
-          <port value="5432" />
-          <database value="STI_db" />
-          <type value="USER_PASSWORD" />
-          <user value="STI" />
-          <deprecated-pwd value="cG9zdGdyZXNTVEk=" />
+          <url-type value="FILE" />
+          <host value="" />
+          <port value="" />
+          <database value="" />
+          <files>
+            <file path="C:\Users\hp\Documents\GitHub\STI_Application\db.sqlite3" schema="main" />
+          </files>
+          <type value="NONE" />
+          <user value="" />
+          <deprecated-pwd value="" />
         </database>
         <properties>
           <auto-commit value="false" />
@@ -123,7 +128,7 @@
           <alternative-statement-delimiter value="" />
         </details>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
-          <object-type-filter use-master-settings="true">
+          <object-type-filter>
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
             <object-type name="ROLE" enabled="true" />
@@ -240,11 +245,11 @@
         <nulls-first value="true" />
         <max-sorting-columns value="4" />
       </sorting>
-      <tracking-columns>
-        <columnNames value="" />
+      <audit-columns>
+        <column-names value="" />
         <visible value="true" />
         <editable value="false" />
-      </tracking-columns>
+      </audit-columns>
     </dataset-grid-settings>
     <dataset-editor-settings>
       <text-editor-popup>

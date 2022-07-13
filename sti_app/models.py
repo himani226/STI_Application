@@ -112,7 +112,7 @@ class Pillar(models.Model):
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return self.stage_title + '-' + self.pillar_title
+        return f"{self.stage_title}, {self.pillar_title}"
 
 
 class Indicator(models.Model):
