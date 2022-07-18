@@ -38,14 +38,36 @@ def indicators(request):
                            })
 
 
-def indicatorslist(request):
+def pillarlist(request):
     stage = request.GET.get('name')
     if stage:
         pillar_title = Pillar.objects.filter(stage_title=stage)
         if pillar_title:
             all_pillar = []
             response = success_response()
-            response['pillar'] = [all_pillar.append(pillar.embed()) for pillar in pillar_title]
+            for pillar in pillar_title:
+                all_pillar.append(pillar.embed())
+            response['pillar'] = all_pillar
+
+            return HttpResponse(json.dumps(response))
+        else:
+            response = no_success_response()
+    else:
+        response = no_success_response()
+    return HttpResponse(json.dumps(response))
+
+
+def indicatorslist(request):
+    pillar = request.GET.get('id')
+    if pillar:
+        indi_title = Indicator.objects.filter(pillar_title_id=pillar)
+        if indi_title:
+            all_ind = []
+            response = success_response()
+            for ind in indi_title:
+                all_ind.append(ind.embed())
+            response['indicators'] = all_ind
+
             return HttpResponse(json.dumps(response))
         else:
             response = no_success_response()

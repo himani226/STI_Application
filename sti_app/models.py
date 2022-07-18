@@ -112,7 +112,14 @@ class Pillar(models.Model):
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return f"{self.stage_title}, {self.pillar_title}"
+        return self.pillar_title
+
+    def embed(self):
+        return {
+            "stage_title": self.stage_title.stage_title,
+            "id": self.id,
+            "pillar_title": self.pillar_title
+        }
 
 
 class Indicator(models.Model):
@@ -132,13 +139,20 @@ class Indicator(models.Model):
     def __str__(self):
         return self.indicator_title
 
+    def embed(self):
+        return {
+            "pillar_title_id": self.pillar_title.pillar_title,
+            "id": self.id,
+            "indicator_title": self.indicator_title
+        }
+
 
 class IndicatorDefinition(models.Model):
     indicator_title = models.ForeignKey(Indicator,
-                                     on_delete=models.SET_NULL,
-                                     blank=True,
-                                     null=True,
-                                    )
+                                        on_delete=models.SET_NULL,
+                                        blank=True,
+                                        null=True,
+                                        )
     indicator_description = models.TextField(null=True)
     indicator_image = models.ImageField(blank=True, upload_to='indicator_image')
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
