@@ -6,7 +6,8 @@ from django.shortcuts import render
 from sti_app.responses.general_response import (no_success_response,
                                                    success_response)
 
-from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData, Spotlight, Stage, Pillar, Indicator
+from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData, Spotlight, Stage, Pillar, Indicator, \
+    IndicatorDefinition, HomeFramework, HomePlanPolicies
 
 
 def index(request):
@@ -14,10 +15,11 @@ def index(request):
     footer_menu_name = FooterMenu.objects.all()
     home_data = HomeData.objects.all()
     spotlight = Spotlight.objects.all()
-
+    framework = HomeFramework.objects.all()
+    policies = HomePlanPolicies.objects.all()
     return render(request, 'index.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
-                           'home_data': home_data, 'spotlight': spotlight})
+                           'home_data': home_data, 'spotlight': spotlight, 'framework':framework, 'policies':policies})
 
 
 def about(request):
@@ -68,6 +70,24 @@ def indicatorslist(request):
                 all_ind.append(ind.embed())
             response['indicators'] = all_ind
 
+            return HttpResponse(json.dumps(response))
+        else:
+            response = no_success_response()
+    else:
+        response = no_success_response()
+    return HttpResponse(json.dumps(response))
+
+
+def indicatorsdef(request):
+    indi_id = request.GET.get('id')
+    if indi_id:
+        indi_title = IndicatorDefinition.objects.filter(indicator_title_id=indi_id)
+        if indi_title:
+            all_indef = []
+            response = success_response()
+            for indef in indi_title:
+                all_indef.append(indef.embed())
+            response['indi_def'] = all_indef
             return HttpResponse(json.dumps(response))
         else:
             response = no_success_response()

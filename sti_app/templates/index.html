@@ -6,13 +6,12 @@
     <meta content="" name="keywords" />
     <meta content="" name="description" />
     <title>{% block title %}Home{% endblock %}</title>
-    <script src="{% static 'js/boostrap.js' %}"></script> <!-- This is how to include a static file -->
     <script src="{% static 'js/countup.min.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
-   <!-- <link rel="stylesheet" href="{% static 'css/main.css' %}" type="text/css" />-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'js/bootstrap.js' %}" type="text/css" />
      {% block style %}
     {% endblock style %}
 
@@ -21,7 +20,6 @@
 <div class="container-fluid ">
     <div class="container">
      <!-- Topbar Start -->
-
         <div class="col-lg-12 col-md-12 top-bar">
             <div class="row">
                 <div class="col-lg-8 col-md-8">
@@ -30,7 +28,7 @@
                             <img src="{% static 'images/Logo.png' %}" width="100px"/>
                         </div>
                         <div class="col-lg-11 col-md-11 header-title">
-                            <span>SCIENCE, TECHNOLOGY & INNOVATION OBSERVATORY, PUNJAB</span>
+                            <span>Science, Technology & Innovation Observatory, Punjab</span>
                         </div>
                     </div>
                 </div>
@@ -55,9 +53,11 @@
     <div class="col-lg-12 col-md-12 header-menu">
         <div class="container">
             <nav class="navbar navbar-expand-lg">
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         {% for menu in header_menu_name %}
@@ -92,115 +92,124 @@
                  {% endfor %}
             </div>
         </div>
+    </div>
+    <div class="container-fluid all">
         <!-- STI Home page information ends-->
         <!-- STI Home page Data Architecture starts -->
-        <div class="col-lg-12 col-md-12 sti-data text-center all">
-            <span class="text-uppercase ">STI Data Architecture Framework</span>
-        </div>
-         <div class="col-lg-12 col-md-12 text-center data-arch">
-            <span>Data Architecture Framework defines components of Science, Technology & Innovation</span>
-        </div>
-         <div class="col-lg-12 col-md-12 all">
-             <div class="row">
-                 <div class="col-lg-4 col-md-4">
-                     <div class="col-lg-12 col-md-12 home-sti-data-img">
-                         <img src="{% static 'images/img1.png' %}" width="100%" height="100%"/>
-                     </div>
-                     <div class="col-lg-12 col-md-12 home-sti-data-text">
-                         <a href="#" class="text-decoration-none">STI EDUCATION</a>
-                     </div>
+        <div class="col-lg-12 col-md-12 sti-data sti-data-arch all">
+            <div class="container">
+                <span>STI Data Architecture Framework</span>
+                 <div class="col-lg-12 col-md-12 data-arch">
+                    <span>Data Architecture Framework defines components of Science, Technology & Innovation</span>
                  </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="col-lg-12 col-md-12 home-sti-data-img">
-                         <img src="{% static 'images/research.png' %}" width="100%" height="100%"/>
-                    </div>
-                    <div class="col-lg-12 col-md-12 home-sti-data-text">
-                        <a href="#" class="text-decoration-none">RESEARCH</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                     <div class="col-lg-12 col-md-12 home-sti-data-img">
-                         <img src="{% static 'images/img2.png' %}" width="100%" height="100%"/>
-                    </div>
-                    <div class="col-lg-12 col-md-12 home-sti-data-invo-text">
-                        <a href="#" class="text-decoration-none">INNOVATION & COMMERCIALIZATION</a>
-                    </div>
-                </div>
+            </div>
+        </div>
+        <div class="container">
+             <div class="col-lg-12 col-md-12 sti-div">
+                 <div class="row sti-margin">
+                     {% for frame in framework %}
+                        <div class="col-lg-4 col-md-4">
+                             <div class="col-lg-12 col-md-12 home-sti-data-text">
+                                 <a href="#" class="text-decoration-none">{{frame.home_framework_title}}</a>
+                             </div>
+                             <div class="col-lg-12 col-md-12 home-sti-data-img">
+                                  <img src="{{ frame.home_framework_image.url }}" width="100%" height="100%"/>
+                             </div>
+                         </div>
+                     {% endfor %}
+                 </div>
              </div>
-             <div class="col-lg-12 col-md-12 text-center more-frame all">
-                <a href="#" class="text-decoration-none"> More Framework</a>
-             </div>
-         </div>
+        </div>
         <!-- STI Home page Data Architecture ends -->
         <!-- STI Home page Infrastructure and Highlights starts -->
-        <div class="col-lg-12 col-md-12 all">
-             <div class="row">
-                 <div class="col-lg-8 col-md-8 sti-data home_sti_infra_text">
-                     <span>STI INFRASTRUCTURE</span>
-                     <div class="col-lg-12 col-md-12 pb-img">
-                        <img src="{% static 'images/map_punjab.png' %}" width="100%" height="80%"/>
-                     </div>
-                     <div class="col-lg-12 col-md-12 text-start pb-text">
-                         <p><span class="pb-circle">34</span><span class="pb-circle-otext">UNIVERSITIES</span></p>
-                         <p><span class="pb-circle">20</span><span class="pb-circle-otext">R&D INSTITUTES</span></p>
-                         <p><span class="pb-circle">06</span><span class="pb-circle-otext">INSTITUTES OF NATIONAL IMPORTANCE</span></p>
-                         <p><span class="pb-circle">27</span><span class="pb-circle-otext">DSIR REGISTERED</span></p>
-                         <p><span class="pb-circle">29</span><span class="pb-circle-otext">INCUBATORS</span></p>
-                         <p><span class="pb-circle">16</span><span class="pb-circle-otext">CENTRES OF EXCELLENCE</span></p>
-
-                     </div>
+        <div class="container-fluid card__image sti-infra-bg all">
+            <div class="container">
+                 <div class="col-lg-12 col-md-12 sti-data">
+                     <span>STI Infrastructure</span>
+                     <div class="row">
+                         <div class="col-lg-2 col-md-2">
+                         </div>
+                         <div class="col-lg-8 col-md-8 text-center">
+                            <img src="{% static 'images/punjab_map.png' %}" width="100%" height="100%"/>
+                         </div>
+                         <div class="col-lg-2 col-md-2">
+                         </div>
                  </div>
-                <div class="sti-data text-center col-lg-4 col-md-4">
-                    <span>STI HIGHLIGHTS</span>
-                    <div class="col-lg-12 col-md-12">
-                        <div class="sti-high-text">
-                            <div class="col-lg-12 col-md-12 all text-center sti-high-border">
-                                <span id="state1" countTo="600" class="sti-high-internal-600">0</span><span class="sti-high-internal-+">+</span><span class="sti-high-internal">STARTUPS</span><p class="text-end">DPIIT Registered</p>
+             </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="highlight-bg col-md-12">
+                <div class="container col-lg-12 col-md-12">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 sti-high-text">
+                            <span>STI Highlights</span>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="row">
+                                 <div class="col-lg-5 col-md-5">
+                                     <span id="state1" countTo="600" class="sti-high-internal-600">0</span>
+                                    <span class="sti-high-internal-plus">+</span>
+                                 </div>
+                                <div class="col-lg-7 col-md-7">
+                                    <span class="sti-high-internal">Startups</span>
+                                    <span class="sti-high-internal-text">DPIIT Registered</span>
+                                </div>
                             </div>
-                            <div class="col-lg-12 col-md-12 all text-center sti-high-border">
-                                <span class="sti-high-internal-600" id="state2" countTo="1500">0</span><span class="sti-high-internal-+">+</span><span class="sti-high-internal">PATIENTS</span><p class="text-end">Filed</p>
+                        </div>
+                        <div class="col-lg-3 col-md-3 sti-internal-div">
+                            <div class="row">
+                                 <div class="col-lg-7 col-md-7">
+                                     <span id="state2" countTo="1500" class="sti-high-internal-600">0</span>
+                                    <span class="sti-high-internal-plus">+</span>
+                                 </div>
+                                <div class="col-lg-5 col-md-5">
+                                    <span class="sti-high-internal">Patents</span>
+                                    <span class="sti-high-internal-text">Filed</span>
+                                </div>
                             </div>
-                            <div class="col-lg-12 col-md-12 all sti-high">
-                                <span class="sti-high-internal-600" id="state3" countTo="10">0</span><span class="sti-high-internal-+">+</span><span class="sti-high-internal">INDUSTRIAL</span><p class="text-end">Parks</p>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="row">
+                                 <div class="col-lg-5 col-md-5">
+                                     <span id="state3" countTo="10" class="sti-high-internal-600">0</span>
+                                    <span class="sti-high-internal-plus">+</span>
+                                 </div>
+                                <div class="col-lg-7 col-md-7">
+                                    <span class="sti-high-internal">Industrial</span>
+                                    <span class="sti-high-internal-text">Parks</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-             </div>
+            </div>
         </div>
+
          <!-- STI Home page Infrastructure and Highlights ends -->
         <!-- STI Home page Plans and policies starts -->
-        <div class="col-lg-12 col-md-12">
-            <div class="col-lg-12 col-md-12 sti-data text-center">
-                <span class="text-uppercase">Plans & Policies</span>
+        <div class="col-lg-12 col-md-12 policy-data">
+            <div class="container">
+                <span>Plans & Policies</span>
+                <div class="col-lg-12 col-md-12 policy-div">
+                     <div class="row sti-margin">
+                         {% for policy in policies %}
+                            <div class="col-lg-4 col-md-4">
+                                 <div class="col-lg-12 col-md-12 home-policy-data-text">
+                                     <a href="#" class="text-decoration-none">{{policy.home_plan_policies_title}}</a>
+                                 </div>
+                                 <div class="col-lg-12 col-md-12 home-sti-data-img">
+                                      <img src="{{ policy.home_plan_policies_image.url }}" width="100%" height="100%"/>
+                                 </div>
+                             </div>
+                         {% endfor %}
+                     </div>
+                </div>
             </div>
-            <div class="row">
-                 <div class="col-lg-4 col-md-4 home_plans_img">
-                     <div class="col-lg-12 col-md-12 home-sti-data-img">
-                         <img src="{% static 'images/pp_img1.png' %}" width="100%" height="100%"/>
-                    </div>
-                    <div class="col-lg-12 col-md-12 home-plans-text">
-                        <a href="#" class="text-decoration-none">MISSION</a>
-                    </div>
-                 </div>
-                <div class="col-lg-4 col-md-4">
-                     <div class="col-lg-12 col-md-12 home-sti-data-img">
-                         <img src="{% static 'images/pp_img2.png' %}" width="100%" height="100%"/>
-                    </div>
-                    <div class="col-lg-12 col-md-12 home-plans-text">
-                        <a href="#" class="text-decoration-none">POLICIES</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                     <div class="col-lg-12 col-md-12 home-sti-data-img">
-                         <img src="{% static 'images/pp_img3.png' %}" width="100%" height="100%"/>
-                    </div>
-                    <div class="col-lg-12 col-md-12 home-plans-text">
-                        <a href="#" class="text-decoration-none">ACTION PLANS</a>
-                    </div>
-                </div>
-             </div>
         </div>
+
+
+
         <!-- STI Home page Plans and policies ends -->
         <!-- STI Spotlight starts -->
         <div class="col-lg-12 col-md-12">

@@ -55,7 +55,6 @@ class HomeSlider(models.Model):
 class HomeFramework(models.Model):
     home_framework_title = models.CharField(null=True, max_length=200)
     home_framework_image = models.ImageField(blank=True, upload_to='home_framework_image')
-    home_framework_text = models.TextField(null=True)
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
@@ -112,7 +111,7 @@ class Pillar(models.Model):
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return self.pillar_title
+        return f"{self.pillar_title}, {self.stage_title}"
 
     def embed(self):
         return {
@@ -158,4 +157,11 @@ class IndicatorDefinition(models.Model):
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
-        return self.indicator_title
+        return f'{self.indicator_title}-----{self.indicator_description}'
+
+    def embed(self):
+        return {
+            "indicator_title": self.indicator_title.indicator_title,
+            "indicator_description": self.indicator_description,
+            "indicator_image": str(self.indicator_image)
+        }
