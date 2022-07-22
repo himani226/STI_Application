@@ -22,6 +22,13 @@
      <!-- Topbar Start -->
         <div class="col-lg-12 col-md-12 top-bar">
             <div class="row">
+                <div class="col-lg-12 col-md-12 text-end">
+                    <span class="top-skip-bar">
+                        <a href="">Skip to main content</a> |
+                        <a href="">Accessibility Options</a> |
+                        <a href="">ਪੰਜਾਬੀ</a>&nbsp;&nbsp;<img src="{% static 'images/Polygon 8.png' %}"/>
+                    </span>
+                </div>
                 <div class="col-lg-8 col-md-8">
                     <div class="row">
                         <div class="col-lg-1 col-md-1">
@@ -32,20 +39,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-3">
-                    <span class="top-skip-bar">
-                        <a href="">Skip to main content</a> |
-                        <a href="">Accessibility Options</a> |
-                        <a href="">ਪੰਜਾਬੀ</a><img src="{% static 'images/Polygon 8.png' %}"/>
-                    </span>
-                    <span class="float-end icons">
+                <div class="col-lg-2 col-md-2 icons">
+                    <span class="float-end">
                         <a class="" href="#"><img src="{% static 'images/facebook.png' %}"/></a>
                         <a class="" href="#"><img src="{% static 'images/youtube.png' %}"/></a>
                         <a class="" href="#"><img src="{% static 'images/twitter.png' %}"/></i></a>
                     </span>
                 </div>
-                <div class="col-lg-1 col-md-1">
-                    <img src="{% static 'images/dst_logo.png' %}" width="150px"/>
+                <div class="col-lg-2 col-md-2 dst-logo">
+                    <img src="{% static 'images/dst_logo.png' %}" class="float-end" width="150px"/>
                 </div>
             </div>
         </div>
@@ -74,8 +76,10 @@
 {% block content %}
 <div class="container-fluid">
      <div class="col-lg-12 col-md-12">
-         <div class="row g-0">
-             <img src="{% static 'images/slider.png' %}"/>
+         <div class="slider row g-0">
+             {% for slide in slider %}
+             <img src="{{ slide.home_slider_image.url }}" width="100%" height="100%"/>
+             {% endfor %}
          </div>
      </div>
     <div class="container">
@@ -122,7 +126,7 @@
         </div>
         <!-- STI Home page Data Architecture ends -->
         <!-- STI Home page Infrastructure and Highlights starts -->
-        <div class="container-fluid card__image sti-infra-bg all">
+        <div class="container-fluid card__image sti-infra-bg">
             <div class="container">
                  <div class="col-lg-12 col-md-12 sti-data">
                      <span>STI Infrastructure</span>
@@ -185,20 +189,20 @@
                 </div>
             </div>
         </div>
+        <!-- STI Home page Infrastructure and Highlights ends -->
 
-         <!-- STI Home page Infrastructure and Highlights ends -->
         <!-- STI Home page Plans and policies starts -->
         <div class="col-lg-12 col-md-12 policy-data">
             <div class="container">
                 <span>Plans & Policies</span>
                 <div class="col-lg-12 col-md-12 policy-div">
-                     <div class="row sti-margin">
+                     <div class="row policy-margin">
                          {% for policy in policies %}
                             <div class="col-lg-4 col-md-4">
-                                 <div class="col-lg-12 col-md-12 home-policy-data-text">
+                                 <div class="col-lg-12 col-md-12 policy-data-text">
                                      <a href="#" class="text-decoration-none">{{policy.home_plan_policies_title}}</a>
                                  </div>
-                                 <div class="col-lg-12 col-md-12 home-sti-data-img">
+                                 <div class="col-lg-12 col-md-12 policy-data-img">
                                       <img src="{{ policy.home_plan_policies_image.url }}" width="100%" height="100%"/>
                                  </div>
                              </div>
@@ -207,107 +211,119 @@
                 </div>
             </div>
         </div>
-
-
-
         <!-- STI Home page Plans and policies ends -->
-        <!-- STI Spotlight starts -->
-        <div class="col-lg-12 col-md-12">
-            <div class="col-lg-12 col-md-12 sti-data text-center">
-                <span class="text-uppercase">Spotlight</span>
-            </div>
-            <div class="row">
-                {% for spot in spotlight %}
-                     <div class="col-lg-4 col-md-4">
-                         <div class="col-lg-12 col-md-12 home_spt_img">
-                             <img src="{{ spot.spotlight_image.url }}" width="100%" height="70%"/>
-                        </div>
-                        <div class="col-lg-12 col-md-12 home_spt_text">
-                            <p class="spt-title">{{ spot.spotlight_title }}</p>
-                            <p class="spt-subtext">{{spot.spotlight_text}}<a href="#" class="text-decoration-none">Read More....</a></p>
-                        </div>
-                     </div>
-                 {% endfor %}
 
-                <div class="col-lg-4 col-md-4">
-                     <div class="col-lg-12 col-md-12 home-sti-data-img">
-                         <img src="{% static 'images/tweets.png' %}" width="100%" height="100%"/>
-                     </div>
-                </div>
-                <div class="col-lg-12 col-md-12 all init-browse text-center">
+        <!-- STI Spotlight starts -->
+        <div class="container">
+            <div class="col-lg-12 col-md-12 spt-data all">
+                <span>Spotlight</span>
+            </div>
+                <div class="col-lg-12 col-md-12 ">
+                    <div class="row">
+                        {% for spot in spotlight %}
+                         <div class="col-lg-4 col-md-4 spt_img">
+                             <div class="row">
+                                 <div class="col-lg-12 col-md-12">
+                                    <img src="{{ spot.spotlight_image.url }}" width="100%" height="100%"/>
+                                 </div>
+                                 <div class="col-lg-12 col-md-12 spt_text">
+                                    <p class="spt-title">
+                                        {{ spot.spotlight_title }}
+                                    </p>
+                                    <p class="spt-subtext">
+                                        {{spot.spotlight_text}}
+                                       </br> <a href="#" class="text-decoration-none">Read More....</a>
+                                    </p>
+                                 </div>
+                             </div>
+                         </div>
+                        {% endfor %}
+                        <div class="col-lg-4 col-md-4 spt_img-tweet">
+                             <div class="col-lg-12 col-md-12 ">
+                                 <div class="twitbox"><a class="twitter-timeline nongov" href="https://twitter.com/PSCST_GoP?ref_src=twsrc%5Etfw" target="_black">Tweets by PSCST_GoP</a> <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+                             </div>
+                        </div>
+                    </div>
+                <div class="col-lg-8 col-md-8 init-browse text-center">
+                    <div class="text-center">
+                          <span class="dot"></span>
+                          <span class="dot"></span>
+                          <span class="dot"></span>
+                    </div>
                     <a href="#" class="text-decoration-none">Browse all 120 initiatives</a>
                 </div>
             </div>
         </div>
-</div>
+    </div>
+
          <!-- STI Spotlight ends -->
-{% endblock %}
+        {% endblock %}
 <!-- Internal Content Closed-->
 
-<!-- Banners Starts -->
-<div class="container">
-    <div class="col-lg-12 col-md-12 all">
-        <div class="row-fluid banner-color">
-            <div class="bannergroup table">
-                <ul class="banner-border">
-                    <li>
-                        <img src="{% static 'images/fl1.png' %}" alt="Digital India" />
-                    </li>
-                    <li>
-                        <img src="{% static 'images/fl2.png' %}" alt="" />
-                    </li>
-                    <li>
-                        <img src="{% static 'images/fl3.png' %}" alt="" width="18%"/>
-                    </li>
-                    <li>
-                        <img src="{% static 'images/fl4.png' %}" alt="" width="18%" />
-                    </li>
-                    <li>
-                        <img src="{% static 'images/fl5.png' %}" alt="" width="18%"/>
-                    </li>
-                    <li>
-                        <img src="{% static 'images/fl6.png' %}" alt="" />
-                    </li>
-                </ul>
+    <!-- Banners Starts -->
+    <div class="container">
+        <div class="col-lg-12 col-md-12 all">
+             <hr>
+            <div class="row-fluid banner-color">
+                <div class="bannergroup table">
+                    <ul class="banner-border">
+                        <li>
+                            <img src="{% static 'images/fl1.png' %}" alt="Digital India" />
+                        </li>
+                        <li>
+                            <img src="{% static 'images/fl2.png' %}" alt="" />
+                        </li>
+                        <li>
+                            <img src="{% static 'images/fl3.png' %}" alt="" width="18%"/>
+                        </li>
+                        <li>
+                            <img src="{% static 'images/fl4.png' %}" alt="" width="18%" />
+                        </li>
+                        <li>
+                            <img src="{% static 'images/fl5.png' %}" alt="" width="18%"/>
+                        </li>
+                        <li>
+                            <img src="{% static 'images/fl6.png' %}" alt="" />
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Banners Ends -->
-<!-- Footer Starts -->
-<div class="container-fluid footer">
-    <img src="{% static 'images/footer.png' %}" alt="" width="100%" height="40%"/>
-    <div class="container col-lg-12 col-md-12 all">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 footer-text">
-                <span><strong>An initiative of </strong><br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Punjab State Council for Science & Technology</span><br/>
-                <span><strong>In Collaboration with</strong> <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Centre for Technology, Innovation & Economic Research
-                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Centre for Development of Advanced Computing</span><br/>
-                <br/><br/><br/><br/><br/><span class="">© STI, PUNJAB | GOVT. OF PUNJAB | 2022 | ALL RIGHTS RESERVED.</span>
+    <!-- Banners Ends -->
+    <!-- Footer Starts -->
+    <div class="footer-bg">
+        <div class="container col-lg-12 col-md-12">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 text-center">
+                    <ul class="footer-menu">
+                        <li><a class="" href="#">About Portal</a></li>|
+                        <li><a class="" href="#">Help</a></li>|
+                        <li><a class="" href="#">User Feedback</a></li>|
+                        <li><a class="" href="#">Accessibility</a></li>|
+                        <li><a class="" href="{%url 'contact' %}">Contact Us</a></li>|
+                        <li><a class="" href="#">Sitemap</a></li>|
+                        <li><a class="" href="#">Website Policies</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-6 footer-text">
+                    <span><strong>An initiative of </strong><br>
+                        <img src="{% static 'images/footer_pcst.png' %}" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;Punjab State Council for Science & Technology</span> <br>
+                    <span><strong>Supported By </strong><br>
+                        <img src="{% static 'images/footer_dst.png' %}" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;Department of Science & Technology, Government of India</span><br/><br>
+                    <p class="footer-menu-copyright">© STI, Punjab | Govt. of Punjab | 2022 | All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 col-md-6 footer-menu-collab">
+                    <span><strong>In Collaboration with</strong> <br>
+                        <img src="{% static 'images/footer_ctier.png' %}" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Centre for Technology, Innovation & Economic Research <br><br>
+                        <img src="{% static 'images/footer_cdac.png' %}" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Centre for Development of Advanced Computing</span><br/>
+                    <p class="footer-menu-develop text-end">Design and Developed by C-DAC Mohali</p>
+                </div>
             </div>
-            <div class="col-lg-6 col-md-6 footer-menu">
-                 <div class="row">
-                    <div class="col-lg-3 col-md-3">
-                        <a class="" href="#">About Portal</a><br/>
-                        <a class="" href="#">FAQ</a><br/>
-                        <a class="" href="#">Help</a><br/>
-                        <a class="" href="#">User Feedback</a><br/>
-                        <a class="" href="#">Accessibility</a>
-                    </div>
-                    <div class="col-lg-3 col-md-3">
-                        <a class="" href="{%url 'contact' %}">Contact Us</a><br/>
-                        <a class="" href="#">Downloads</a><br/>
-                        <a class="" href="#">Sitemap</a><br/>
-                        <a class="" href="#">Website Policies</a><br/>
-                        <a class="" href="#">Security Policies</a>
-                    </div>
-                 </div>
-                <br/><br/><br/><br/><br/><span class="">DESIGN AND DEVELOPED BY C-DAC MOHALI</span>
             </div>
         </div>
     </div>
-</div>
 </div>
 {% block javascript %}
 <script type="text/javascript">
@@ -336,6 +352,29 @@
       };
     }
   </script>
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 5000); // Change image every 2 seconds
+    }
+</script>
+
+
 {% endblock javascript %}
 </body>
 </html>

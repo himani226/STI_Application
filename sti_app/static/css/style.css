@@ -9,7 +9,7 @@
     margin:0 !important;
 }
 .all{
-    margin-top:100px !important;
+    margin-top:70px !important;
 }
 .top-bar{
     padding:10px;
@@ -30,7 +30,13 @@
     display: inline-block
 }
 .icons{
-    padding: 5px;
+    padding: 0px !important;
+    width:20% !important;
+    margin-top: 60px !important;
+}
+.dst-logo{
+    padding: 0px !important;
+    width:13% !important;
 }
 
 .header-menu{
@@ -40,8 +46,13 @@
 .header-menu a{
    color: #FFFFFF;
    font-size:18px;
+   padding-top:14px;
    padding-left: 17px !important;
 }
+.header-menu a:hover{
+    color:#020922;
+}
+
 .navbar-expand-lg{
     padding:10px 0 0 105px;
 }
@@ -67,18 +78,18 @@
 }
 
 .sti-data{
-    font-size:30px;
+    font-size:35px;
     color: #3A3B3B;
     padding-top:20px;
 }
 .data-arch{
     color: #008080;
-    font-size:20px;
+    font-size:25px;
 }
 .home-sti-data-text{
     font-size:28px;
 }
-.home-sti-data-text a{
+.home-sti-data-text a, .home-sti-data-text a:hover{
     color: #022539;
 }
 .home-sti-data-img{
@@ -117,30 +128,63 @@
 .policy-data{
     background-color: #3B877F;
     color: #FFFFFF;
-    font-size:30px;
-}
-.policy-data span{
+    font-size:35px;
     padding-top: 30px;
 }
-.home-policy-data-text{
+.policy-margin{
+    margin: 10px 10px!important;
+    padding-top:30px;
+}
+
+.policy-data-text{
     font-size:28px;
 }
-.home-policy-data-text a{
+.policy-data-text a, .policy-data-text a:hover{
     color: #FED9AA;
 }
+.policy-data-img:hover, .home-sti-data-img:hover{
+    outline:1px solid #008080;
+    outline-offset: -1px;
+    box-shadow: 0px 4px 3px #44444440;
+}
 
+.spt-data{
+    font-size:35px;
+    padding: 30px 0;
+    color:#022539;
+}
+.spt_img{
+    border:1px solid #707070;
+    padding:0px !important;
+    margin: 0 5px;
+    width:32.3333% !important;
+    height: 600px;
+}
+.spt_img-tweet{
+    border:1px solid #707070;
+    padding:0px !important;
+    margin: 0 5px;
+    width:32.3333% !important;
+    height: 600px;
+    overflow-y : scroll;
+}
+.spt_img:hover, .spt_img-tweet:hover{
+    outline:2px solid #008080;
+    outline-offset: -1px;
+}
 
 .spt-title{
-    text-align: center;
     font-size: 28px;
     color: #3D2514;
+    padding:15px;
+    line-height: normal;
 }
 
 .spt-subtext{
     text-align: left;
     font: 20px;
     color: #3D3D3D;
-    padding:0 10px 0 10px;
+    padding:0 15px;
 }
 .init-browse{
     padding: 20px 0 0 0;
@@ -151,32 +195,66 @@
     font-size: 16px;
 }
 
+.init-browse a:hover{
+    color: #3D2514;
+}
+
 ul.banner-border {
     margin: 20px 0 0 0;
 }
 ul.banner-border li {
 	display: inline;
 }
-.footer{
-    position:relative;
-    font-size: 16px;
+.footer-bg{
+    background-image: url("/static/images/Footer_BG.png")
 }
-.footer-text{
-    position:absolute;
-    color: #FFFFFF;
-    bottom:70px;
+ul.footer-menu li{
+    display: inline;
 }
-.footer-menu{
-    position:absolute;
-    top: 40px;
-    color: #FFFFFF;
-    right: -350px;
+
+.footer-menu a:hover{
+  color: #FED9AA;
+
 }
+.footer-menu, .footer-text, .footer-menu-collab{
+     color: #FFFFFF;
+     padding-top: 20px;
+}
+.footer-menu-copyright{
+     color: #FFFFFF;
+     padding-top: 10px;
+     font-size:13px;
+}
+
+.footer-menu-develop{
+     color: #FFFFFF;
+     padding-top: 60px;
+     font-size:13px;
+}
+
 .footer-menu a{
     text-decoration: none;
     color: #FFFFFF;
+    padding:15px;
 }
 
 .text-justify {
   text-align: justify;
 }
+
+/* Media CSS */
+
+/* Smaller than standard 960 (devices and browsers) */
+@media only screen and (max-width: 959px) {}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {}
