@@ -23,5 +23,6 @@ urlpatterns = [
     path(r'portfolio/', views.portfolio, name='portfolio'),
     path(r'researchers/', views.researchers, name='researchers'),
     path(r'technology/', views.technology, name='technology'),
+    path(r'framework/', views.framework, name='framework'),
 
 ]

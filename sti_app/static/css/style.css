@@ -77,11 +77,24 @@
     bottom:150px;
 }
 
-.sti-data{
+.sti-data {
     font-size:35px;
     color: #3A3B3B;
     padding-top:20px;
 }
+
+.sti-data a{
+    font-size:35px;
+    color: #3A3B3B;
+    padding-top:20px;
+    text-decoration:none;
+}
+
+.sti-data a:hover{
+    color: #3A3B3B;
+    text-decoration:none;
+}
+
 .data-arch{
     color: #008080;
     font-size:25px;
@@ -98,6 +111,59 @@
 .sti-infra-bg{
     background-image: url("/static/images/Infra_BG.png")
 }
+
+.pb-image{
+    position: relative;
+}
+.pb-number1{
+    position: absolute;
+    top: 335px;
+    left: -195px;
+}
+.pb-number2{
+    position: absolute;
+    top: 315px;
+    left: 402px;
+
+}
+.pb-number3{
+    position: absolute;
+    top: 436px;
+    left: -102px;
+
+}
+.pb-number4{
+    position: absolute;
+    top: 98px;
+    left: -102px;
+
+}
+.pb-number5{
+    position: absolute;
+    top: 175px;
+    left: -15px;
+
+}
+.pb-number6{
+    position: absolute;
+    top: 170px;
+    left: 423px;
+
+}
+.pb-nb-text{
+    color: #6B6B6B;
+}
+
+.pb-number5:hover, .pb-number1:hover  {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+
+
+
+
+
 .highlight-bg{
     background-color: #F8F8F8;
     padding-top:40px !important;

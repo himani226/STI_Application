@@ -4,7 +4,7 @@ from django.http import HttpResponse, response
 from django.shortcuts import render
 
 from sti_app.responses.general_response import (no_success_response,
-                                                   success_response)
+                                                success_response)
 
 from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData, Spotlight, Stage, Pillar, Indicator, \
     IndicatorDefinition, HomeFramework, HomePlanPolicies, HomeSlider
@@ -19,8 +19,9 @@ def index(request):
     framework = HomeFramework.objects.all()
     policies = HomePlanPolicies.objects.all()
     return render(request, 'index.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,'slider':slider,
-                           'home_data': home_data, 'spotlight': spotlight, 'framework':framework, 'policies':policies})
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'slider': slider,
+                           'home_data': home_data, 'spotlight': spotlight, 'framework': framework,
+                           'policies': policies})
 
 
 def about(request):
@@ -101,6 +102,13 @@ def incubators(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     return render(request, 'incubators.html',
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+
+
+def framework(request):
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    return render(request, 'framework.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
 
 
