@@ -117,52 +117,52 @@
 }
 .pb-number1{
     position: absolute;
-    top: 335px;
-    left: -195px;
+    top: 270px;
+    left: -138px;
+    transition: transform .2s;
 }
 .pb-number2{
     position: absolute;
-    top: 315px;
-    left: 402px;
+    top: 356px;
+    right: -365px;
+    transition: transform .2s;
 
 }
 .pb-number3{
     position: absolute;
-    top: 436px;
-    left: -102px;
+    top: 515px;
+    left: -136px;
+    transition: transform .2s;
 
 }
 .pb-number4{
     position: absolute;
-    top: 98px;
-    left: -102px;
+    top: 560px;
+    right: -100px;
+    transition: transform .2s;
 
 }
 .pb-number5{
     position: absolute;
-    top: 175px;
-    left: -15px;
+    top: 130px;
+    left: 30px;
+    transition: transform .2s;
 
 }
 .pb-number6{
     position: absolute;
     top: 170px;
-    left: 423px;
+    right: 46px;
+    transition: transform .2s;
 
 }
 .pb-nb-text{
     color: #6B6B6B;
 }
 
-.pb-number5:hover, .pb-number1:hover  {
+.pb-number5:hover, .pb-number1:hover, .pb-number2:hover,.pb-number3:hover,.pb-number4:hover,.pb-number6:hover  {
   transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
-
-
-
-
-
-
 
 .highlight-bg{
     background-color: #F8F8F8;
@@ -270,6 +270,7 @@ ul.banner-border {
 }
 ul.banner-border li {
 	display: inline;
+	margin: 0 15px;
 }
 .footer-bg{
     background-image: url("/static/images/Footer_BG.png")
@@ -279,23 +280,28 @@ ul.footer-menu li{
 }
 
 .footer-menu a:hover{
-  color: #FED9AA;
+  color: #FB991C;
 
 }
 .footer-menu, .footer-text, .footer-menu-collab{
      color: #FFFFFF;
-     padding-top: 20px;
-}
-.footer-menu-copyright{
-     color: #FFFFFF;
-     padding-top: 10px;
-     font-size:13px;
 }
 
-.footer-menu-develop{
+.footer-text, .footer-menu-collab{
+    margin:50px 0 20px 0 !important;
+}
+
+.footer-text-clr{
+    color:#FB991C;
+    font-weight:bold;
+}
+
+.footer-menu-copyright{
      color: #FFFFFF;
-     padding-top: 60px;
      font-size:13px;
+}
+.hr-color{
+    color: #FFFFFF;
 }
 
 .footer-menu a{

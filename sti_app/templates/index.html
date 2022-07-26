@@ -22,31 +22,31 @@
      <!-- Topbar Start -->
         <div class="col-lg-12 col-md-12 top-bar">
             <div class="row">
-                <div class="col-lg-12 col-md-12 text-end">
+                <div class="col-lg-12 col-sm-12 col-md-12 text-end">
                     <span class="top-skip-bar">
                         <a href="#header-menu">Skip to main content</a> |
                         <a href="">Accessibility Options</a> |
                         <a href="">ਪੰਜਾਬੀ</a>&nbsp;&nbsp;<img src="{% static 'images/Polygon 8.png' %}"/>
                     </span>
                 </div>
-                <div class="col-lg-8 col-md-8">
+                <div class="col-lg-8 col-sm-12 col-md-8">
                     <div class="row">
-                        <div class="col-lg-1 col-md-1">
+                        <div class="col-lg-1 col-sm-12 col-md-1">
                             <img src="{% static 'images/Logo.png' %}" width="100px"/>
                         </div>
-                        <div class="col-lg-11 col-md-11 header-title">
+                        <div class="col-lg-11 col-sm-12 col-md-11 header-title">
                             <span>Science, Technology & Innovation Observatory, Punjab</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-2 icons">
+                <div class="col-lg-2 col-sm-12 col-md-2 icons">
                     <span class="float-end">
                         <a class="" href="#"><img src="{% static 'images/facebook.png' %}"/></a>
                         <a class="" href="#"><img src="{% static 'images/youtube.png' %}"/></a>
                         <a class="" href="#"><img src="{% static 'images/twitter.png' %}"/></i></a>
                     </span>
                 </div>
-                <div class="col-lg-2 col-md-2 dst-logo">
+                <div class="col-lg-2 col-sm-12 col-md-2 dst-logo">
                     <img src="{% static 'images/dst_logo.png' %}" class="float-end" width="150px"/>
                 </div>
             </div>
@@ -135,15 +135,15 @@
                          </div>
                          <div class="col-lg-8 col-md-8 text-center pb-image">
                             <img src="{% static 'images/punjab_map.png' %}" width="90%" height="90%"/>
-                             <a href="#"><p class="pb-number1"><span class="pb-nb-text">Institutes of <br/> National Importance </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <img src="{% static 'images/sti_number_1.png' %}" /></p></a>
+                             <a href="#"><span class="pb-number1"><span class="pb-nb-text">Institutes of<br>National Importance</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <img src="{% static 'images/sti_number_1.png' %}" /></span></a>
                              <a href="#"><p class="pb-number2"><img src="{% static 'images/sti_number_2.png' %}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                  <span class="pb-nb-text">DSIR Recognized R&D Units</span></p></a>
                              <a href="#"><p class="pb-number3"><span class="pb-nb-text">Incubators</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                  <img src="{% static 'images/sti_number_3.png' %}" /></p></a>
                              <a href="#"><p class="pb-number4"><img src="{% static 'images/sti_number_4.png' %}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                  <span class="pb-nb-text">Center of Excellence</span></p></a>
-                             <a href="#"><p class="pb-number5"><span class="pb-nb-text">Universities </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             <a href="#"><p class="pb-number5"><span class="pb-nb-text">Universities </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                  <img src="{% static 'images/sti_number_5.png' %}" /></p></a>
                              <a href="#"><p class="pb-number6"><img src="{% static 'images/sti_number_6.png' %}"/>&nbsp;&nbsp;&nbsp;
                                  <span class="pb-nb-text">   R&D Institutes </span></p></a>
@@ -307,7 +307,22 @@
     <div class="footer-bg">
         <div class="container col-lg-12 col-md-12">
             <div class="row">
-                <div class="col-lg-12 col-md-12 text-center">
+                <div class="col-lg-6 col-md-6 footer-text text-center">
+                    <span class="footer-text-clr">An initiative of</span><br>
+                        <img src="{% static 'images/footer_psct.png' %}" alt=""/><br><span>Punjab State Council for Science & Technology</span> <br><br>
+                    <span class="footer-text-clr">Supported By <br></span>
+                        <img src="{% static 'images/footer_dst.png' %}" alt=""/><br><span>Department of Science & Technology, Government of India</span><br/><br>
+
+                </div>
+                <div class="col-lg-6 col-md-6 footer-text footer-menu-collab text-center">
+                    <span class="footer-text-clr">In Collaboration with <br></span><span>
+                        <img src="{% static 'images/footer_ctier.png' %}" alt=""/><br>Centre for Technology, Innovation & Economic Research <br><br><br>
+                        <img src="{% static 'images/footer_cdac.png' %}" alt=""/><br>Centre for Development of Advanced Computing</span><br/>
+
+                </div>
+            </div>
+            <hr class="hr-color">
+            <div class="col-lg-12 col-md-12 text-center">
                     <ul class="footer-menu">
                         <li><a class="" href="#">About Portal</a></li>|
                         <li><a class="" href="#">Help</a></li>|
@@ -319,20 +334,17 @@
                         <li></li>
                     </ul>
                 </div>
-                <div class="col-lg-6 col-md-6 footer-text">
-                    <span><strong>An initiative of </strong><br>
-                        <img src="{% static 'images/footer_pcst.png' %}" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;Punjab State Council for Science & Technology</span> <br>
-                    <span><strong>Supported By </strong><br>
-                        <img src="{% static 'images/footer_dst.png' %}" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;Department of Science & Technology, Government of India</span><br/><br>
+        <hr class="hr-color">
+        <div class="col-lg-12 col-md-12">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 text-start">
                     <p class="footer-menu-copyright">© STI, Punjab | Govt. of Punjab | 2022 | All Rights Reserved.</p>
                 </div>
-                <div class="col-lg-6 col-md-6 footer-menu-collab">
-                    <span><strong>In Collaboration with</strong> <br>
-                        <img src="{% static 'images/footer_ctier.png' %}" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Centre for Technology, Innovation & Economic Research <br><br>
-                        <img src="{% static 'images/footer_cdac.png' %}" alt=""/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Centre for Development of Advanced Computing</span><br/>
-                    <p class="footer-menu-develop text-end">Design and Developed by C-DAC Mohali</p>
+                <div class="col-lg-6 col-md-6 text-end">
+                    <p class="footer-menu-copyright">Design and Developed by C-DAC Mohali</p>
                 </div>
             </div>
+        </div>
             </div>
         </div>
     </div>
@@ -364,27 +376,6 @@
       };
     }
   </script>
-<script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 5000); // Change image every 2 seconds
-    }
-</script>
 
 
 {% endblock javascript %}
