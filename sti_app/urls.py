@@ -24,5 +24,6 @@ urlpatterns = [
     path(r'researchers/', views.researchers, name='researchers'),
     path(r'technology/', views.technology, name='technology'),
     path(r'framework/', views.framework, name='framework'),
+    path(r'help/', views.help, name='help'),
 
 ]

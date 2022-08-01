@@ -27,16 +27,18 @@
     padding-left: 45px !important;
     color: #022539;
     font-size:28px;
-    display: inline-block
+    display: inline-block;
 }
 .icons{
     padding: 0px !important;
     width:20% !important;
     margin-top: 60px !important;
+    text-align:right;
 }
 .dst-logo{
     padding: 0px !important;
     width:13% !important;
+    text-align:right;
 }
 
 .header-menu{
@@ -117,47 +119,49 @@
 }
 .pb-number1{
     position: absolute;
-    top: 270px;
-    left: -138px;
+    top: 332px;
+    left: -313px;
     transition: transform .2s;
 }
 .pb-number2{
     position: absolute;
     top: 356px;
-    right: -365px;
+    right: -345px;
     transition: transform .2s;
 
 }
 .pb-number3{
     position: absolute;
-    top: 515px;
-    left: -136px;
+    top: 570px;
+    left: -115px;
     transition: transform .2s;
 
 }
 .pb-number4{
     position: absolute;
-    top: 560px;
-    right: -100px;
+    top: 620px;
+    right: -125px;
     transition: transform .2s;
 
 }
 .pb-number5{
     position: absolute;
     top: 130px;
-    left: 30px;
+    left: 20px;
     transition: transform .2s;
 
 }
 .pb-number6{
     position: absolute;
     top: 170px;
-    right: 46px;
+    right: 15px;
     transition: transform .2s;
 
 }
 .pb-nb-text{
     color: #6B6B6B;
+    padding: 0 45px;
+    line-height: 20px;
 }
 
 .pb-number5:hover, .pb-number1:hover, .pb-number2:hover,.pb-number3:hover,.pb-number4:hover,.pb-number6:hover  {
@@ -169,6 +173,19 @@
     padding-top:40px !important;
     height: 20%;
 }
+.sti-high-6{
+    padding:0px !important;
+    width: 32.666667% !important;
+}
+.sti-high-15{
+   padding-right: 0px !important;
+   width: 49% !important;
+}
+.sti-high-10{
+    padding-right:0px !important;
+    width: 32.666667% !important;
+}
+
 .sti-high-text{
     color: #022539;
     font-weight:bold;
@@ -219,14 +236,14 @@
     padding: 30px 0;
     color:#022539;
 }
-.spt_img{
+.spt-img{
     border:1px solid #707070;
     padding:0px !important;
     margin: 0 5px;
     width:32.3333% !important;
     height: 600px;
 }
-.spt_img-tweet{
+.spt-img-tweet{
     border:1px solid #707070;
     padding:0px !important;
     margin: 0 5px;
@@ -234,7 +251,7 @@
     height: 600px;
     overflow-y : scroll;
 }
-.spt_img:hover, .spt_img-tweet:hover{
+.spt-img:hover, .spt-img-tweet:hover{
     outline:2px solid #008080;
     outline-offset: -1px;
 }
@@ -270,7 +287,7 @@ ul.banner-border {
 }
 ul.banner-border li {
 	display: inline;
-	margin: 0 15px;
+	margin: 0 14px;
 }
 .footer-bg{
     background-image: url("/static/images/Footer_BG.png")
@@ -317,16 +334,320 @@ ul.footer-menu li{
 /* Media CSS */
 
 /* Smaller than standard 960 (devices and browsers) */
-@media only screen and (max-width: 959px) {}
+@media only screen and (max-width: 959px) {
+    .logo{
+        text-align:center;
+        padding-top: 10px;
+    }
+    .header-title{
+        padding-top: 10px !important;
+        padding-left: 0px !important;
+        text-align:center;
+    }
+    .icons{
+        width:50% !important;
+        text-align:center;
+        margin-top:70px !important;
+    }
+    .dst-logo{
+        text-align:center;
+        width:50% !important;
+        margin-top: 10px !important;;
+    }
+    .navbar-nav{
+        background-color:#008080E6;
+    }
+    .sti-div{
+        bottom:35px;
+    }
+    .sti-data-margin{
+        margin-bottom:50px;
+    }
+    .pb-number{
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        position: inherit;
+        margin:0;
+    }
+    .pb-image{
+        width:50%;
+        height:50%;
+    }
+    .pb-nb-text{
+        font-size:18px;
+        padding:0px;
+    }
+    .highlight-bg {
+        height: 60%;
+        padding:20px 0 !important;
+        text-align:center;
+    }
+    .sti-high-6, .sti-high-15, .sti-high-10, .spt-img, .spt-img-tweet{
+        width:100% !important;
+    }
+    .policy-img{
+        margin: 45px 0;
+    }
+    .foot-design{
+        text-align:center;
+    }
+
+}
 
 /* Tablet Portrait size to standard 960 (devices and browsers) */
-@media only screen and (min-width: 768px) and (max-width: 959px) {}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    .logo{
+        text-align:center;
+        padding-top: 10px;
+    }
+    .header-title{
+        padding-top: 10px !important;
+        padding-left: 0px !important;
+        text-align:center;
+    }
+    .icons{
+        width:50% !important;
+        text-align:center;
+        margin-top:70px !important;
+    }
+    .dst-logo{
+        text-align:center;
+        width:50% !important;
+        margin-top: 10px !important;;
+    }
+    .navbar-nav{
+        background-color:#008080E6;
+    }
+    .sti-div{
+        bottom:35px;
+    }
+    .sti-data-margin{
+        margin-bottom:50px;
+    }
+    .pb-number{
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        position: inherit;
+        margin:0;
+    }
+    .pb-image{
+        width:50%;
+        height:50%;
+    }
+    .pb-nb-text{
+        font-size:18px;
+        padding:0px;
+    }
+    .highlight-bg {
+        height: 60%;
+        padding:20px 0 !important;
+        text-align:center;
+    }
+    .sti-high-6, .sti-high-15, .sti-high-10, .spt-img, .spt-img-tweet{
+        width:100% !important;
+    }
+    .policy-img{
+        margin: 45px 0;
+    }
+    .foot-design{
+        text-align:center;
+    }
+
+}
+
 
 /* All Mobile Sizes (devices and browser) */
-@media only screen and (max-width: 767px) {}
+@media only screen and (max-width: 767px) {
+
+     .logo{
+        text-align:center;
+        padding-top: 10px;
+    }
+    .header-title{
+        padding-top: 10px !important;
+        padding-left: 0px !important;
+        text-align:center;
+    }
+    .icons{
+        width:50% !important;
+        text-align:center;
+        margin-top:70px !important;
+    }
+    .dst-logo{
+        text-align:center;
+        width:50% !important;
+        margin-top: 10px !important;;
+    }
+    .navbar-nav{
+        background-color:#008080E6;
+    }
+    .sti-div{
+        bottom:35px;
+    }
+    .sti-data-margin{
+        margin-bottom:50px;
+    }
+    .pb-number{
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        position: inherit;
+        margin:0;
+    }
+    .pb-image{
+        width:50%;
+        height:50%;
+    }
+    .pb-nb-text{
+        font-size:18px;
+        padding:0px;
+    }
+    .highlight-bg {
+        height: 60%;
+        padding:20px 0 !important;
+        text-align:center;
+    }
+    .sti-high-6, .sti-high-15, .sti-high-10, .spt-img, .spt-img-tweet{
+        width:100% !important;
+    }
+    .policy-img{
+        margin: 45px 0;
+    }
+    .foot-design{
+        text-align:center;
+    }
+
+}
 
 /* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+
+    .logo{
+        text-align:center;
+        padding-top: 10px;
+    }
+    .header-title{
+        padding-top: 10px !important;
+        padding-left: 0px !important;
+        text-align:center;
+    }
+    .icons{
+        width:50% !important;
+        text-align:center;
+        margin-top:70px !important;
+    }
+    .dst-logo{
+        text-align:center;
+        width:50% !important;
+        margin-top: 10px !important;;
+    }
+    .navbar-nav{
+        background-color:#008080E6;
+    }
+    .sti-div{
+        bottom:35px;
+    }
+    .sti-data-margin{
+        margin-bottom:50px;
+    }
+    .pb-number{
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        position: inherit;
+        margin:0;
+    }
+    .pb-image{
+        width:50%;
+        height:50%;
+    }
+    .pb-nb-text{
+        font-size:18px;
+        padding:0px;
+    }
+    .highlight-bg {
+        height: 60%;
+        padding:20px 0 !important;
+        text-align:center;
+    }
+    .sti-high-6, .sti-high-15, .sti-high-10, .spt-img, .spt-img-tweet{
+        width:100% !important;
+    }
+    .policy-img{
+        margin: 45px 0;
+    }
+    .foot-design{
+        text-align:center;
+    }
+
+}
 
 /* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
-@media only screen and (max-width: 479px) {}
+@media only screen and (max-width: 399px) {
+    .logo{
+        text-align:center;
+        padding-top: 10px;
+    }
+    .header-title{
+        padding-top: 10px !important;
+        padding-left: 0px !important;
+        text-align:center;
+    }
+    .icons{
+        width:50% !important;
+        text-align:center;
+        margin-top:70px !important;
+    }
+    .dst-logo{
+        text-align:center;
+        width:50% !important;
+        margin-top: 10px !important;;
+    }
+    .navbar-nav{
+        background-color:#008080E6;
+    }
+    .sti-div{
+        bottom:35px;
+    }
+    .sti-data-margin{
+        margin-bottom:50px;
+    }
+    .pb-number{
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        position: inherit;
+        margin:0;
+    }
+    .pb-image{
+        width:50%;
+        height:50%;
+    }
+    .pb-nb-text{
+        font-size:18px;
+        padding:0px;
+    }
+    .highlight-bg {
+        height: 70%;
+        padding:20px 0 !important;
+        text-align:center;
+    }
+    .sti-high-6, .sti-high-15, .sti-high-10, .spt-img, .spt-img-tweet{
+        width:100% !important;
+    }
+    .policy-img{
+        margin: 45px 0;
+    }
+    .foot-design{
+        text-align:center;
+    }
+
+
+}

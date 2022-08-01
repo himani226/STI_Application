@@ -7,7 +7,7 @@ from sti_app.responses.general_response import (no_success_response,
                                                 success_response)
 
 from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData, Spotlight, Stage, Pillar, Indicator, \
-    IndicatorDefinition, HomeFramework, HomePlanPolicies, HomeSlider
+    IndicatorDefinition, HomeFramework, HomePlanPolicies, HomeSlider, Banner
 
 
 def index(request):
@@ -18,28 +18,30 @@ def index(request):
     spotlight = Spotlight.objects.all()
     framework = HomeFramework.objects.all()
     policies = HomePlanPolicies.objects.all()
+    banner = Banner.objects.all()
     return render(request, 'index.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'slider': slider,
                            'home_data': home_data, 'spotlight': spotlight, 'framework': framework,
-                           'policies': policies})
+                           'policies': policies, 'banner': banner})
 
 
 def about(request):
     about_data = AboutData.objects.all()
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
     return render(request, 'about.html', context={'about_data': about_data, 'header_menu_name': header_menu_name,
-                                                  'footer_menu_name': footer_menu_name})
+                                                  'footer_menu_name': footer_menu_name, 'banner': banner})
 
 
 def indicators(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     stage = Stage.objects.all()
-
+    banner = Banner.objects.all()
     return render(request, 'indicators.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'stage': stage,
-                           })
+                           'banner': banner})
 
 
 def pillarlist(request):
@@ -101,54 +103,79 @@ def indicatorsdef(request):
 def incubators(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
     return render(request, 'incubators.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
 
 
 def framework(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
     return render(request, 'framework.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
 
 
 def instrumentation(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
     return render(request, 'instrumentation.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
 
 
 def researchers(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
     return render(request, 'researchers.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
 
 
 def portfolio(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
     return render(request, 'portfolio.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
 
 
 def technology(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
     return render(request, 'technology.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
 
 
 def challenges(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
     return render(request, 'challenges.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
 
 
 def contact(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
     return render(request, 'contact.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name})
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
+
+
+def help(request):
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
+    return render(request, 'help.html',
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})

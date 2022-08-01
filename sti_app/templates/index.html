@@ -10,8 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
-    <link rel="stylesheet" href="{% static 'js/bootstrap.js' %}" type="text/css" />
      {% block style %}
     {% endblock style %}
 
@@ -25,13 +25,13 @@
                 <div class="col-lg-12 col-sm-12 col-md-12 text-end">
                     <span class="top-skip-bar">
                         <a href="#header-menu">Skip to main content</a> |
-                        <a href="">Accessibility Options</a> |
+                        <a href="">Accessibility Options </a> |
                         <a href="">ਪੰਜਾਬੀ</a>&nbsp;&nbsp;<img src="{% static 'images/Polygon 8.png' %}"/>
                     </span>
                 </div>
                 <div class="col-lg-8 col-sm-12 col-md-8">
                     <div class="row">
-                        <div class="col-lg-1 col-sm-12 col-md-1">
+                        <div class="col-lg-1 col-sm-12 col-md-1 logo">
                             <img src="{% static 'images/Logo.png' %}" width="100px"/>
                         </div>
                         <div class="col-lg-11 col-sm-12 col-md-11 header-title">
@@ -39,15 +39,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-sm-12 col-md-2 icons">
-                    <span class="float-end">
+                    <div class="col-lg-2 col-sm-6 col-md-2 icons">
+                    <span>
                         <a class="" href="#"><img src="{% static 'images/facebook.png' %}"/></a>
                         <a class="" href="#"><img src="{% static 'images/youtube.png' %}"/></a>
                         <a class="" href="#"><img src="{% static 'images/twitter.png' %}"/></i></a>
                     </span>
                 </div>
-                <div class="col-lg-2 col-sm-12 col-md-2 dst-logo">
-                    <img src="{% static 'images/dst_logo.png' %}" class="float-end" width="150px"/>
+                <div class="col-lg-2 col-sm-6 col-md-2 dst-logo">
+                    <img src="{% static 'images/dst_logo.png' %}" width="150px"/>
                 </div>
             </div>
         </div>
@@ -55,11 +55,9 @@
     <div class="col-lg-12 col-md-12 header-menu">
         <div class="container">
             <nav id="header-menu" class="navbar navbar-expand-lg">
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         {% for menu in header_menu_name %}
@@ -75,7 +73,7 @@
 <!-- Internal Content Started-->
 {% block content %}
 <div class="container-fluid">
-     <div class="col-lg-12 col-md-12">
+     <div class="col-lg-12 col-sm-12 col-md-12">
          <div class="slider row g-0">
              {% for slide in slider %}
              <img src="{{ slide.home_slider_image.url }}" width="100%" height="100%"/>
@@ -84,7 +82,7 @@
      </div>
     <div class="container">
         <!-- STI Home page information starts -->
-        <div class="col-lg-12 col-md-12 home_info_data all">
+        <div class="col-lg-12 col-sm-12 col-md-12 home_info_data all">
             <div class="row g-0">
                 {% for homedata in home_data %}
                      <div class="col-lg-4 col-md-4">
@@ -100,23 +98,23 @@
     <div class="container-fluid all">
         <!-- STI Home page information ends-->
         <!-- STI Home page Data Architecture starts -->
-        <div class="col-lg-12 col-md-12 sti-data sti-data-arch all">
+        <div class="col-lg-12 col-sm-12 col-md-12 sti-data sti-data-arch all">
             <div class="container">
                 <a href="{% url 'framework' %}"><span>STI Data Architecture Framework</span></a>
-                 <div class="col-lg-12 col-md-12 data-arch">
+                 <div class="col-lg-12 col-sm-12 col-md-12 data-arch">
                     <span>Data Architecture Framework defines components of Science, Technology & Innovation</span>
                  </div>
             </div>
         </div>
         <div class="container">
-             <div class="col-lg-12 col-md-12 sti-div">
+             <div class="col-lg-12 col-sm-12 col-md-12 sti-div">
                  <div class="row sti-margin">
                      {% for frame in framework %}
-                        <div class="col-lg-4 col-md-4">
-                             <div class="col-lg-12 col-md-12 home-sti-data-text">
+                        <div class="col-lg-4 col-sm-12 col-md-4 sti-data-margin">
+                             <div class="col-lg-12 col-sm-12 col-md-12 home-sti-data-text">
                                  <a href="#" class="text-decoration-none">{{frame.home_framework_title}}</a>
                              </div>
-                             <div class="col-lg-12 col-md-12 home-sti-data-img">
+                             <div class="col-lg-12 col-sm-12 col-md-12 home-sti-data-img">
                                   <img src="{{ frame.home_framework_image.url }}" width="100%" height="100%"/>
                              </div>
                          </div>
@@ -128,70 +126,73 @@
         <!-- STI Home page Infrastructure and Highlights starts -->
         <div class="container-fluid card__image sti-infra-bg">
             <div class="container">
-                 <div class="col-lg-12 col-md-12 sti-data">
+                 <div class="col-lg-12 col-sm-12 col-md-12 sti-data">
                      <span>STI Infrastructure</span>
                      <div class="row">
-                         <div class="col-lg-2 col-md-2">
+                         <div class="col-lg-2 col-sm-12 col-md-2">
                          </div>
-                         <div class="col-lg-8 col-md-8 text-center pb-image">
-                            <img src="{% static 'images/punjab_map.png' %}" width="90%" height="90%"/>
-                             <a href="#"><span class="pb-number1"><span class="pb-nb-text">Institutes of<br>National Importance</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <img src="{% static 'images/sti_number_1.png' %}" /></span></a>
-                             <a href="#"><p class="pb-number2"><img src="{% static 'images/sti_number_2.png' %}" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <span class="pb-nb-text">DSIR Recognized R&D Units</span></p></a>
-                             <a href="#"><p class="pb-number3"><span class="pb-nb-text">Incubators</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <img src="{% static 'images/sti_number_3.png' %}" /></p></a>
-                             <a href="#"><p class="pb-number4"><img src="{% static 'images/sti_number_4.png' %}"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <span class="pb-nb-text">Center of Excellence</span></p></a>
-                             <a href="#"><p class="pb-number5"><span class="pb-nb-text">Universities </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 <img src="{% static 'images/sti_number_5.png' %}" /></p></a>
-                             <a href="#"><p class="pb-number6"><img src="{% static 'images/sti_number_6.png' %}"/>&nbsp;&nbsp;&nbsp;
-                                 <span class="pb-nb-text">   R&D Institutes </span></p></a>
+                         <div class="col-lg-8 col-sm-12 col-md-8 text-center pb-image">
+                            <img src="{% static 'images/punjab_map.png' %}" width="80%" height="80%"/>
+                             <a href="#"><span class="pb-number pb-number5"><span class="pb-nb-text">Universities </span>
+                                 <img src="{% static 'images/sti_number_5.png' %}" /></span></a><br>
+                             <a href="#"><span class="pb-number pb-number2"><img src="{% static 'images/sti_number_2.png' %}" />
+                                 <span class="pb-nb-text">DSIR Recognized R&D Units</span></span></a><br>
+                             <a href="#"><span class="pb-number pb-number1"><span class="pb-nb-text">Institutes of National Importance</span>
+                                 <img src="{% static 'images/sti_number_1.png' %}" /></span></a><br>
+                             <a href="#"><span class="pb-number pb-number3"><span class="pb-nb-text">Incubators</span>
+                                 <img src="{% static 'images/sti_number_3.png' %}" /></span></a><br>
+                             <a href="#"><span class="pb-number pb-number4"><img src="{% static 'images/sti_number_4.png' %}"/>
+                                 <span class="pb-nb-text">Center of Excellence</span></span></a><br>
+                             <a href="#"><span class="pb-number pb-number1"><span class="pb-nb-text">Institutes of National Importance</span>
+                                 <img src="{% static 'images/sti_number_1.png' %}" /></span></a><br>
+                             <a href="#"><span class="pb-number pb-number6"><img src="{% static 'images/sti_number_6.png' %}"/>
+                                 <span class="pb-nb-text">R&D Institutes </span></span></a>
                          </div>
-                         <div class="col-lg-2 col-md-2">
+                         <div class="col-lg-2 col-sm-12 col-md-2">
                          </div>
                  </div>
              </div>
             </div>
         </div>
+        <!-- STI Highlights section in which the count up javascript has been added to counter the number up --->
         <div class="container-fluid">
-            <div class="highlight-bg col-md-12">
-                <div class="container col-lg-12 col-md-12">
+            <div class="highlight-bg col-sm-12 col-md-12">
+                <div class="container col-lg-12 col-sm-12 col-md-12">
                     <div class="row">
-                        <div class="col-lg-3 col-md-3 sti-high-text">
+                        <div class="col-lg-3 col-sm-12 col-md-3 sti-high-text">
                             <span>STI Highlights</span>
                         </div>
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-3 col-sm-12 col-md-3">
                             <div class="row">
-                                 <div class="col-lg-5 col-md-5">
+                                 <div class="col-lg-5 col-sm-12 col-md-5 sti-high-6">
                                      <span id="state1" countTo="600" class="sti-high-internal-600">0</span>
                                     <span class="sti-high-internal-plus">+</span>
                                  </div>
-                                <div class="col-lg-7 col-md-7">
+                                <div class="col-lg-7 col-sm-12 col-md-7">
                                     <span class="sti-high-internal">Startups</span>
                                     <span class="sti-high-internal-text">DPIIT Registered</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3 sti-internal-div">
+                        <div class="col-lg-3 col-sm-12 col-md-3 sti-internal-div">
                             <div class="row">
-                                 <div class="col-lg-7 col-md-7">
+                                 <div class="col-lg-7 col-sm-12 col-md-7 sti-high-15">
                                      <span id="state2" countTo="1500" class="sti-high-internal-600">0</span>
                                     <span class="sti-high-internal-plus">+</span>
                                  </div>
-                                <div class="col-lg-5 col-md-5">
+                                <div class="col-lg-5 col-sm-12 col-md-5">
                                     <span class="sti-high-internal">Patents</span>
                                     <span class="sti-high-internal-text">Filed</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-3">
+                        <div class="col-lg-3 col-sm-12 col-md-3">
                             <div class="row">
-                                 <div class="col-lg-5 col-md-5">
+                                 <div class="col-lg-5 col-sm-12 col-md-5 sti-high-10">
                                      <span id="state3" countTo="10" class="sti-high-internal-600">0</span>
                                     <span class="sti-high-internal-plus">+</span>
                                  </div>
-                                <div class="col-lg-7 col-md-7">
+                                <div class="col-lg-7 col-sm-12 col-md-7 sti-high-6">
                                     <span class="sti-high-internal">Industrial</span>
                                     <span class="sti-high-internal-text">Parks</span>
                                 </div>
@@ -203,18 +204,18 @@
         </div>
         <!-- STI Home page Infrastructure and Highlights ends -->
 
-        <!-- STI Home page Plans and policies starts -->
-        <div class="col-lg-12 col-md-12 policy-data">
+        <!-- STI Home page Plans and policies starts, the data has been fetched from the database  -->
+        <div class="col-lg-12 col-sm-12 col-md-12 policy-data">
             <div class="container">
                 <span>Plans & Policies</span>
-                <div class="col-lg-12 col-md-12 policy-div">
+                <div class="col-lg-12 col-sm-12 col-md-12 policy-div">
                      <div class="row policy-margin">
                          {% for policy in policies %}
-                            <div class="col-lg-4 col-md-4">
-                                 <div class="col-lg-12 col-md-12 policy-data-text">
+                            <div class="col-lg-4 col-sm-12 col-md-4 policy-img">
+                                 <div class="col-lg-12 col-sm-12 col-md-12 policy-data-text">
                                      <a href="#" class="text-decoration-none">{{policy.home_plan_policies_title}}</a>
                                  </div>
-                                 <div class="col-lg-12 col-md-12 policy-data-img">
+                                 <div class="col-lg-12 col-sm-12 col-md-12 policy-data-img">
                                       <img src="{{ policy.home_plan_policies_image.url }}" width="100%" height="100%"/>
                                  </div>
                              </div>
@@ -225,20 +226,20 @@
         </div>
         <!-- STI Home page Plans and policies ends -->
 
-        <!-- STI Spotlight starts -->
+        <!-- STI Spotlight starts., the content is fetched from database -->
         <div class="container">
-            <div class="col-lg-12 col-md-12 spt-data all">
+            <div class="col-lg-12 col-sm-12 col-md-12 spt-data all">
                 <span>Spotlight</span>
             </div>
-                <div class="col-lg-12 col-md-12 ">
+                <div class="col-lg-12 col-sm-12 col-md-12 ">
                     <div class="row">
                         {% for spot in spotlight %}
-                         <div class="col-lg-4 col-md-4 spt_img">
+                         <div class="col-lg-4 col-sm-12 col-md-4 spt-img">
                              <div class="row">
-                                 <div class="col-lg-12 col-md-12">
+                                 <div class="col-lg-12 col-sm-12 col-md-12">
                                     <img src="{{ spot.spotlight_image.url }}" width="100%" height="100%"/>
                                  </div>
-                                 <div class="col-lg-12 col-md-12 spt_text">
+                                 <div class="col-lg-12 col-sm-12 col-md-12 spt_text">
                                     <p class="spt-title">
                                         {{ spot.spotlight_title }}
                                     </p>
@@ -250,13 +251,13 @@
                              </div>
                          </div>
                         {% endfor %}
-                        <div class="col-lg-4 col-md-4 spt_img-tweet">
-                             <div class="col-lg-12 col-md-12 ">
+                        <div class="col-lg-4 col-sm-12 col-md-4 spt-img-tweet">
+                             <div class="col-lg-12 col-sm-12 col-md-12 ">
                                  <div class="twitbox"><a class="twitter-timeline nongov" href="https://twitter.com/PSCST_GoP?ref_src=twsrc%5Etfw" target="_black">Tweets by PSCST_GoP</a> <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
                              </div>
                         </div>
                     </div>
-                <div class="col-lg-8 col-md-8 init-browse text-center">
+                <div class="col-lg-8 col-sm-12 col-md-8 init-browse text-center">
                     <div class="text-center">
                           <span class="dot"></span>
                           <span class="dot"></span>
@@ -274,29 +275,16 @@
 
     <!-- Banners Starts -->
     <div class="container">
-        <div class="col-lg-12 col-md-12 all">
+        <div class="col-lg-12 col-sm-12 col-md-12 all">
              <hr>
             <div class="row-fluid banner-color">
                 <div class="bannergroup table">
                     <ul class="banner-border">
+                        {% for ban in banner %}
                         <li>
-                            <img src="{% static 'images/fl1.png' %}" alt="Digital India" />
+                            <img src="{{ ban.banner_image.url }}" alt="ban.banner_title" />
                         </li>
-                        <li>
-                            <img src="{% static 'images/fl2.png' %}" alt="" />
-                        </li>
-                        <li>
-                            <img src="{% static 'images/fl3.png' %}" alt="" width="18%"/>
-                        </li>
-                        <li>
-                            <img src="{% static 'images/fl4.png' %}" alt="" width="18%" />
-                        </li>
-                        <li>
-                            <img src="{% static 'images/fl5.png' %}" alt="" width="18%"/>
-                        </li>
-                        <li>
-                            <img src="{% static 'images/fl6.png' %}" alt="" />
-                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
@@ -305,16 +293,16 @@
     <!-- Banners Ends -->
     <!-- Footer Starts -->
     <div class="footer-bg">
-        <div class="container col-lg-12 col-md-12">
+        <div class="container col-lg-12 col-sm-12 col-md-12">
             <div class="row">
-                <div class="col-lg-6 col-md-6 footer-text text-center">
+                <div class="col-lg-6 col-md-6 col-sm-12 footer-text text-center">
                     <span class="footer-text-clr">An initiative of</span><br>
                         <img src="{% static 'images/footer_psct.png' %}" alt=""/><br><span>Punjab State Council for Science & Technology</span> <br><br>
                     <span class="footer-text-clr">Supported By <br></span>
                         <img src="{% static 'images/footer_dst.png' %}" alt=""/><br><span>Department of Science & Technology, Government of India</span><br/><br>
 
                 </div>
-                <div class="col-lg-6 col-md-6 footer-text footer-menu-collab text-center">
+                <div class="col-lg-6 col-md-6 col-sm-12 footer-text footer-menu-collab text-center">
                     <span class="footer-text-clr">In Collaboration with <br></span><span>
                         <img src="{% static 'images/footer_ctier.png' %}" alt=""/><br>Centre for Technology, Innovation & Economic Research <br><br><br>
                         <img src="{% static 'images/footer_cdac.png' %}" alt=""/><br>Centre for Development of Advanced Computing</span><br/>
@@ -322,10 +310,10 @@
                 </div>
             </div>
             <hr class="hr-color">
-            <div class="col-lg-12 col-md-12 text-center">
+            <div class="col-lg-12 col-sm-12 col-md-12 text-center">
                     <ul class="footer-menu">
                         <li><a class="" href="#">About Portal</a></li>|
-                        <li><a class="" href="#">Help</a></li>|
+                        <li><a class="" href="{% url 'help' %}">Help</a></li>|
                         <li><a class="" href="#">User Feedback</a></li>|
                         <li><a class="" href="#">Accessibility</a></li>|
                         <li><a class="" href="{%url 'contact' %}">Contact Us</a></li>|
@@ -335,12 +323,12 @@
                     </ul>
                 </div>
         <hr class="hr-color">
-        <div class="col-lg-12 col-md-12">
+        <div class="col-lg-12 col-sm-12 col-md-12 foot-design">
             <div class="row">
-                <div class="col-lg-6 col-md-6 text-start">
+                <div class="col-lg-6 col-sm-12 col-md-6 text-start">
                     <p class="footer-menu-copyright">© STI, Punjab | Govt. of Punjab | 2022 | All Rights Reserved.</p>
                 </div>
-                <div class="col-lg-6 col-md-6 text-end">
+                <div class="col-lg-6 col-sm-12 col-md-6 text-end">
                     <p class="footer-menu-copyright">Design and Developed by C-DAC Mohali</p>
                 </div>
             </div>
@@ -380,4 +368,5 @@
 
 {% endblock javascript %}
 </body>
+  <script src="{% static 'js/bootstrap.js' %}" /></script>
 </html>
