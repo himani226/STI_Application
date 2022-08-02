@@ -25,7 +25,15 @@
                 <div class="col-lg-12 col-sm-12 col-md-12 text-end">
                     <span class="top-skip-bar">
                         <a href="#header-menu">Skip to main content</a> |
-                        <a href="">Accessibility Options </a> |
+                        <div class="dropdown">
+                             <button class="dropbtn">Accessibility Options</button>
+                                <div class="dropdown-content">
+                                    <a href="#">A+</a>
+                                    <a href="#">A-</a>
+                                    <a href="#">W</a>
+                                    <a href="#">B</a>
+                                </div>
+                        </div> |
                         <a href="">ਪੰਜਾਬੀ</a>&nbsp;&nbsp;<img src="{% static 'images/Polygon 8.png' %}"/>
                     </span>
                 </div>
@@ -137,8 +145,6 @@
                                  <img src="{% static 'images/sti_number_5.png' %}" /></span></a><br>
                              <a href="#"><span class="pb-number pb-number2"><img src="{% static 'images/sti_number_2.png' %}" />
                                  <span class="pb-nb-text">DSIR Recognized R&D Units</span></span></a><br>
-                             <a href="#"><span class="pb-number pb-number1"><span class="pb-nb-text">Institutes of National Importance</span>
-                                 <img src="{% static 'images/sti_number_1.png' %}" /></span></a><br>
                              <a href="#"><span class="pb-number pb-number3"><span class="pb-nb-text">Incubators</span>
                                  <img src="{% static 'images/sti_number_3.png' %}" /></span></a><br>
                              <a href="#"><span class="pb-number pb-number4"><img src="{% static 'images/sti_number_4.png' %}"/>
@@ -312,13 +318,13 @@
             <hr class="hr-color">
             <div class="col-lg-12 col-sm-12 col-md-12 text-center">
                     <ul class="footer-menu">
-                        <li><a class="" href="#">About Portal</a></li>|
+                        <li><a class="" href="{% url 'about' %}">About Portal</a></li>|
                         <li><a class="" href="{% url 'help' %}">Help</a></li>|
-                        <li><a class="" href="#">User Feedback</a></li>|
-                        <li><a class="" href="#">Accessibility</a></li>|
+                        <li><a class="" href="{% url 'feedback' %}">User Feedback</a></li>|
+                        <li><a class="" href="{% url 'accessibility' %}">Accessibility</a></li>|
                         <li><a class="" href="{%url 'contact' %}">Contact Us</a></li>|
-                        <li><a class="" href="#">Sitemap</a></li>|
-                        <li><a class="" href="#">Website Policies</a></li>
+                        <li><a class="" href="{% url 'sitemap' %}">Sitemap</a></li>|
+                        <li><a class="" href="{% url 'policies' %}">Website Policies</a></li>
                         <li></li>
                     </ul>
                 </div>

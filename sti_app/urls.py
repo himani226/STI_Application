@@ -25,5 +25,9 @@ urlpatterns = [
     path(r'technology/', views.technology, name='technology'),
     path(r'framework/', views.framework, name='framework'),
     path(r'help/', views.help, name='help'),
+    path(r'policies/', views.policies, name='policies'),
+    path(r'feedback/', views.feedback, name='feedback'),
+    path(r'sitemap/', views.sitemap, name='sitemap'),
+    path(r'accessibility/', views.accessibility, name='accessibility'),
 
 ]

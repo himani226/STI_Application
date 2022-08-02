@@ -179,3 +179,39 @@ def help(request):
     return render(request, 'help.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
+
+
+def feedback(request):
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
+    return render(request, 'feedback.html',
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
+
+
+def sitemap(request):
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
+    return render(request, 'sitemap.html',
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
+
+
+def policies(request):
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
+    return render(request, 'policies.html',
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
+
+
+def accessibility(request):
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
+    return render(request, 'accessibility.html',
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'banner': banner})
