@@ -8,9 +8,8 @@
     <title>{% block title %}Home{% endblock %}</title>
     <script src="{% static 'js/countup.min.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
-
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
      {% block style %}
     {% endblock style %}
@@ -22,14 +21,15 @@
      <!-- Topbar Start -->
         <div class="col-lg-12 col-md-12 top-bar">
             <div class="row">
-                <div class="col-lg-12 col-sm-12 col-md-12 text-end">
+                <div class="content col-lg-12 col-sm-12 col-md-12 text-end" style="font-size:14px">
                     <span class="top-skip-bar">
                         <a href="#header-menu">Skip to main content</a> |
                         <div class="dropdown">
                              <button class="dropbtn">Accessibility Options</button>
                                 <div class="dropdown-content">
-                                    <a href="#">A+</a>
-                                    <a href="#">A-</a>
+                                    <a class="font-button plus" href="#">A+</a>
+                                    <a class="font-button reset" href="#">A</a>
+                                    <a class="font-button minus" href="#">A-</a>
                                     <a href="#">W</a>
                                     <a href="#">B</a>
                                 </div>
@@ -39,10 +39,10 @@
                 </div>
                 <div class="col-lg-8 col-sm-12 col-md-8">
                     <div class="row">
-                        <div class="col-lg-1 col-sm-12 col-md-1 logo">
+                        <div class="content col-lg-1 col-sm-12 col-md-1 logo" style="font-size:20px">
                             <img src="{% static 'images/Logo.png' %}" width="100px"/>
                         </div>
-                        <div class="col-lg-11 col-sm-12 col-md-11 header-title">
+                        <div class="content col-lg-11 col-sm-12 col-md-11 header-title" style="font-size:26px">
                             <span>Science, Technology & Innovation Observatory, Punjab</span>
                         </div>
                     </div>
@@ -54,13 +54,13 @@
                         <a class="" href="#"><img src="{% static 'images/twitter.png' %}"/></i></a>
                     </span>
                 </div>
-                <div class="col-lg-2 col-sm-6 col-md-2 dst-logo">
+                <div class="content col-lg-2 col-sm-6 col-md-2 dst-logo">
                     <img src="{% static 'images/dst_logo.png' %}" width="150px"/>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-12 col-md-12 header-menu">
+    <div class="content col-lg-12 col-md-12 header-menu" style="font-size:18px;">
         <div class="container">
             <nav id="header-menu" class="navbar navbar-expand-lg">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,11 +76,9 @@
             </nav>
         </div>
     </div>
-</div>
 <!-- Top header Closed-->
 <!-- Internal Content Started-->
 {% block content %}
-<div class="container-fluid">
      <div class="col-lg-12 col-sm-12 col-md-12">
          <div class="slider row g-0">
              {% for slide in slider %}
@@ -103,7 +101,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid all">
+    <div class=" all">
         <!-- STI Home page information ends-->
         <!-- STI Home page Data Architecture starts -->
         <div class="col-lg-12 col-sm-12 col-md-12 sti-data sti-data-arch all">
@@ -328,17 +326,16 @@
                         <li></li>
                     </ul>
                 </div>
-        <hr class="hr-color">
-        <div class="col-lg-12 col-sm-12 col-md-12 foot-design">
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 col-md-6 text-start">
-                    <p class="footer-menu-copyright">© STI, Punjab | Govt. of Punjab | 2022 | All Rights Reserved.</p>
+            <hr class="hr-color">
+            <div class="col-lg-12 col-sm-12 col-md-12 foot-design">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12 col-md-6 text-start">
+                        <p class="footer-menu-copyright">© STI, Punjab | Govt. of Punjab | 2022 | All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 col-md-6 text-end">
+                        <p class="footer-menu-copyright">Design and Developed by C-DAC Mohali</p>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-sm-12 col-md-6 text-end">
-                    <p class="footer-menu-copyright">Design and Developed by C-DAC Mohali</p>
-                </div>
-            </div>
-        </div>
             </div>
         </div>
     </div>
@@ -370,7 +367,29 @@
       };
     }
   </script>
-
+<script type="text/javascript">
+        $(function () {
+            $(".font-button").bind("click", function () {
+                var size = parseInt($('.content').css("font-size"));
+                if ($(this).hasClass("plus")) {
+                    size = size + 4;
+                    if(size >= 30) {
+                        size = 30;
+                    }
+                }
+                else if ($(this).hasClass("reset")) {
+                    location.reload();
+                }
+                else {
+                    size = size - 4;
+                    if (size <= 16) {
+                        size = 16;
+                    }
+                }
+                $('.content').css("font-size", size);
+            });
+        });
+    </script>
 
 {% endblock javascript %}
 </body>
