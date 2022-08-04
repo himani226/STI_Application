@@ -15,13 +15,13 @@
     {% endblock style %}
 
 </head>
-<body>
+<body class="body">
 <div class="container-fluid ">
     <div class="container">
      <!-- Topbar Start -->
         <div class="col-lg-12 col-md-12 top-bar">
             <div class="row">
-                <div class="content col-lg-12 col-sm-12 col-md-12 text-end" style="font-size:14px">
+                <div class="col-lg-12 col-sm-12 col-md-12 text-end" style="font-size:14px">
                     <span class="top-skip-bar">
                         <a href="#header-menu">Skip to main content</a> |
                         <div class="dropdown">
@@ -30,8 +30,8 @@
                                     <a class="font-button plus" href="#">A+</a>
                                     <a class="font-button reset" href="#">A</a>
                                     <a class="font-button minus" href="#">A-</a>
-                                    <a href="#">W</a>
-                                    <a href="#">B</a>
+                                    <a class="b-button white" href="#">W</a>
+                                    <a class="b-button black" href="#">B</a>
                                 </div>
                         </div> |
                         <a href="">ਪੰਜਾਬੀ</a>&nbsp;&nbsp;<img src="{% static 'images/Polygon 8.png' %}"/>
@@ -39,10 +39,10 @@
                 </div>
                 <div class="col-lg-8 col-sm-12 col-md-8">
                     <div class="row">
-                        <div class="content col-lg-1 col-sm-12 col-md-1 logo" style="font-size:20px">
+                        <div class="col-lg-1 col-sm-12 col-md-1 logo">
                             <img src="{% static 'images/Logo.png' %}" width="100px"/>
                         </div>
-                        <div class="content col-lg-11 col-sm-12 col-md-11 header-title" style="font-size:26px">
+                        <div class="col-lg-11 col-sm-12 col-md-11 header-title" style="font-size:30px">
                             <span>Science, Technology & Innovation Observatory, Punjab</span>
                         </div>
                     </div>
@@ -54,13 +54,13 @@
                         <a class="" href="#"><img src="{% static 'images/twitter.png' %}"/></i></a>
                     </span>
                 </div>
-                <div class="content col-lg-2 col-sm-6 col-md-2 dst-logo">
+                <div class="col-lg-2 col-sm-6 col-md-2 dst-logo">
                     <img src="{% static 'images/dst_logo.png' %}" width="150px"/>
                 </div>
             </div>
         </div>
     </div>
-    <div class="content col-lg-12 col-md-12 header-menu" style="font-size:18px;">
+    <div class="col-lg-12 col-md-12 header-menu" style="font-size:20px;">
         <div class="container">
             <nav id="header-menu" class="navbar navbar-expand-lg">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +94,7 @@
                      <div class="col-lg-4 col-md-4">
                          <img src="{{ homedata.home_info_image.url }}" width="100%" height="100%"/>
                      </div>
-                     <div class="col-lg-8 col-md-8 home_info text-justify">
+                     <div class="col-lg-8 col-md-8 home_info text-justify" style="font-size:20px">
                             <p>{{homedata.home_info_text}}</p>
                      </div>
                  {% endfor %}
@@ -104,10 +104,10 @@
     <div class=" all">
         <!-- STI Home page information ends-->
         <!-- STI Home page Data Architecture starts -->
-        <div class="col-lg-12 col-sm-12 col-md-12 sti-data sti-data-arch all">
+        <div class="col-lg-12 col-sm-12 col-md-12 sti-data sti-data-arch all" style="font-size:35px">
             <div class="container">
                 <a href="{% url 'framework' %}"><span>STI Data Architecture Framework</span></a>
-                 <div class="col-lg-12 col-sm-12 col-md-12 data-arch">
+                 <div class="col-lg-12 col-sm-12 col-md-12 data-arch" style="font-size:26px">
                     <span>Data Architecture Framework defines components of Science, Technology & Innovation</span>
                  </div>
             </div>
@@ -132,7 +132,7 @@
         <!-- STI Home page Infrastructure and Highlights starts -->
         <div class="container-fluid card__image sti-infra-bg">
             <div class="container">
-                 <div class="col-lg-12 col-sm-12 col-md-12 sti-data">
+                 <div class="col-lg-12 col-sm-12 col-md-12 sti-data" style="font-size:35px">
                      <span>STI Infrastructure</span>
                      <div class="row">
                          <div class="col-lg-2 col-sm-12 col-md-2">
@@ -370,26 +370,43 @@
 <script type="text/javascript">
         $(function () {
             $(".font-button").bind("click", function () {
-                var size = parseInt($('.content').css("font-size"));
                 if ($(this).hasClass("plus")) {
-                    size = size + 4;
-                    if(size >= 30) {
-                        size = 30;
+                    $('.header-title').css("font-size", '32px');
+                    $('.top-bar a, .dropbtn').css("font-size", '18px');
+                    $('.sti-data').css("font-size", '40px');
+                    $('.header-menu').css("height", '14%');
+                    $('.init-browse a,.header-menu a,.home_info, .footer-menu, .footer-menu a,.footer-text, .footer-menu-collab, .footer-menu-copyright').css("font-size", '24px');
                     }
-                }
                 else if ($(this).hasClass("reset")) {
                     location.reload();
                 }
                 else {
-                    size = size - 4;
-                    if (size <= 16) {
-                        size = 16;
-                    }
+                    $('.header-title').css("font-size", '26px');
+                    $('.top-bar a, .dropbtn').css("font-size", '12px');
+                    $('.sti-data').css("font-size", '30px');
+                    $('.header-menu').css("height", '70px');
+                    $('.init-browse a,.header-menu a,.home_info, .footer-menu, .footer-menu a,.footer-text, .footer-menu-collab, .footer-menu-copyright').css("font-size", '16px');
+
                 }
-                $('.content').css("font-size", size);
             });
         });
     </script>
+
+<script type="text/javascript">
+        $(function () {
+            $(".b-button").bind("click", function () {
+                if ($(this).hasClass("white")) {
+                    location.reload();
+                    }
+                else {
+                    $('.body, .sti-data, .sti-div, .highlight-bg, .policy-data, .top-skip-bar a, .footer-bg, .dropbtn, .dropdown-content').css("background-color", '#000000');
+                    $('.footer-bg').css("background-image", 'none');
+                    $('.body, .header-title, .dropbtn, .header-menu a,.sti-data, .top-skip-bar a, .sti-data a, .data-arch, .home-sti-data-text a, .pb-nb-text, .sti-high-text, .sti-high-internal-600, .sti-high-internal-plus,.sti-high-internal-text, .sti-high-internal,.policy-data, .policy-data-text a, .policy-data-text a:hover, .spt-data, .spt-title, .spt-subtext').css("color", '#ff0');
+                    $('.init-browse a, .footer-menu, .footer-menu a,.footer-text, .footer-menu-collab, .footer-menu-copyright').css("color", '#ff0');
+                    }
+            });
+        });
+</script>
 
 {% endblock javascript %}
 </body>

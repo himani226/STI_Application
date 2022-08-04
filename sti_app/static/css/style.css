@@ -1,13 +1,8 @@
 .body{
      font-family: Roboto;
-     margin:0 !important;
-     padding:0 !important;
-     overflow-x:hidden !important;
+     background-color:#FFFFFF;
+     color:#000000;
 }
-.content{
-    font-size:20px;
-}
-
 .container-fluid{
     padding:0 !important;
     margin:0 !important;
@@ -41,12 +36,11 @@
 
 .dropdown-content a {
     color: #707070;
-    padding: 10px 6-px;
+    padding: 10px 5px;
     text-decoration: none;
     display: inline-block;
 
 }
-
 .dropdown-content a:hover {
     background-color: #f1f1f1;
 }
@@ -59,7 +53,6 @@
     padding-top: 55px;
     padding-left: 45px !important;
     color: #022539;
-    font-size:28px;
     display: inline-block;
 }
 .icons{
@@ -81,7 +74,7 @@
 .header-menu a{
    color: #FFFFFF;
    padding-top:14px;
-   padding-left: 17px !important;
+   padding-left: 15px !important;
 }
 .header-menu a:hover{
     color:#020922;
@@ -93,7 +86,6 @@
     padding-top: 35px;
 }
 .home_info{
-    font-size:16px;
     padding-left: 15px !important;
 }
 .sti-margin{
@@ -111,13 +103,11 @@
 }
 
 .sti-data {
-    font-size:35px;
     color: #3A3B3B;
     padding-top:20px;
 }
 
 .sti-data a{
-    font-size:35px;
     color: #3A3B3B;
     padding-top:20px;
     text-decoration:none;
@@ -150,7 +140,7 @@
 .pb-number1{
     position: absolute;
     top: 332px;
-    left: -313px;
+    left: -268px;
     transition: transform .2s;
 }
 .pb-number2{
