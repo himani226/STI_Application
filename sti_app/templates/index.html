@@ -118,11 +118,13 @@
                      {% for frame in framework %}
                         <div class="col-lg-4 col-sm-12 col-md-4 sti-data-margin">
                              <div class="col-lg-12 col-sm-12 col-md-12 home-sti-data-text">
-                                 <a href="#" class="text-decoration-none">{{frame.home_framework_title}}</a>
+                                 <a href="#" name="{{frame.stage_title}}" id="frame" class="text-decoration-none frame">{{frame.stage_title}}
+                                 <div class="col-lg-12 col-sm-12 col-md-12 home-sti-data-img">
+                                    <img src="{{ frame.home_stage_image.url }}" width="100%" height="100%"/>
+                                 </div>
+                                 </a>
                              </div>
-                             <div class="col-lg-12 col-sm-12 col-md-12 home-sti-data-img">
-                                  <img src="{{ frame.home_framework_image.url }}" width="100%" height="100%"/>
-                             </div>
+
                          </div>
                      {% endfor %}
                  </div>
@@ -407,7 +409,7 @@
             });
         });
 </script>
-
+<script src="{% static 'js/frameclick.js' %}"></script>
 {% endblock javascript %}
 </body>
   <script src="{% static 'js/bootstrap.js' %}" /></script>

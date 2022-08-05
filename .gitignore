@@ -1,0 +1,8 @@
+
+# remove .pyc files
+*.pyc
+
+
+# ignore migrations folder
+STI/sti_app/migrations/*
+!STI/sti_app/migrations/__init__.py

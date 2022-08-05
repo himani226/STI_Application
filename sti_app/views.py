@@ -7,7 +7,7 @@ from sti_app.responses.general_response import (no_success_response,
                                                 success_response)
 
 from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData, Spotlight, Stage, Pillar, Indicator, \
-    IndicatorDefinition, HomeFramework, HomePlanPolicies, HomeSlider, Banner
+    IndicatorDefinition, HomePlanPolicies, HomeSlider, Banner
 
 
 def index(request):
@@ -16,7 +16,7 @@ def index(request):
     slider = HomeSlider.objects.all()
     home_data = HomeData.objects.all()
     spotlight = Spotlight.objects.all()
-    framework = HomeFramework.objects.all()
+    framework = Stage.objects.all()
     policies = HomePlanPolicies.objects.all()
     banner = Banner.objects.all()
     return render(request, 'index.html',

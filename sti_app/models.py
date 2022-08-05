@@ -52,15 +52,6 @@ class HomeSlider(models.Model):
         return self.home_slider_title
 
 
-class HomeFramework(models.Model):
-    home_framework_title = models.CharField(null=True, max_length=200)
-    home_framework_image = models.ImageField(blank=True, upload_to='home_framework_image')
-    pub_date = models.DateTimeField(default=datetime.now, blank=True)
-
-    def __str__(self):
-        return self.home_framework_title
-
-
 class HomePlanPolicies(models.Model):
     home_plan_policies_title = models.CharField(null=True, max_length=200)
     home_plan_policies_image = models.ImageField(blank=True, upload_to='home_policies_image')
@@ -95,6 +86,7 @@ class Spotlight(models.Model):
 
 class Stage(models.Model):
     stage_title = models.CharField(primary_key=True, max_length=200)
+    home_stage_image = models.ImageField(blank=True, upload_to='home_stage_image')
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
