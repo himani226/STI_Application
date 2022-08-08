@@ -15,7 +15,7 @@ $(document).ready(function(){
                    // process on data
                    var data = JSON.parse(context);
                    pillar = data["pillar"];
-                   $("#append").empty();
+                   $("#pillarDiv").empty();
                    $("#indicator1").empty();
                    $("#indicator2").empty();
                    indicator2.style.display = "none";
@@ -25,7 +25,7 @@ $(document).ready(function(){
                         var checkbox_value =value["pillar_title"];
                         var checkbox_name = value["pillar_title"];
                         var template = '<div class="col-lg-9 col-md-9">'+ checkbox_label + '</div> <div class="col-lg-3 col-md-3"> <input type="checkbox" id="'+checkbox_id+'" name="'+checkbox_name+'" value="'+checkbox_value+'" class ="pillar" > </div>';
-                            $("#append").append(template);
+                            $("#pillarDiv").append(template);
                     });
                     $('input.pillar').on('change', function() {
                         event.stopPropagation()
@@ -48,7 +48,7 @@ $(document).ready(function(){
 
                                     var indicator_label = value["indicator_title"];
                                     var indicator_id = value["id"];
-                                    var template = '<div class="col-lg-10 col-md-10">'+ indicator_label + '</div> <div class="col-lg-2 col-md-2"> <input type="checkbox" id="'+indicator_id+'" name="'+indicator_label+'" value="'+indicator_label+'" class ="indicator" > </div>';
+                                    var template = '<div class="col-lg-9 col-md-9">'+ indicator_label + '</div> <div class="col-lg-3 col-md-3"> <input type="checkbox" id="'+indicator_id+'" name="'+indicator_label+'" value="'+indicator_label+'" class ="indicator" > </div>';
                                     indicator1.style.display = "flex";
                                     $("#indicator1").append(template);
                                 });
