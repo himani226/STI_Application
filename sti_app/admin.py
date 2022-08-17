@@ -29,7 +29,14 @@ admin.site.register(Indicator, IndicatorAdmin),
 
 
 class IndicatordefAdmin(admin.ModelAdmin):
+    class Media:
+        css = {
+            "all": ("css/content.css",)
+        }
+        js = ("js/content.js",)
+
     list_display = ("indicator_title", "indicator_description")
+
 
 
 admin.site.register(IndicatorDefinition, IndicatordefAdmin),

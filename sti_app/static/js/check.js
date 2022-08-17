@@ -73,6 +73,7 @@ $(document).ready(function(){
                                     var indicator_image = value["indicator_image"];
                                     var indicator_id = value["id"];
                                     var template = '<div class="col-lg-12 col-md-12 text-center"><strong>'+indicator_label+'</strong></div><div class="col-lg-12 col-md-12">'+indicator_def+'</div><div class="col-lg-12 col-md-12"><img src="/media/'+indicator_image+'"/></div>';
+
                                     indicator2.style.display = "flex";
                                     $("#indicator2").append(template);
                                 });
@@ -90,4 +91,9 @@ $(document).ready(function(){
             })
         $('input.stage').not(this).prop('checked', false);
     });
+
 })
+
+document.addEventListener("DOMContentLoaded", function(event){
+    console.log($("#centralUniv > tbody > tr").length);
+});
