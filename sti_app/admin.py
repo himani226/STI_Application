@@ -33,9 +33,9 @@ class IndicatordefAdmin(admin.ModelAdmin):
         css = {
             "all": ("css/content.css",)
         }
-        js = ("js/content.js",)
+        js = ("js/content.js","js/scroll.js")
 
-    list_display = ("indicator_title", "indicator_description")
+    list_display = ("indicator_title",)
 
 
 

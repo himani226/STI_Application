@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-12 col-md-12 header-menu" style="font-size:20px;">
+    <div class="col-lg-12 col-md-12 header-menu" style="font-size:18px;">
         <div class="container">
             <nav id="header-menu" class="navbar navbar-expand-lg">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +94,7 @@
                      <div class="col-lg-4 col-md-4">
                          <img src="{{ homedata.home_info_image.url }}" width="100%" height="100%"/>
                      </div>
-                     <div class="col-lg-8 col-md-8 home_info text-justify" style="font-size:20px">
+                     <div class="col-lg-8 col-md-8 home_info text-justify" style="font-size:18px">
                             <p>{{homedata.home_info_text}}</p>
                      </div>
                  {% endfor %}
@@ -249,7 +249,7 @@
                                     <p class="spt-title">
                                         {{ spot.spotlight_title }}
                                     </p>
-                                    <p class="spt-subtext">
+                                    <p class="spt-subtext" style="display:inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 40ch;">
                                         {{spot.spotlight_text}}
                                        </br> <a href="#" class="text-decoration-none">Read More....</a>
                                     </p>

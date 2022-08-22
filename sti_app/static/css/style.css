@@ -82,11 +82,13 @@
 .navbar-expand-lg{
     padding:10px 0 0 105px;
 }
+/* Home page css  */
+
 .home_info_data{
     padding-top: 35px;
 }
 .home_info{
-    padding-left: 15px !important;
+    padding-left: 25px !important;
 }
 .sti-margin{
     margin: 20px 10px!important;
@@ -123,7 +125,7 @@
     font-size:25px;
 }
 .home-sti-data-text{
-    font-size:28px;
+    font-size:26px;
 }
 .home-sti-data-text a, .home-sti-data-text a:hover{
     color: #022539;
@@ -140,7 +142,7 @@
 .pb-number1{
     position: absolute;
     top: 332px;
-    left: -268px;
+    left: -320px;
     transition: transform .2s;
 }
 .pb-number2{
@@ -304,6 +306,17 @@ ul.banner-border li {
 	display: inline;
 	margin: 0 14px;
 }
+
+/* Indicator page css  */
+
+.nav.nav-tabs {
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+}
+
+/* footer css */
+
 .footer-bg{
     background-image: url("/static/images/Footer_BG.png")
 }

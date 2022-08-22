@@ -148,8 +148,6 @@ class IndicatorDefinition(models.Model):
     indicator_image = models.ImageField(blank=True, upload_to='indicator_image')
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
-    def __str__(self):
-        return self.indicator_description
 
     def embed(self):
         return {
