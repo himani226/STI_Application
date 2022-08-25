@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4##-gzt+k=iuii#)+o7o(3f=2l)r_elws^-h9d&78+$!3)4z!)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','10.228.11.20']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok.io','10.228.11.20']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sti_app',
     'bootstrap5',
+    'dynamic_breadcrumbs',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'dynamic_breadcrumbs.context_processors.breadcrumbs',
             ],
         },
     },

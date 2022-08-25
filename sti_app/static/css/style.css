@@ -314,7 +314,12 @@ ul.banner-border li {
   overflow-y: hidden;
   flex-wrap: nowrap;
 }
-
+.canvasjs-chart-credit{
+    display:none;
+}
+.canvasjs-chart-watermarked{
+    display:none;
+}
 /* footer css */
 
 .footer-bg{

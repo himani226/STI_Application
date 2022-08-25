@@ -70,9 +70,8 @@ $(document).ready(function(){
                                 $.each(indi_def,function(index,value){
                                     var indicator_label = value["indicator_title"];
                                     var indicator_def = value["indicator_description"];
-                                    var indicator_image = value["indicator_image"];
                                     var indicator_id = value["id"];
-                                    var template = '<div class="col-lg-12 col-md-12 text-center"><strong>'+indicator_label+'</strong></div><div class="col-lg-12 col-md-12">'+indicator_def+'</div><div class="col-lg-12 col-md-12"><img src="/media/'+indicator_image+'"/></div>';
+                                    var template = '<div class="col-lg-12 col-md-12 text-center"><strong>'+indicator_label+'</strong></div><div class="col-lg-12 col-md-12">'+indicator_def+'</div>';
 
                                     indicator2.style.display = "flex";
                                     $("#indicator2").append(template);

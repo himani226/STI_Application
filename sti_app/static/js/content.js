@@ -66,7 +66,10 @@ document.addEventListener("DOMContentLoaded", function(event){
           contextmenu: 'link image imagetools table',
           skin: useDarkMode ? 'oxide-dark' : 'oxide',
           content_css: useDarkMode ? 'dark' : 'default',
-          content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+          content_style: 'body { font-family:Roboto; font-size:14px }',
+          extended_valid_elements: 'script[language|type|src]',
+          allow_script_urls: true,
+          valid_elements : '*[*]'
          });
 
 
