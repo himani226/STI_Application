@@ -314,11 +314,11 @@ ul.banner-border li {
   overflow-y: hidden;
   flex-wrap: nowrap;
 }
-.canvasjs-chart-credit{
+.canvasjs-chart-credit, .raphael-group-GwlxCMHj{
     display:none;
 }
-.canvasjs-chart-watermarked{
-    display:none;
+[pointer-events="bounding-box"] {
+    display: none;
 }
 /* footer css */
 
