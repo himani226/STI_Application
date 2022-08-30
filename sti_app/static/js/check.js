@@ -5,6 +5,9 @@ $(document).ready(function(){
         event.stopPropagation()
             var check = $(this);
             var name = $(this).attr('name');
+            var myClass = document.getElementById(name);
+            myClass.style.color = '#008080';
+
             $.ajax({
                 type: "GET",
                 url: HOST+'/pillarlist/',
@@ -19,14 +22,16 @@ $(document).ready(function(){
                    $("#indicator1").empty();
                    $("#indicator2").empty();
                    indicator2.style.display = "none";
+
                     $.each(pillar,function(index,value){
                         var checkbox_label = value["pillar_title"];
                         var checkbox_id = value["id"];
                         var checkbox_value =value["pillar_title"];
                         var checkbox_name = value["pillar_title"];
-                        var template = '<div class="col-lg-9 col-md-9">'+ checkbox_label + '</div> <div class="col-lg-3 col-md-3"> <input type="checkbox" id="'+checkbox_id+'" name="'+checkbox_name+'" value="'+checkbox_value+'" class ="pillar" > </div>';
+                        var template = '<div class="col-lg-9 col-md-9 pillar-title-clr">'+ checkbox_label + '</div> <div class="col-lg-3 col-md-3"> <input type="checkbox" id="'+checkbox_id+'" name="'+checkbox_name+'" value="'+checkbox_value+'" class ="pillar" > </div>';
                             $("#pillarDiv").append(template);
                     });
+
                     $('input.pillar').on('change', function() {
                         event.stopPropagation()
                         var check = $(this);
@@ -71,18 +76,17 @@ $(document).ready(function(){
                                     var indicator_label = value["indicator_title"];
                                     var indicator_def = value["indicator_description"];
                                     var indicator_id = value["id"];
-
-                                    var template = '<div class="col-lg-12 col-md-12 text-center"><strong>'+indicator_label+'</strong></div><div class="col-lg-12 col-md-12">'+indicator_def+'</div>';
-
+                                    var template = '<div class="col-lg-12 col-md-12"><strong>'+indicator_label+'</strong></div><div class="col-lg-12 col-md-12">'+indicator_def+'</div>';
                                     indicator2.style.display = "flex";
                                     $("#indicator2").append(template);
                                     var myDiv = document.getElementById("chart-container");
+                                    var highBarChart = document.getElementById("highsecondarychart-container");
                                     var divBarChart = document.getElementById("barchart-container");
+                                    var divNestedChart = document.getElementById("nestedchart-container");
                                     if(myDiv){
                                         const dataSource = {
                                         chart: {
-                                        caption: "New Companies Registered <br> Year 2020-21",
-                                        subCaptionFontSize:"20",
+                                        baseFont:"Roboto",
                                         plottooltext: "<b>$dataValue</b> of Firms/Companies Registered",
                                         showlegend: "1",
                                         showpercentvalues: "1",
@@ -96,13 +100,13 @@ $(document).ready(function(){
                                         {
                                         label: "New Indian Firms Registered",
                                         toolText: "$dataValue",
-                                        color: "#483a75",
+                                        color: "#094BA4",
                                         value: "2070"
                                         },
                                         {
                                         label: "New LLP's Registered",
                                         toolText: "$dataValue",
-                                        color: "#1cadad",
+                                        
                                         value: "519"
                                         },
                                         {
@@ -138,7 +142,7 @@ $(document).ready(function(){
                                             caption: "Ease of Doing Business",
                                             xaxisname: "Year",
                                             yaxisname: "Ranking of State",
-
+                                            baseFont:"Roboto",
                                             theme: "fusion"
                                           },
                                           data: [
@@ -174,11 +178,181 @@ $(document).ready(function(){
                                           }).render();
                                         });
                                     }
+                                    else if(divNestedChart)
+                                    {
+                                    const dataSource = {
+                                        chart: {
+                                        showplotborder: "1",
+                                        plotfillalpha: "80",
+                                        useHoverColor :"0",
+                                        baseFont:"Roboto",
+                                        autoRotateLabels :"0",
+                                        useEllipsesWhenOverflow :"0",
+                                        skipOverlapLabels:"0",
+                                        pieRadius : "240",
+
+                                        plottooltext:
+                                        " $DataValue $Label",
+                                        theme: "fusion"
+                                        },
+                                        category: [
+                                        {
+                                        label: "Degree",
+                                        tooltext: "No. of Degrees",
+                                        color: "#ffffff",
+
+                                        value: "150",
+                                        category: [
+                                        {
+                                        label: "Post Graduate",
+                                        color: "#dc6200",
+
+                                        category: [
+                                        {
+                                        label: "Engineering",
+                                        color: "#e27700",
+                                        value: "010"
+                                        },
+                                        {
+                                        label: "Medical",
+                                        color: "#ff9117",
+                                        value: "005"
+                                        },
+                                        {
+                                        label: "Applied Sciences",
+                                        color: "#ffa542",
+                                        value: "201"
+                                        },
+
+                                        ]
+                                        },
+
+
+                                        {
+                                        label: "Under Graduate",
+                                        color: "008080",
+
+                                        category: [
+                                        {
+                                        label: "Engineering",
+                                        color: "#1cadad",
+                                        value: "87"
+                                        },
+                                        {
+                                        label: "Medical",
+                                        color: "#2cc0c0",
+                                        value: "94"
+                                        },
+                                        {
+                                        label: "Applied Sciences",
+                                        color: "#33d2d2",
+                                        value: "307"
+                                        }
+                                        ]
+                                        }
+                                        ]
+                                        }
+                                        ]
+                                        };
+                                        FusionCharts.ready(function() {
+                                        var myChart = new FusionCharts({
+                                        type: "multilevelpie",
+                                        renderAt: "nestedchart-container",
+                                        width: "100%",
+                                        height: "100%",
+                                        dataFormat: "json",
+                                        dataSource
+                                        }).render();
+                                        });
+                                    }
+                                    else if(highBarChart){
+                                    const dataSource = {
+                                        chart: {
+
+                                        baseFont:"Roboto",
+                                        yaxisname: "No. of Schools",
+                                        formatnumberscale: "1",
+                                        numvisibleplot: "8",
+                                        labeldisplay: "auto",
+                                        theme: "fusion",
+
+                                        drawcrossline: "1",
+
+                                        },
+                                        categories: [
+                                        {
+                                        category: [
+                                        {
+                                        label: "2017-18"
+                                        },
+                                        {
+                                        label: "2018-19"
+                                        },
+                                        {
+                                        label: "2019-20"
+                                        },
+                                        {
+                                        label: "2020-21"
+                                        }
+
+                                        ]
+                                        }
+                                        ],
+                                        dataset: [
+                                        {
+                                        seriesname: "Total no. of Higher Sec. Schools ",
+                                        color: "#094BA4",
+                                        data: [
+                                        {
+                                        value: "5084",
+                                        },
+                                        {
+                                        value: "5159",
+                                        },
+                                        {
+                                        value: "5201",
+                                        },
+                                        {
+                                        value: "00.00"
+                                        }
+                                        ]
+                                        },
+                                        {
+                                        seriesname: "Higher Sec. Schools offering Science Streams",
+                                        data: [
+                                        {
+                                        value: "2207"
+                                        },
+                                        {
+                                        value: "2304"
+                                        },
+                                        {
+                                        value: "2335"
+                                        },
+                                        {
+                                        value: "00.00"
+                                        }
+                                        ]
+                                        }
+                                        ]
+                                        };
+
+                                        FusionCharts.ready(function() {
+                                        var myChart = new FusionCharts({
+                                        type: "scrollcolumn2d",
+                                        renderAt: "highsecondarychart-container",
+                                        width: "90%",
+                                        height: "100%",
+                                        dataFormat: "json",
+                                        dataSource
+                                        }).render();
+                                        });
+                                    }
                                 });
                             }
-
                         })
                         $('input.indicator').not(this).prop('checked', false);
+
                         })
 
                         }

@@ -3,9 +3,11 @@
 
 <title>{% block title %}STI Indicators{% endblock %}</title>
 {% block content %}
-<div class="container">
+<div class="container-fluid">
+    <img src="{% static 'images/int_slide.png' %}"/>
+</div>
+<div class="container all">
     <div class="col-lg-12 col-md-12">
-        <h3>STI Indicators</h3>
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <form method="POST">
@@ -13,12 +15,12 @@
                         <p><strong>Filters By Stage</strong></p>
                         <div class="row">
                             {% for st in stage %}
-                                <div class="col-lg-9 col-md-9">
-                                    {{ st.stage_title }}
-                                </div>
-                                <div class="col-lg-3 col-md-3">
-                                    <input type="checkbox" class="stage" name="{{ st.stage_title }}"  value="{{ st.stage_title }}" >
-                                </div>
+
+                                    <div id="{{ st.stage_title }}" class="col-lg-9 col-md-9 ">{{ st.stage_title }}</div>
+                                    <div class="col-lg-3 col-md-3" >
+                                        <input type="checkbox" class="stage" name="{{ st.stage_title }}" value="{{ st.stage_title }}"/>
+                                    </div>
+
                             {% endfor %}
                         </div>
                     </div>
@@ -39,13 +41,9 @@
                 </div>
             </div>
             <div class="col-lg-9 col-md-9">
-                <p class="text-center"><strong>Indicators</strong></p>
+                <h3>STI Indicators</h3>
                 <div id="indicator2" class="row">
                 </div>
-
-            </div>
-        <div>
-
             </div>
         </div>
     </div>
@@ -58,6 +56,5 @@
 <script src="{% static 'js/canvas.js' %}"></script>
 <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
 <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
-
 {% endblock javascript %}
 

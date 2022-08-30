@@ -314,12 +314,41 @@ ul.banner-border li {
   overflow-y: hidden;
   flex-wrap: nowrap;
 }
-.canvasjs-chart-credit, .raphael-group-GwlxCMHj{
-    display:none;
-}
 [pointer-events="bounding-box"] {
     display: none;
 }
+
+.pillar-title-clr{
+    color:#008080;
+}
+.indicator-table-heading {
+    background-color:#C8EAE1 !important;
+}
+.indi-tbody-a a{
+    text-decoration: none;
+    color: #000000;
+}
+.indi-tbody-a a:active, .indi-tbody-a a:hover{
+    color:#008080;
+}
+.selectDiv{
+    width: 200px;
+    height:40px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding:10px;
+}
+
+/* accordion css */
+
+.accordion-button:not(.collapsed) {
+    color: #000000 !important;
+    background-color: #C8EAE1 !important;
+    box-shadow: none !important;
+}
+
+
+
 /* footer css */
 
 .footer-bg{
