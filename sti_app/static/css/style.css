@@ -308,7 +308,9 @@ ul.banner-border li {
 }
 
 /* Indicator page css  */
-
+.stageDiv {
+    padding-top:5px;
+}
 .nav.nav-tabs {
   overflow-x: auto;
   overflow-y: hidden;
@@ -318,9 +320,6 @@ ul.banner-border li {
     display: none;
 }
 
-.pillar-title-clr{
-    color:#008080;
-}
 .indicator-table-heading {
     background-color:#C8EAE1 !important;
 }
@@ -331,14 +330,49 @@ ul.banner-border li {
 .indi-tbody-a a:active, .indi-tbody-a a:hover{
     color:#008080;
 }
-.selectDiv{
+.selectDiv {
     width: 200px;
     height:40px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
     padding:10px;
 }
+.nav-link.active {
+    color: #000000 !important;
+    background-color: #C8EAE1 !important;
+    border-color: #C8EAE1 !important;
+}
+.tabs-class {
+    color:#000000 !important;
+}
+.tab-content {
+    margin:20px;
+}
+.indi-tab-head{
+    margin-top: 10px;
+    background-color:#EEEEEE;
+}
+.accordion-button {
+    background-color:#F1F1F1 !important;
+}
+.indi_div{
+    margin-top: 16px;
+}
+.filters{
+    color:#022539;
+    font-size:28px;
+    font-family:Roboto Light;
+    margin: 0;
+}
+.filterDiv a{
+    text-decoration:none;
+    color:#022539;
+    padding-right: 0px;
+}
 
+.filterDiv a:active, .filterDiv a:hover {
+    color:#008080 !important;
+}
 /* accordion css */
 
 .accordion-button:not(.collapsed) {

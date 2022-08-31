@@ -5,8 +5,6 @@ $(document).ready(function(){
         event.stopPropagation()
             var check = $(this);
             var name = $(this).attr('name');
-            var myClass = document.getElementById(name);
-            myClass.style.color = '#008080';
 
             $.ajax({
                 type: "GET",
@@ -28,7 +26,7 @@ $(document).ready(function(){
                         var checkbox_id = value["id"];
                         var checkbox_value =value["pillar_title"];
                         var checkbox_name = value["pillar_title"];
-                        var template = '<div class="col-lg-9 col-md-9 pillar-title-clr">'+ checkbox_label + '</div> <div class="col-lg-3 col-md-3"> <input type="checkbox" id="'+checkbox_id+'" name="'+checkbox_name+'" value="'+checkbox_value+'" class ="pillar" > </div>';
+                        var template = '<a href="#" class="row"><div class="col-lg-9 col-md-9 pillar-title-clr">'+ checkbox_label + '</div> <div class="col-lg-3 col-md-3 stageDiv"> <input type="checkbox" id="'+checkbox_id+'" name="'+checkbox_name+'" value="'+checkbox_value+'" class ="pillar" > </div><hr style="width:85%;text-align:left;margin-left:0;margin-top:10px;"></a>';
                             $("#pillarDiv").append(template);
                     });
 
@@ -53,7 +51,7 @@ $(document).ready(function(){
 
                                     var indicator_label = value["indicator_title"];
                                     var indicator_id = value["id"];
-                                    var template = '<div class="col-lg-9 col-md-9">'+ indicator_label + '</div> <div class="col-lg-3 col-md-3"> <input type="checkbox" id="'+indicator_id+'" name="'+indicator_label+'" value="'+indicator_label+'" class ="indicator" > </div>';
+                                    var template = '<a href="#" class="row"><div class="col-lg-9 col-md-9">'+ indicator_label + '</div> <div class="col-lg-3 col-md-3 stageDiv"> <input type="checkbox" id="'+indicator_id+'" name="'+indicator_label+'" value="'+indicator_label+'" class ="indicator" > </div><hr style="width:85%;text-align:left;margin-left:0;margin-top:10px;"></a>';
                                     indicator1.style.display = "flex";
                                     $("#indicator1").append(template);
                                 });
@@ -83,6 +81,8 @@ $(document).ready(function(){
                                     var highBarChart = document.getElementById("highsecondarychart-container");
                                     var divBarChart = document.getElementById("barchart-container");
                                     var divNestedChart = document.getElementById("nestedchart-container");
+                                    var ictBarChartIndia = document.getElementById("ict-india-chart-container");
+                                    var ictBarChartPunjab= document.getElementById("ict-pb-chart-container");
                                     if(myDiv){
                                         const dataSource = {
                                         chart: {
@@ -106,7 +106,7 @@ $(document).ready(function(){
                                         {
                                         label: "New LLP's Registered",
                                         toolText: "$dataValue",
-                                        
+
                                         value: "519"
                                         },
                                         {
@@ -226,8 +226,6 @@ $(document).ready(function(){
 
                                         ]
                                         },
-
-
                                         {
                                         label: "Under Graduate",
                                         color: "008080",
@@ -268,14 +266,12 @@ $(document).ready(function(){
                                     else if(highBarChart){
                                     const dataSource = {
                                         chart: {
-
                                         baseFont:"Roboto",
                                         yaxisname: "No. of Schools",
                                         formatnumberscale: "1",
                                         numvisibleplot: "8",
                                         labeldisplay: "auto",
                                         theme: "fusion",
-
                                         drawcrossline: "1",
 
                                         },
@@ -342,6 +338,201 @@ $(document).ready(function(){
                                         type: "scrollcolumn2d",
                                         renderAt: "highsecondarychart-container",
                                         width: "90%",
+                                        height: "100%",
+                                        dataFormat: "json",
+                                        dataSource
+                                        }).render();
+                                        });
+                                    }
+                                    else if(ictBarChartIndia){
+                                    const dataSource = {
+                                        chart: {
+                                        baseFont:"Roboto",
+                                        caption: "ICT Enabled Schools",
+                                        subcaption: "2017 - 2020",
+                                        pyaxisname: "ICT Enabled Schools in India",
+                                        syaxisname: "% of ICT Labs",
+                                        snumbersuffix: "%",
+                                        syaxismaxvalue: "25",
+                                        theme: "fusion",
+                                        showvalues: "0",
+                                        drawcrossline: "1",
+                                        divlinealpha: "20"
+                                        },
+                                        categories: [
+                                        {
+                                        category: [
+                                        {
+                                        label: "2017-18"
+                                        },
+                                        {
+                                        label: "2018-19"
+                                        },
+                                        {
+                                        label: "2019-20"
+                                        }
+                                        ]
+                                        }
+                                        ],
+                                        dataset: [
+                                        {
+                                        dataset: [
+                                        {
+                                        seriesname: "Total No. of Schools in the Country",
+                                        color:"#094BA4",
+                                        data: [
+                                        {
+                                        value: "1558903"
+                                        },
+                                        {
+                                        value: "1551000"
+                                        },
+                                        {
+                                        value: "1507708"
+                                        }
+                                        ]
+                                        },
+                                        {
+                                        seriesname: "Number of Schools with ICT Labs",
+                                        data: [
+                                        {
+                                        value: "487443"
+                                        },
+                                        {
+                                        value: "506483"
+                                        },
+                                        {
+                                        value: "587656"
+                                        }
+                                        ]
+                                        }
+                                        ]
+                                        },
+
+                                        ],
+                                        lineset: [
+                                        {
+                                        seriesname: "Percentage %",
+                                        plottooltext:
+                                        "Total ICT Labs in $label is <b>$dataValue</b> in India",
+                                        showvalues: "0",
+                                        data: [
+                                        {
+                                        value: "31.02"
+                                        },
+                                        {
+                                        value: "33.41"
+                                        },
+                                        {
+                                        value: "38.09"
+                                        }
+                                        ]
+                                        }
+                                        ]
+                                        };
+
+                                        FusionCharts.ready(function() {
+                                        var myChart = new FusionCharts({
+                                        type: "msstackedcolumn2dlinedy",
+                                        renderAt: "ict-india-chart-container",
+                                        width: "100%",
+                                        height: "100%",
+                                        dataFormat: "json",
+                                        dataSource
+                                        }).render();
+                                        });
+                                    }
+                                    else if(ictBarChartPunjab){
+                                    const dataSource = {
+                                        chart: {
+                                        baseFont:"Roboto",
+                                        caption: "ICT Enabled Schools in Punjab",
+                                        subcaption: "2017 - 2020",
+                                        pyaxisname: "ICT Enabled Schools in Punjab",
+                                        syaxisname: "% of ICT Labs",
+                                        snumbersuffix: "%",
+                                        syaxismaxvalue: "25",
+                                        theme: "fusion",
+                                        showvalues: "0",
+                                        drawcrossline: "1",
+                                        divlinealpha: "20"
+                                        },
+                                        categories: [
+                                        {
+                                        category: [
+                                        {
+                                        label: "2017-18"
+                                        },
+                                        {
+                                        label: "2018-19"
+                                        },
+                                        {
+                                        label: "2019-20"
+                                        }
+                                        ]
+                                        }
+                                        ],
+                                        dataset: [
+                                        {
+                                        dataset: [
+                                        {
+                                        seriesname: "Total No. of Schools in Punjab",
+                                        data: [
+                                        {
+                                        value: "28926"
+                                        },
+                                        {
+                                        value: "28637"
+                                        },
+                                        {
+                                        value: "28775"
+                                        }
+                                        ]
+                                        },
+                                        {
+                                        seriesname: "Number of Schools with ICT Labs",
+                                        data: [
+                                        {
+                                        value: "21979"
+                                        },
+                                        {
+                                        value: "19112"
+                                        },
+                                        {
+                                        value: "20269"
+                                        }
+                                        ]
+                                        }
+                                        ]
+                                        },
+
+                                        ],
+                                        lineset: [
+                                        {
+                                        seriesname: "Percentage %",
+                                        plottooltext:
+                                        "Total ICT Labs in $label is <b>$dataValue</b> in India",
+                                        showvalues: "0",
+                                        data: [
+                                        {
+                                        value: "75.98"
+                                        },
+                                        {
+                                        value: "66.73"
+                                        },
+                                        {
+                                        value: "70.43"
+                                        }
+                                        ]
+                                        }
+                                        ]
+                                        };
+
+                                        FusionCharts.ready(function() {
+                                        var myChart = new FusionCharts({
+                                        type: "msstackedcolumn2dlinedy",
+                                        renderAt: "ict-pb-chart-container",
+                                        width: "100%",
                                         height: "100%",
                                         dataFormat: "json",
                                         dataSource

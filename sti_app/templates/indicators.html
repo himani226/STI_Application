@@ -4,44 +4,56 @@
 <title>{% block title %}STI Indicators{% endblock %}</title>
 {% block content %}
 <div class="container-fluid">
-    <img src="{% static 'images/int_slide.png' %}"/>
+    <img src="{% static 'images/int_slide.png' %}" width="100%" height="200px"/>
 </div>
 <div class="container all">
     <div class="col-lg-12 col-md-12">
         <div class="row">
             <div class="col-lg-3 col-md-3">
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <h3>STI Indicators</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
                 <form method="POST">
                     <div class="col-lg-12 col-md-12">
-                        <p><strong>Filters By Stage</strong></p>
-                        <div class="row">
+                        <p class="filters">Filters By Stage</p>
+                        <div class="row filterDiv">
+                            <hr style="width:85%;text-align:left;margin-top:10px;">
                             {% for st in stage %}
-
-                                    <div id="{{ st.stage_title }}" class="col-lg-9 col-md-9 ">{{ st.stage_title }}</div>
-                                    <div class="col-lg-3 col-md-3" >
+                                    <a href="#" class="row"><div id="{{ st.stage_title }}" class="col-lg-9 col-md-9">{{ st.stage_title }}</div>
+                                    <div class="col-lg-3 col-md-3 stageDiv" >
                                         <input type="checkbox" class="stage" name="{{ st.stage_title }}" value="{{ st.stage_title }}"/>
-                                    </div>
-
+                                    </div><hr style="width:85%;text-align:left;margin-top:10px;">
+                                    </a>
                             {% endfor %}
                         </div>
                     </div>
                 </form>
-                <hr>
+
                 <div class="col-lg-12 col-md-12">
-                    <p><strong>Filters By Pillars</strong></p>
-                    <div id="pillarDiv" class="row">
+                    <p class="filters">Filters By Pillars</p>
+                    <hr style="width:91%;text-align:left;margin-left:-10px;margin-top:10px;">
+                    <div id="pillarDiv" class="row filterDiv">
+
                     </div>
                 </div>
-                <hr>
-                <div class="col-lg-12 col-md-12" >
-                    <p><strong>List of Indicators</strong></p>
+
+                <div class="col-lg-12 col-md-12 indi_div" >
+                    <p class="filters">List of Indicators</p>
+                    <hr style="width:91%;text-align:left;margin-left:-10px;margin-top:10px;">
                     <form method="POST">
-                        <div id="indicator1" class="row">
+                        <div id="indicator1" class="row filterDiv">
                         </div>
                     </form>
                 </div>
+
             </div>
             <div class="col-lg-9 col-md-9">
-                <h3>STI Indicators</h3>
                 <div id="indicator2" class="row">
                 </div>
             </div>
