@@ -41,6 +41,7 @@
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="ab9521a0-3bff-44e3-bfd5-f0cf8571e2e9" dataset="main.sti_app_pillar" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="ab9521a0-3bff-44e3-bfd5-f0cf8571e2e9" dataset="main.sti_app_indicatordefinition" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="ab9521a0-3bff-44e3-bfd5-f0cf8571e2e9" dataset="main.sti_app_technologyareadetail" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="ab9521a0-3bff-44e3-bfd5-f0cf8571e2e9" dataset="main.sti_app_indicator" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="ab9521a0-3bff-44e3-bfd5-f0cf8571e2e9" dataset="main.sti_app_stage" active-filter-id="EMPTY_FILTER" />
   </component>

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import HeaderMenu, FooterMenu, Banner, HomeData, HomeSlider, HomePlanPolicies, Spotlight, \
-    AboutData, Stage, Pillar, Indicator, IndicatorDefinition
+    AboutData, Stage, Pillar, Indicator, IndicatorDefinition, TechnologyArea, TechnologyAreaDetail
 
 # Register your models here.
 admin.site.register(HeaderMenu),
@@ -38,5 +38,12 @@ class IndicatordefAdmin(admin.ModelAdmin):
     list_display = ("indicator_title",)
 
 
-
 admin.site.register(IndicatorDefinition, IndicatordefAdmin),
+admin.site.register(TechnologyArea),
+
+
+class TechAdmin(admin.ModelAdmin):
+    list_display = ("technology_name", "institute","inventor_detail","technology_area_name")
+
+
+admin.site.register(TechnologyAreaDetail, TechAdmin),

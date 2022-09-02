@@ -75,7 +75,12 @@
             </nav>
         </div>
     </div>
-<!-- Top header Closed-->
+<!-- Top header Closed
+    {% if breadcrumbs %}
+<div class="container">
+    {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs%}
+</div>
+{% endif %}-->
 <!-- Internal Content Started-->
 {% block content %}
      <div class="col-lg-12 col-sm-12 col-md-12">
@@ -283,7 +288,7 @@
         <div class="col-lg-12 col-sm-12 col-md-12 all">
              <hr>
             <div class="row-fluid banner-color">
-                <div class="bannergroup table">
+                <div class="bannergroup table text-center">
                     <ul class="banner-border">
                         {% for ban in banner %}
                         <li>

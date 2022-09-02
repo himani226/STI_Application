@@ -1,18 +1,65 @@
 {% extends 'index.html' %}
+{% load static %}
+
 <title>{% block title %}Technology Platform{% endblock %}</title>
 {% block content %}
-<div class="container">
+<div class="container-fluid">
+    <img src="{% static 'images/technology_slide.png' %}" width="100%" height="200px"/>
+</div>
+<div class="container all">
     <div class="col-lg-12 col-md-12">
-        <h3>Technology Platform</h3>
         <div class="row">
-            <div class="col-lg-8 col-md-8 text-justify">
-
+            <div class="col-lg-3 col-md-3">
             </div>
-            <div>
-
+            <div class="col-lg-9 col-md-9 tech-heading">
+                <h3>Technology Platform</h3>
             </div>
         </div>
-
+    </div>
+    <div class="col-lg-12 col-md-12">
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <form method="POST">
+                    <div class="col-lg-12 col-md-12">
+                        <p class="filters">Technology Areas</p>
+                        <div class="row filterDiv">
+                            <hr style="width:82%;text-align:left;margin-top:5px;">
+                            {% for tp in tech_area %}
+                             <a href="JavaScript:void(0);" name="{{ tp.technology_area_name }}" class="row tech-area">
+                                    <div class="col-lg-12 col-md-12">
+                                       {{ tp.technology_area_name }}
+                                    </div>
+                             </a>
+                                    <hr style="width:85%;text-align:left;margin-top:10px;">
+                            {% endfor %}
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div id="tech_info" class="col-lg-12 col-md-12">
+                    <p class="text-justify">A greater emphasis is being given to development and deployment of indigenous technologies to achieve a larger goal of ‘Atma Nirbhar Bharat’ for sustainable and inclusive growth of the Nation. Region-wise Facilitating Platforms are required for collating and showcasing technologies indigenously developed with potential for deployment and commercialization. Technology Platform – Punjab has been set up with this vision, to augment and create systematic inter-linkages for leveraging technological strengths of higher education institution, research institutions, universities, CSIR labs & scientific organizations having presence in Punjab to partner with industry, early stage entrepreneurs, start-ups, private players for access to technology and innovations. It is holistic Initiative to build Innovation Eco-System Punjab and will also feature States’ Technology Need Assessment. It will provide access to technologies required for developmental needs, to address socio economic challenges, unprecedented disasters, improve productivity, emerging future technologies for further networking for acquisition, deployment and diffusion.</p>
+                </div>
+                <div class="col-lg-12 col-md-12">
+                    <table id="technology_area" class="table table-responsive" style="display:none">
+                        <thead class="indicator-table-heading" style="font-weight:bold;font-size:14px;">
+                        <tr>
+                            <th>Name of the Technology</th>
+                            <th>Inventor Details</th>
+                            <th>Institute</th>
+                            <th>Technology Abstract</th>
+                            <th>Technology Status</th>
+                            <th>Technology Transferred To</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody"></tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
- {% endblock %}
+{% endblock %}
+{% block javascript %}
+<script src="{% static 'js/technology_check.js' %}"></script>
+{% endblock javascript %}

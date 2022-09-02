@@ -23,6 +23,7 @@ urlpatterns = [
     path(r'portfolio/', views.portfolio, name='portfolio'),
     path(r'researchers/', views.researchers, name='researchers'),
     path(r'technology/', views.technology, name='technology'),
+    path(r'techlist/', views.techlist, name='techlist'),
     path(r'framework/', views.framework, name='framework'),
     path(r'help/', views.help, name='help'),
     path(r'policies/', views.policies, name='policies'),

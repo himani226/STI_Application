@@ -26,7 +26,7 @@ $(document).ready(function(){
                         var checkbox_id = value["id"];
                         var checkbox_value =value["pillar_title"];
                         var checkbox_name = value["pillar_title"];
-                        var template = '<a href="#" class="row"><div class="col-lg-9 col-md-9 pillar-title-clr">'+ checkbox_label + '</div> <div class="col-lg-3 col-md-3 stageDiv"> <input type="checkbox" id="'+checkbox_id+'" name="'+checkbox_name+'" value="'+checkbox_value+'" class ="pillar" > </div><hr style="width:85%;text-align:left;margin-left:0;margin-top:10px;"></a>';
+                        var template = '<a href="#" class="row"><div class="col-lg-9 col-md-9 pillar-title-clr">'+ checkbox_label + '</div> <div class="col-lg-3 col-md-3 stageDiv"> <input type="checkbox" id="'+checkbox_id+'" name="'+checkbox_name+'" value="'+checkbox_value+'" class ="pillar" > </div><hr style="width:85%;text-align:left;margin-left:0;margin-top:5px;"></a>';
                             $("#pillarDiv").append(template);
                     });
 
@@ -51,7 +51,7 @@ $(document).ready(function(){
 
                                     var indicator_label = value["indicator_title"];
                                     var indicator_id = value["id"];
-                                    var template = '<a href="#" class="row"><div class="col-lg-9 col-md-9">'+ indicator_label + '</div> <div class="col-lg-3 col-md-3 stageDiv"> <input type="checkbox" id="'+indicator_id+'" name="'+indicator_label+'" value="'+indicator_label+'" class ="indicator" > </div><hr style="width:85%;text-align:left;margin-left:0;margin-top:10px;"></a>';
+                                    var template = '<a href="#" class="row"><div class="col-lg-9 col-md-9">'+ indicator_label + '</div> <div class="col-lg-3 col-md-3 stageDiv"> <input type="checkbox" id="'+indicator_id+'" name="'+indicator_label+'" value="'+indicator_label+'" class ="indicator" > </div><hr style="width:85%;text-align:left;margin-left:0;margin-top:5px;"></a>';
                                     indicator1.style.display = "flex";
                                     $("#indicator1").append(template);
                                 });
@@ -70,6 +70,7 @@ $(document).ready(function(){
                                 var data = JSON.parse(context);
                                indi_def= data["indi_def"];
                                 $("#indicator2").empty();
+                                $("#STI_info").empty();
                                 $.each(indi_def,function(index,value){
                                     var indicator_label = value["indicator_title"];
                                     var indicator_def = value["indicator_description"];

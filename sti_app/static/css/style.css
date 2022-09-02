@@ -3,6 +3,19 @@
      background-color:#FFFFFF;
      color:#000000;
 }
+.loader .loader-container {
+    width: 50px;
+    height: 50px;
+    background-color: #106eea;
+    border-radius: 100%;
+    -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+    animation: sk-scaleout 1s infinite ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
 .container-fluid{
     padding:0 !important;
     margin:0 !important;
@@ -306,8 +319,37 @@ ul.banner-border li {
 	display: inline;
 	margin: 0 14px;
 }
+/*About us page css  */
+.about-initiate{
+    background-color:#F8F8F8;
+}
+.about-tab-links a, .about-tab-links a:hover{
+    text-decoration:none;
+    color:#008080;
+    font-size: 28px;
+    font-family:Roboto Light;
+    padding-right:50px;
+}
+.about-tab-links a:active{
+    text-decoration:none;
+    color:#008080;
+    font-size: 28px;
+    font-family:Roboto Medium;
+}
+
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
 
 /* Indicator page css  */
+.indicator-heading, .tech-heading{
+    color: #058180;
+    font-family: Roboto Medium;
+    margin-bottom:7px;
+}
 .stageDiv {
     padding-top:5px;
 }
@@ -373,6 +415,8 @@ ul.banner-border li {
 .filterDiv a:active, .filterDiv a:hover {
     color:#008080 !important;
 }
+tr:nth-child(even) {background: #FCFCFC}
+
 /* accordion css */
 
 .accordion-button:not(.collapsed) {
@@ -380,7 +424,10 @@ ul.banner-border li {
     background-color: #C8EAE1 !important;
     box-shadow: none !important;
 }
-
+/* technology page css */
+#tbody{
+    line-height:22px;
+}
 
 
 /* footer css */

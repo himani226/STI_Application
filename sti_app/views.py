@@ -7,7 +7,7 @@ from sti_app.responses.general_response import (no_success_response,
                                                 success_response)
 
 from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData, Spotlight, Stage, Pillar, Indicator, \
-    IndicatorDefinition, HomePlanPolicies, HomeSlider, Banner
+    IndicatorDefinition, HomePlanPolicies, HomeSlider, Banner, TechnologyArea, TechnologyAreaDetail
 
 
 def index(request):
@@ -100,6 +100,35 @@ def indicatorsdef(request):
     return HttpResponse(json.dumps(response))
 
 
+def technology(request):
+    header_menu_name = HeaderMenu.objects.all()
+    footer_menu_name = FooterMenu.objects.all()
+    banner = Banner.objects.all()
+    tech_area = TechnologyArea.objects.all()
+    return render(request, 'technology.html',
+                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                           'tech_area': tech_area,
+                           'banner': banner})
+
+
+def techlist(request):
+    tech_area = request.GET.get('name')
+    if tech_area:
+        tech_name = TechnologyAreaDetail.objects.filter(technology_area_name_id=tech_area)
+        if tech_name:
+            all_tech_name = []
+            response = success_response()
+            for tech_area_name  in tech_name:
+                all_tech_name.append(tech_area_name.embed())
+            response['all_tech_name'] = all_tech_name
+            return HttpResponse(json.dumps(response))
+        else:
+            response = no_success_response()
+    else:
+        response = no_success_response()
+    return HttpResponse(json.dumps(response))
+
+
 def incubators(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
@@ -141,15 +170,6 @@ def portfolio(request):
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'portfolio.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
-                           'banner': banner})
-
-
-def technology(request):
-    header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
-    banner = Banner.objects.all()
-    return render(request, 'technology.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 

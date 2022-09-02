@@ -6,7 +6,7 @@ from django.utils.datetime_safe import datetime
 # headermenu table has been created to load the data from database
 class HeaderMenu(models.Model):
     menu_name = models.CharField(max_length=200)
-    menu_link = models.CharField(max_length=200, default='#')
+    menu_link = models.CharField(max_length=200, default='#', blank=True)
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
@@ -147,9 +147,46 @@ class IndicatorDefinition(models.Model):
     indicator_description = models.TextField(null=True)
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
-
     def embed(self):
         return {
             "indicator_title": self.indicator_title.indicator_title,
             "indicator_description": self.indicator_description
+        }
+
+
+class TechnologyArea(models.Model):
+    technology_area_name = models.CharField(primary_key=True, max_length=200)
+    pub_date = models.DateTimeField(default=datetime.now, blank=True)
+
+    def __str__(self):
+        return self.technology_area_name
+
+
+class TechnologyAreaDetail(models.Model):
+    technology_area_name = models.ForeignKey(TechnologyArea,
+                                    on_delete=models.SET_NULL,
+                                    blank=True,
+                                    null=True,
+                                    )
+    technology_name = models.CharField(max_length=200,blank=True)
+    inventor_detail = models.CharField(max_length=200,blank=True)
+    institute = models.CharField(max_length=200,blank=True)
+    technology_abstract = models.TextField(blank=True)
+    technology_status = models.CharField(max_length=200,blank=True)
+    technology_transferred = models.CharField(max_length=200,blank=True)
+    pub_date = models.DateTimeField(default=datetime.now,blank=True)
+
+    def __str__(self):
+        return self.technology_name
+
+    def embed(self):
+        return {
+            "id": self.id,
+            "technology_area_name_id": self.technology_area_name.technology_area_name,
+            "technology_name": self.technology_name,
+            "inventor_detail": self.inventor_detail,
+            "institute": self.institute,
+            "technology_abstract": self.technology_abstract,
+            "technology_status": self.technology_status,
+            "technology_transferred": self.technology_transferred,
         }
