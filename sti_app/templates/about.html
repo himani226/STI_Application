@@ -6,46 +6,149 @@
 <div class="container-fluid">
     <img src="{% static 'images/technology_slide.png' %}" width="100%" height="200px"/>
     <div class="container all">
-        <div class="col-lg-12 col-md-12">
+        <div class="col-lg-12 col-md-12 abt-heading">
+            <h3>About Us</h3>
+            <h5>Genesis</h5>
             <div class="row">
-                <div class="col-lg-3 col-md-3">
+                <div class="col-lg-2 col-md-2 all">
+                    <img src="{% static 'images/abt-pscst.png' %}"/>
                 </div>
-                <div class="col-lg-9 col-md-9 tech-heading">
-                    <h3>About Us</h3>
+                <div class="col-lg-9 col-md-9 all ">
+                    <p>
+                        The Government of Punjab (GoP) is taking focused initiatives to make Punjab a Hub of Science Technology and Innovation. The state-of-the-art scientific &
+                        research institutions, vibrant incubation & start-up ecosystem, strong tec-preneurship base are the strong indicators paving way for Innovation Roadmap of
+                        Punjab. Further, multiple initiatives are being taken for stimulating State’s Innovation & Entrepreneurial Ecosystem
+                    </p>
+                </div>
+                <div class="col-lg-9 col-md-9 all">
+                    <p>
+                        Department of Science, Technology and Environment - GoP has launched Mission Innovate Punjab with aim to build robust research and innovation culture for
+                        boosting competitiveness, growth, generating quality jobs and achieving SDGs. Punjab State Council for Science & Technology (PSCST) is a state level node of
+                        DST - GoI and is spearheading Mission Innovate Punjab to bring Science, Technology & Innovation at forefront for accelerating socio-economic
+                        development of the State. DST has appreciated PSCST as a model S&T Council in the country.
+                    </p>
+                </div>
+                <div class="col-lg-2 col-md-2 all">
+                    <img src="{% static 'images/abt-pscst.png' %}"/>
+                </div>
+                 <div class="col-lg-2 col-md-2 all">
+                    <img src="{% static 'images/abt-pscst.png' %}"/>
+                </div>
+                <div class="col-lg-9 col-md-9 all">
+                    <p>To quantify STI Ecosystem vis-a-vis strength and weakness of Punjab, in line with new National STI Policy, PSCST formulated and submitted a
+                        proposal on “Strategic Framework for Mapping and Strengthening STI Ecosystem of Punjab”. Department of Science & Technology, Govt. of India
+                        has sanctioned the project and urged PSCST to build STI Indicator Framework to serve as baseline document for emulation by other states
+                        Hence, the model framework has been developed by PSCST and present STI Observatory is being setup as a single-window portal to
+                        capture, manage, and ease the flow of knowledge among stakeholders.</p>
                 </div>
             </div>
         </div>
-        <div class="col-lg-12 col-md-12 about-tab-links text-center">
-            <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#Initiative">An Initiative of</a></li>
-                <li><a data-toggle="tab" href="#Supported">Supported by</a></li>
-                <li><a data-toggle="tab" href="#Collaborators">Collaborators</a></li>
-            </ul>
-             <div class="container-fluid about-initiate">
-                <div class="container text-center">
-                    <div class="tab-content">
-                        <div id="Initiative" class="tab-pane fade in active">
-                            <h3>Initiative</h3>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                        <div id="Supported" class="tab-pane fade">
-                          <h3>Menu 1</h3>
-                          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </div>
-                        <div id="Collaborators" class="tab-pane fade">
-                          <h3>Menu 2</h3>
-                          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div class="col-lg-12 col-md-12 text-center all">
+        <div class="row">
+            <div class="col-lg-4 col-md-4"></div>
+            <div class="col-lg-6 col-md-6 text-center">
+                <nav id="tech-nav" class="container">
+                    <div id="nav-tab" class="nav text-center nav-tabs" role="tablist" style="border: none;">
+                        <button id="nav-initiative-tab"  class="about-nav-link active" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-initiative" aria-controls="nav-initiative" aria-selected="true">An Initiative of</button>
+                        <button id="nav-supported-tab" class="about-nav-link" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-supported" aria-controls="nav-supported" aria-selected="false">Supported By</button>
+                        <button id="nav-collab-tab"  class="about-nav-link" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-collab" aria-controls="nav-collab" aria-selected="false">Collaborators</button>
+                    </div>
+                </nav>
+            </div>
+            <div id="nav-tabContent" class="about tab-content">
+                <div id="nav-initiative" class="tab-pane container fade show active all" role="tabpanel" aria-labelledby="nav-initiative-tab">
+                    <div class="col-lg-12 col-md-12 text-center">
+                        <div class="row">
+                             <div class="col-lg-4 col-md-4 text-end">
+                                <img src="{% static 'images/abt-pscst.png' %}"/>
+                             </div>
+                            <div class="col-lg-8 col-md-8 text-start">
+                                <span class="abt-pscst">PSCST, GoP</span><br>
+                                <span class="abt-initiate-text"> Punjab State Council for Science and Technology </span><br>
+                                <span class="abt-gop-text"> Government of Punjab</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-             </div>
+                <div id="nav-supported" class="tab-pane container fade all" role="tabpanel" aria-labelledby="nav-supported-tab">
+                     <div class="col-lg-12 col-md-12 text-center">
+                        <div class="row">
+                             <div class="col-lg-4 col-md-4 text-end">
+                                <img src="{% static 'images/abt-dst.png' %}"/>
+                             </div>
+                            <div class="col-lg-8 col-md-8 text-start">
+                                <span class="abt-pscst">DST, GoI</span><br>
+                                <span class="abt-initiate-text"> Department of Science and Technology </span><br>
+                                <span class="abt-gop-text"> Government of India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="nav-collab" class="tab-pane container fade all" role="tabpanel" aria-labelledby="nav-collab-tab">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 text-center">
+                                <div class="row">
+                                     <div class="col-lg-4 col-md-4 text-end">
+                                        <img src="{% static 'images/abt-ctier.png' %}"/>
+                                     </div>
+                                    <div class="col-lg-8 col-md-8 text-start">
+                                        <span class="abt-pscst">Center for Technology, Innovation and Economic Research</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 text-center">
+                                <div class="row">
+                                     <div class="col-lg-4 col-md-4 text-end">
+                                        <img src="{% static 'images/abt-ctier.png' %}"/>
+                                     </div>
+                                    <div class="col-lg-8 col-md-8 text-start">
+                                        <span class="abt-pscst">Centre for Development of Advanced Computing, Mohali</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3"></div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-sm-12 col-md-12 sti-data sti-data-arch all" style="font-size:35px">
+        <div class="container">
+            <p>Contributors</p>
+            <div class="col-lg-12 col-sm-12 col-md-12 data-arch" style="font-size:20px">
+                <span>For Phase I, Data has been captured from 45 Research Institutions and Universities and showcased. The Data collection and updation process is ongoing, involving more
+stakeholders viz Other Institutions, Universities, Industry, Incubators, Development Departments etc</span></div>
+            <div class="col-lg-12 col-sm-12 col-md-12 abt-contrib-div">
+                <div class="row sti-margin">
+                    <div class="col-lg-4 col-sm-12 col-md-4 sti-data-margin">
+                        <div class="col-lg-12 col-sm-12 col-md-12 home-sti-data-text">
+                            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                {% for contrib in contributor %}
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="10000">
+                                            <img src="{{ contrib.contributor_image.url }}" class="" alt="..." width="276px" height="276px">
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
  {% endblock %}
 {% block javascript %}
 <script type="text/javascript">
-
 </script>
 {% endblock javascript %}
 

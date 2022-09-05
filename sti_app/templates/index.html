@@ -8,6 +8,7 @@
     <title>{% block title %}Home{% endblock %}</title>
     <script src="{% static 'js/countup.min.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
@@ -175,7 +176,7 @@
                         <div class="col-lg-3 col-sm-12 col-md-3">
                             <div class="row">
                                  <div class="col-lg-5 col-sm-12 col-md-5 sti-high-6">
-                                     <span id="state1" countTo="600" class="sti-high-internal-600">0</span>
+                                     <span data-from="0" data-to="600" data-time="4000" class="count3 sti-high-internal-600">0</span>
                                     <span class="sti-high-internal-plus">+</span>
                                  </div>
                                 <div class="col-lg-7 col-sm-12 col-md-7">
@@ -187,7 +188,7 @@
                         <div class="col-lg-3 col-sm-12 col-md-3 sti-internal-div">
                             <div class="row">
                                  <div class="col-lg-7 col-sm-12 col-md-7 sti-high-15">
-                                     <span id="state2" countTo="1500" class="sti-high-internal-600">0</span>
+                                     <span data-from="0" data-to="1500" data-time="4000" class="count2 sti-high-internal-600">0</span>
                                     <span class="sti-high-internal-plus">+</span>
                                  </div>
                                 <div class="col-lg-5 col-sm-12 col-md-5">
@@ -199,7 +200,7 @@
                         <div class="col-lg-3 col-sm-12 col-md-3">
                             <div class="row">
                                  <div class="col-lg-5 col-sm-12 col-md-5 sti-high-10">
-                                     <span id="state3" countTo="10" class="sti-high-internal-600">0</span>
+                                     <span data-from="0" data-to="10" data-time="4000" class="count1 sti-high-internal-600">0</span>
                                     <span class="sti-high-internal-plus">+</span>
                                  </div>
                                 <div class="col-lg-7 col-sm-12 col-md-7 sti-high-6">
@@ -347,32 +348,44 @@
     </div>
 </div>
 {% block javascript %}
+<!-- script for counter ate homepage --->
 <script type="text/javascript">
-    if (document.getElementById('state1')) {
-      const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
-      if (!countUp.error) {
-        countUp.start();
-      } else {
-        console.error(countUp.error);
-      }
-    }
-    if (document.getElementById('state2')) {
-      const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
-      if (!countUp1.error) {
-        countUp1.start();
-      } else {
-        console.error(countUp1.error);
-      }
-    }
-    if (document.getElementById('state3')) {
-      const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
-      if (!countUp2.error) {
-        countUp2.start();
-      } else {
-        console.error(countUp2.error);
-      };
-    }
+   (function ($){
+          $.fn.counter = function() {
+            const $this = $(this),
+            numberFrom = parseInt($this.attr('data-from')),
+            numberTo = parseInt($this.attr('data-to')),
+            delta = numberTo - numberFrom,
+            deltaPositive = delta > 0 ? 1 : 0,
+            time = parseInt($this.attr('data-time')),
+            changeTime = 10;
+
+            let currentNumber = numberFrom,
+            value = delta*changeTime/time;
+            var interval1;
+            const changeNumber = () => {
+              currentNumber += value;
+              //checks if currentNumber reached numberTo
+              (deltaPositive && currentNumber >= numberTo) || (!deltaPositive &&currentNumber<= numberTo) ? currentNumber=numberTo : currentNumber;
+              this.text(parseInt(currentNumber));
+              currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
+            }
+
+            interval1 = setInterval(changeNumber,changeTime);
+          }
+        }(jQuery));
+
+        $(document).ready(function(){
+
+          $('.count-up').counter();
+          $('.count1').counter();
+          $('.count2').counter();
+          $('.count3').counter();
+          new WOW().init();
+});
   </script>
+
+<!-- change font size on click of accessibility -->
 <script type="text/javascript">
         $(function () {
             $(".font-button").bind("click", function () {
@@ -416,5 +429,5 @@
 <script src="{% static 'js/frameclick.js' %}"></script>
 {% endblock javascript %}
 </body>
-  <script src="{% static 'js/bootstrap.js' %}" /></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
 </html>

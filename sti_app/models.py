@@ -154,7 +154,8 @@ class IndicatorDefinition(models.Model):
         }
 
 
-class TechnologyArea(models.Model):
+class \
+        TechnologyArea(models.Model):
     technology_area_name = models.CharField(primary_key=True, max_length=200)
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 
@@ -181,7 +182,7 @@ class TechnologyAreaDetail(models.Model):
 
     def embed(self):
         return {
-            "id": self.id,
+
             "technology_area_name_id": self.technology_area_name.technology_area_name,
             "technology_name": self.technology_name,
             "inventor_detail": self.inventor_detail,
@@ -190,3 +191,11 @@ class TechnologyAreaDetail(models.Model):
             "technology_status": self.technology_status,
             "technology_transferred": self.technology_transferred,
         }
+
+class Contributor(models.Model):
+    contributor_title = models.CharField(null=True, max_length=200)
+    contributor_image = models.ImageField(max_length=200, upload_to='contributor_image')
+    pub_date = models.DateTimeField(default=datetime.now, blank=True)
+
+    def __str__(self):
+        return self.contributor_title
