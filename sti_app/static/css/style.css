@@ -2,6 +2,7 @@
      font-family: Roboto;
      background-color:#FFFFFF;
      color:#000000;
+     overflow-x:hidden;
 }
 .loader .loader-container {
     width: 50px;
@@ -87,7 +88,7 @@
 .header-menu a{
    color: #FFFFFF;
    padding-top:14px;
-   padding-left: 15px !important;
+   padding-left: 12px !important;
 }
 .header-menu a:hover{
     color:#020922;
@@ -222,9 +223,14 @@
     font-size:30px;
     padding-top: 20px;
 }
-.sti-high-internal-600, .sti-high-internal-plus{
+.sti-high-internal-600{
     color:#008080;
     font-size:44px;
+}
+
+.sti-high-internal-plus{
+    color:#008080;
+    font-size:26px;
 }
 .sti-high-internal{
     color:#008080;
@@ -325,15 +331,31 @@ ul.banner-border li {
     font-family: Roboto Medium;
     margin-bottom:7px;
 }
+.abt-heading h4{
+    color: #022539;
+    font-family: Roboto Light;
+    margin-bottom:20px;
+}
 
 .abt-heading p{
     color: #444444;
 }
+.abt-icon-bg{
+     background-color:#FCEBCB;
+}
+.abt-icon-bg img
+{
+    padding:30px;
+}
+.abt-text
+{
+    padding: 0 !important;
+}
 
 .about.tab-content {
     background-color:#F8F8F8;
-    height:250px;
-    margin-top:15px !important;
+    height:400px;
+    margin:15px 0 0 0!important;
 }
 .about-nav-link {
     border:0;
@@ -349,26 +371,78 @@ ul.banner-border li {
     font-family: Roboto Medium;
     border-bottom: 2px solid #008080;
 }
+.abt-pscst-div{
+    padding-top:40px;
+}
+.abt-cdac-div{
+    padding-top:30px;
+    border-left: 2px solid #707070;
+}
+
 .abt-pscst{
     font-family: Roboto Medium;
-    font-size:28px;
+    font-size:30px;
     color:#022539;
 }
+
 .abt-initiate-text{
     font-family: Roboto Medium;
-    font-size:22px;
+    font-size:24px;
     color:#022539;
 }
+
 .abt-gop-text{
     font-family: Roboto Light;
-    font-size:18px;
+    font-size:20px;
     color:#022539;
 }
+
 .abt-contrib-div{
     background-color:#FFFFFF;
     position:relative;
     bottom:5px;
-    height:300px;
+    height:150px;
+    padding:30px;
+    margin-top: 10px;
+    overflow-y:hidden;
+}
+
+.first-contrib-img:hover {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+.owl-item{
+    height:100px !important;
+    width:100px !important;
+    margin-right:40px !important;
+}
+
+.owl-nav button {
+  position: absolute;
+  top: 50%;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.38) !important;
+}
+
+.owl-nav button.owl-prev {
+  left: -15;
+}
+
+.owl-nav button.owl-next {
+  right: -35;
+}
+
+.owl-nav button:focus {
+    outline: none;
 }
 
 /* Indicator page css  */
@@ -424,6 +498,10 @@ ul.banner-border li {
 .accordion-button {
     background-color:#F1F1F1 !important;
 }
+.indicator-tabs{
+    margin-top:50px;
+}
+
 .indi_div{
     margin-top: 16px;
 }
@@ -442,7 +520,26 @@ ul.banner-border li {
 .filterDiv a:active, .filterDiv a:hover {
     color:#008080 !important;
 }
-tr:nth-child(even) {background: #FCFCFC}
+tr:nth-child(even) {
+    background: #FCFCFC;
+    }
+
+.indicator-label{
+   font-size:20px;
+   margin:20px 0 10px 0;
+}
+#highsecondarychart-container, #barchart-container, #nestedchart-container, #ict-india-chart-container, #ict-pb-chart-container, #chart-container{
+    margin:80px 0 30px 0;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border: 1px solid #c1c1c1;
+    text-align:center;
+}
+#raphael-paper-2{
+    height:460px !important;
+    margin-top:10px;
+}
+
+
 
 /* accordion css */
 
@@ -454,6 +551,10 @@ tr:nth-child(even) {background: #FCFCFC}
 /* technology page css */
 #tbody{
     line-height:22px;
+}
+.tech-table-heading{
+    background-color:#C8EAE1 !important;
+    text-align:center;
 }
 
 

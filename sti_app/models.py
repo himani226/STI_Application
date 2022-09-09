@@ -61,17 +61,6 @@ class HomePlanPolicies(models.Model):
         return self.home_plan_policies_title
 
 
-# about page data will be stored here
-
-
-class AboutData(models.Model):
-    about_text = models.TextField(null=True)
-    pub_date = models.DateTimeField(default=datetime.now, blank=True)
-
-    def __str__(self):
-        return self.about_text
-
-
 class Spotlight(models.Model):
     spotlight_image = models.ImageField(blank=True, upload_to='spotlight_image')
     spotlight_title = models.TextField(null=True)

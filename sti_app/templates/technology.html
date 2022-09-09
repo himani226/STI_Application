@@ -23,10 +23,10 @@
                     <div class="col-lg-12 col-md-12">
                         <p class="filters">Technology Areas</p>
                         <div class="row filterDiv">
-                            <hr style="width:82%;text-align:left;margin-top:5px;">
+                            <hr style="width:85%;text-align:left;margin-top:5px;">
                             {% for tp in tech_area %}
                              <a href="JavaScript:void(0);" name="{{ tp.technology_area_name }}" class="row tech-area">
-                                    <div class="col-lg-12 col-md-12">
+                                    <div id="tech-{{ forloop.counter }}" class="col-lg-12 col-md-12" style="width:85%">
                                        {{ tp.technology_area_name }}
                                     </div>
                              </a>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="col-lg-12 col-md-12 all ">
                     <table id="technology_area" class="table table-responsive" style="display:none">
-                        <thead class="indicator-table-heading" style="font-weight:bold;font-size:14px;">
+                        <thead class="tech-table-heading" style="font-weight:bold;font-size:14px;">
                         <tr>
                             <th>Name of the Technology</th>
                             <th>Inventor Details</th>

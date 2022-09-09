@@ -6,7 +6,7 @@ from django.shortcuts import render
 from sti_app.responses.general_response import (no_success_response,
                                                 success_response)
 
-from sti_app.models import HeaderMenu, FooterMenu, AboutData, HomeData, Spotlight, Stage, Pillar, Indicator, \
+from sti_app.models import HeaderMenu, FooterMenu, HomeData, Spotlight, Stage, Pillar, Indicator, \
     IndicatorDefinition, HomePlanPolicies, HomeSlider, Banner, TechnologyArea, TechnologyAreaDetail, Contributor
 
 
@@ -26,12 +26,11 @@ def index(request):
 
 
 def about(request):
-    about_data = AboutData.objects.all()
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     contributor = Contributor.objects.all()
-    return render(request, 'about.html', context={'about_data': about_data, 'header_menu_name': header_menu_name,
+    return render(request, 'about.html', context={ 'header_menu_name': header_menu_name,
                                                   'footer_menu_name': footer_menu_name, 'banner': banner,'contributor':contributor})
 
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import HeaderMenu, FooterMenu, Banner, HomeData, HomeSlider, HomePlanPolicies, Spotlight, \
-    AboutData, Stage, Pillar, Indicator, IndicatorDefinition, TechnologyArea, TechnologyAreaDetail, Contributor
+     Stage, Pillar, Indicator, IndicatorDefinition, TechnologyArea, TechnologyAreaDetail, Contributor
 
 # Register your models here.
 admin.site.register(HeaderMenu),
@@ -10,7 +10,6 @@ admin.site.register(HomeData),
 admin.site.register(HomeSlider),
 admin.site.register(HomePlanPolicies),
 admin.site.register(Spotlight),
-admin.site.register(AboutData),
 admin.site.register(Stage),
 admin.site.register(Contributor),
 

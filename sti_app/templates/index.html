@@ -6,12 +6,14 @@
     <meta content="" name="keywords" />
     <meta content="" name="description" />
     <title>{% block title %}Home{% endblock %}</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <script src="{% static 'js/countup.min.js' %}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css'>
      {% block style %}
     {% endblock style %}
 </head>
@@ -96,10 +98,10 @@
         <div class="col-lg-12 col-sm-12 col-md-12 home_info_data all">
             <div class="row g-0">
                 {% for homedata in home_data %}
-                     <div class="col-lg-4 col-md-4">
+                     <!--<div class="col-lg-4 col-md-4">
                          <img src="{{ homedata.home_info_image.url }}" width="100%" height="100%"/>
-                     </div>
-                     <div class="col-lg-8 col-md-8 home_info text-justify" style="font-size:18px">
+                     </div>-->
+                     <div class=" home_info text-justify" style="font-size:18px">
                             <p>{{homedata.home_info_text}}</p>
                      </div>
                  {% endfor %}
@@ -113,7 +115,7 @@
             <div class="container">
                 <a href="{% url 'framework' %}"><span>STI Data Architecture Framework</span></a>
                  <div class="col-lg-12 col-sm-12 col-md-12 data-arch" style="font-size:26px">
-                    <span>Data Architecture Framework defines components of Science, Technology & Innovation</span>
+                    <span></span>
                  </div>
             </div>
         </div>
@@ -176,7 +178,7 @@
                         <div class="col-lg-3 col-sm-12 col-md-3">
                             <div class="row">
                                  <div class="col-lg-5 col-sm-12 col-md-5 sti-high-6">
-                                     <span data-from="0" data-to="600" data-time="4000" class="count3 sti-high-internal-600">0</span>
+                                     <span data-from="0" data-to="600" data-time="8000" class="count3 sti-high-internal-600">0</span>
                                     <span class="sti-high-internal-plus">+</span>
                                  </div>
                                 <div class="col-lg-7 col-sm-12 col-md-7">
@@ -188,7 +190,7 @@
                         <div class="col-lg-3 col-sm-12 col-md-3 sti-internal-div">
                             <div class="row">
                                  <div class="col-lg-7 col-sm-12 col-md-7 sti-high-15">
-                                     <span data-from="0" data-to="1500" data-time="4000" class="count2 sti-high-internal-600">0</span>
+                                     <span data-from="0" data-to="1500" data-time="8000" class="count2 sti-high-internal-600">0</span>
                                     <span class="sti-high-internal-plus">+</span>
                                  </div>
                                 <div class="col-lg-5 col-sm-12 col-md-5">
@@ -200,7 +202,7 @@
                         <div class="col-lg-3 col-sm-12 col-md-3">
                             <div class="row">
                                  <div class="col-lg-5 col-sm-12 col-md-5 sti-high-10">
-                                     <span data-from="0" data-to="10" data-time="4000" class="count1 sti-high-internal-600">0</span>
+                                     <span data-from="0" data-to="10" data-time="8000" class="count1 sti-high-internal-600">0</span>
                                     <span class="sti-high-internal-plus">+</span>
                                  </div>
                                 <div class="col-lg-7 col-sm-12 col-md-7 sti-high-6">
@@ -274,7 +276,7 @@
                           <span class="dot"></span>
                           <span class="dot"></span>
                     </div>
-                    <a href="#" class="text-decoration-none">Browse all 120 initiatives</a>
+                    <a href="#" class="text-decoration-none">Browse all</a>
                 </div>
             </div>
         </div>

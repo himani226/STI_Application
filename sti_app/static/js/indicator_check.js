@@ -75,7 +75,7 @@ $(document).ready(function(){
                                     var indicator_label = value["indicator_title"];
                                     var indicator_def = value["indicator_description"];
                                     var indicator_id = value["id"];
-                                    var template = '<div class="col-lg-12 col-md-12"><strong>'+indicator_label+'</strong></div><div class="col-lg-12 col-md-12">'+indicator_def+'</div>';
+                                    var template = '<div class="col-lg-12 col-md-12 indicator-label text-center"><strong>'+indicator_label+'</strong></div><div class="col-lg-12 col-md-12">'+indicator_def+'</div>';
                                     indicator2.style.display = "flex";
                                     $("#indicator2").append(template);
                                     var myDiv = document.getElementById("chart-container");
@@ -268,6 +268,7 @@ $(document).ready(function(){
                                     const dataSource = {
                                         chart: {
                                         baseFont:"Roboto",
+                                        chartTopMargin: "50",
                                         yaxisname: "No. of Schools",
                                         formatnumberscale: "1",
                                         numvisibleplot: "8",
@@ -349,8 +350,6 @@ $(document).ready(function(){
                                     const dataSource = {
                                         chart: {
                                         baseFont:"Roboto",
-                                        caption: "ICT Enabled Schools",
-                                        subcaption: "2017 - 2020",
                                         pyaxisname: "ICT Enabled Schools in India",
                                         syaxisname: "% of ICT Labs",
                                         snumbersuffix: "%",
