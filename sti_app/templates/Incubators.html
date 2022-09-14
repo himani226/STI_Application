@@ -1,0 +1,112 @@
+{% extends 'Home.html' %}
+{% load static %}
+
+<title>{% block title %}Incubators{% endblock %}</title>
+{% block content %}
+<div class="container-fluid">
+    <img src="{% static 'images/technology_slide.png' %}" width="100%" height="200px"/>
+    <div class="bread">
+        <nav class="container" style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'Home' %}">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Incubators</li>
+            </ol>
+        </nav>
+     </div>
+    <div class="container all">
+        <div class="col-lg-12 col-md-12 abt-heading">
+            <h3>Incubators</h3>
+            <h4>Incubation & Startup Landscape</h4>
+            <p>Punjab is among the top 6 most innovative states as per the latest India Innovation Index Ranking and has been recognized as 'Leader' for
+            developing strong startup ecosystem. The State Government is working consistently towards development of robust ecosystem for promoting
+            innovations to enhance competitiveness and boost economic growth. The Platform showcases the existing strengths and opportunities w.r.t
+            Incubation & Startup Landscape Punjab. It provides complete mapping of incubators set up by different ministries in the State as well as highlight the statistics of Startups</p>
+        </div>
+        <div class="col-lg-12 col-md-12 text-center abt-heading all">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 abt-heading">
+                    <h3>Incubation Growth Trend</h3>
+                </div>
+                <div class="col-lg-6 col-md-6 abt-heading">
+                    <h3>Incubators Regional Spread</h3>
+                </div>
+            </div>
+            <img src="{% static 'images/incubators_roadmap.png' %}" alt=""/>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-sm-12 col-md-12 sti-data sti-data-arch contrib-div" style="font-size:35px">
+        <div class="container">
+            <p>Support Network</p>
+            <div class="col-lg-12 col-sm-12 col-md-12 abt-contrib-div">
+                 <div class="row support-carousel owl-carousel">
+                     <div class="first-contrib-img">
+                         <a href="#" target="_blank" onclick="return external_link();">
+                            <img src="{% static 'images/support_1.png' %}" alt=""/>
+                         </a>
+                     </div>
+                     <div class="first-contrib-img">
+                         <a href="#" target="_blank" onclick="return external_link();">
+                            <img src="{% static 'images/support_2.png' %}" alt="" />
+                         </a>
+                     </div>
+                     <div class="first-contrib-img">
+                         <a href="#" target="_blank" onclick="return external_link();">
+                           <img src="{% static 'images/support_3.png' %}" alt="" />
+                         </a>
+                     </div>
+                     <div class="first-contrib-img">
+                         <a href="#" target="_blank" onclick="return external_link();">
+                            <img src="{% static 'images/support_4.png' %}" alt="" />
+                         </a>
+                     </div>
+                     <div class="first-contrib-img">
+                         <a href="#" target="_blank" onclick="return external_link();">
+                            <img src="{% static 'images/support_5.png' %}" alt=""/>
+                         </a>
+                     </div>
+                     <div class="first-contrib-img">
+                         <a href="#" target="_blank" onclick="return external_link();">
+                            <img src="{% static 'images/support_6.png' %}" alt="" />
+                         </a>
+                     </div>
+                     <div class="first-contrib-img">
+                         <a href="#" target="_blank" onclick="return external_link();">
+                            <img src="{% static 'images/support_7.png' %}" alt=""/>
+                         </a>
+                     </div>
+                     <div class="first-contrib-img">
+                         <a href="#" target="_blank" onclick="return external_link();">
+                            <img src="{% static 'images/support_8.png' %}" alt="" />
+                         </a>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+<script type="text/javascript">
+    $('.support-carousel').owlCarousel({
+
+        autoHeight: true,
+        autoplayTimeout: 2000,
+        smartSpeed: 800,
+        rewind: true,
+        nav: true,
+        items:4,
+        navText: [
+        "<i class='fa fa-caret-left'></i>",
+        "<i class='fa fa-caret-right'></i>"
+        ],
+        autoplay: true,
+        autoplayHoverPause: true,
+        dots:false,
+    })
+</script>
+
+{% endblock javascript %}
+

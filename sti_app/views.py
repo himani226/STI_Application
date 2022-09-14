@@ -19,7 +19,7 @@ def index(request):
     framework = Stage.objects.all()
     policies = HomePlanPolicies.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'index.html',
+    return render(request, 'Home.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'slider': slider,
                            'home_data': home_data, 'spotlight': spotlight, 'framework': framework,
                            'policies': policies, 'banner': banner})
@@ -30,7 +30,7 @@ def about(request):
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     contributor = Contributor.objects.all()
-    return render(request, 'about.html', context={ 'header_menu_name': header_menu_name,
+    return render(request, 'About.html', context={ 'header_menu_name': header_menu_name,
                                                   'footer_menu_name': footer_menu_name, 'banner': banner,'contributor':contributor})
 
 
@@ -39,7 +39,7 @@ def indicators(request):
     footer_menu_name = FooterMenu.objects.all()
     stage = Stage.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'indicators.html',
+    return render(request, 'STI Indicators.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'stage': stage,
                            'banner': banner})
 
@@ -105,7 +105,7 @@ def technology(request):
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     tech_area = TechnologyArea.objects.all()
-    return render(request, 'technology.html',
+    return render(request, 'Technology Platform.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'tech_area': tech_area,
                            'banner': banner})
@@ -133,7 +133,7 @@ def incubators(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'incubators.html',
+    return render(request, 'Incubators.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -142,7 +142,7 @@ def framework(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'framework.html',
+    return render(request, 'Framework.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -151,7 +151,7 @@ def instrumentation(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'instrumentation.html',
+    return render(request, 'Instrumentation Facilities.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -160,7 +160,7 @@ def researchers(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'researchers.html',
+    return render(request, 'Researchers Network.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -169,7 +169,7 @@ def portfolio(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'portfolio.html',
+    return render(request, 'IP Portfolio.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -178,7 +178,7 @@ def challenges(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'challenges.html',
+    return render(request, 'Grand Challenges.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -187,7 +187,7 @@ def contact(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'contact.html',
+    return render(request, 'Contact.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -196,7 +196,7 @@ def help(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'help.html',
+    return render(request, 'Help.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -205,7 +205,7 @@ def feedback(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'feedback.html',
+    return render(request, 'Feedback.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -214,7 +214,7 @@ def sitemap(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'sitemap.html',
+    return render(request, 'Sitemap.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -223,7 +223,7 @@ def policies(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'policies.html',
+    return render(request, 'Website Policies.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -232,6 +232,6 @@ def accessibility(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'accessibility.html',
+    return render(request, 'Accessibility.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})

@@ -325,7 +325,24 @@ ul.banner-border li {
 	display: inline;
 	margin: 0 14px;
 }
+
+.bread{
+    background-color: #F8F8F8;
+    padding:10px;
+}
+.bread a{
+    color:#000000;
+    text-decoration:none;
+}
+
+
+.breadcrumb-item.active, .breadcrumb-item a:hover {
+    color: #008080 !important;
+}
+
+
 /*About us page css  */
+
 .abt-heading {
     color: #058180;
     font-family: Roboto Medium;
@@ -401,10 +418,13 @@ ul.banner-border li {
     background-color:#FFFFFF;
     position:relative;
     bottom:5px;
-    height:150px;
+    height:180px;
     padding:30px;
     margin-top: 10px;
     overflow-y:hidden;
+}
+.contrib-div{
+    margin-bottom: 150px;
 }
 
 .first-contrib-img:hover {
@@ -417,9 +437,9 @@ ul.banner-border li {
 }
 
 .owl-item{
-    height:100px !important;
-    width:100px !important;
-    margin-right:40px !important;
+    height:160px !important;
+    width:160px !important;
+    margin:0 80px !important;
 }
 
 .owl-nav button {
