@@ -577,7 +577,72 @@ tr:nth-child(even) {
     text-align:center;
 }
 
+/* Incubators */
 
+.startupIndiaDiv{
+    background-color:#022539;
+    color:#F89522;
+    height:600px;
+}
+.startupIndiaDiv h3{
+    font-size:50px;
+}
+.startupIndiaDiv p{
+    font-size:35px;
+}
+.incub-number{
+    background-color:#EFEFEF;
+    font-size: 40px;
+    height:300px;
+    margin-right: 20px;
+    width: 23% !important;
+    color:#008080;
+}
+.incub-number:hover{
+    color:#F89522;
+    background-color:#C8EAE1;
+    transform: scale(1.1);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+.incub-number p{
+    color:#022539;
+    font-size:28px;
+}
+.incub-heading span{
+    color:#058180;
+    font-size:30px;
+    font-family:Roboto Medium;
+    border-bottom: 3px solid #058180;
+    padding-bottom:7px;
+}
+.incub-regional{
+    border-left: 1px solid #C8EAE1;
+}
+.incubationDiv{
+    margin-bottom:45px;
+}
+.iconsDiv{
+    background-color:#EFEFEF;
+    height:750px;
+}
+.card{
+    width:16rem !important;
+    border-radius:0px !important;
+    border:0px 1px 1px 0px solid #DFDFDF !important;
+}
+.card-img-top{
+    padding:40px;
+}
+.card-text{
+    color:#008080 !important;
+    padding:0 10px 10px 10px;
+    font-size:18px;
+}
+
+.support-network img{
+    width:150%;
+    height:100%;
+}
 /* footer css */
 
 .footer-bg{

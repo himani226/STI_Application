@@ -39,7 +39,7 @@ def indicators(request):
     footer_menu_name = FooterMenu.objects.all()
     stage = Stage.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'STI Indicators.html',
+    return render(request, 'STI_Indicators.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'stage': stage,
                            'banner': banner})
 
@@ -105,7 +105,7 @@ def technology(request):
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     tech_area = TechnologyArea.objects.all()
-    return render(request, 'Technology Platform.html',
+    return render(request, 'Technology_Platform.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'tech_area': tech_area,
                            'banner': banner})
@@ -151,7 +151,7 @@ def instrumentation(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'Instrumentation Facilities.html',
+    return render(request, 'Instrumentation_Facilities.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -160,7 +160,7 @@ def researchers(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'Researchers Network.html',
+    return render(request, 'Researchers_Network.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -169,7 +169,7 @@ def portfolio(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'IP Portfolio.html',
+    return render(request, 'IP_Portfolio.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -178,7 +178,7 @@ def challenges(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'Grand Challenges.html',
+    return render(request, 'Grand_Challenges.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -223,7 +223,7 @@ def policies(request):
     header_menu_name = HeaderMenu.objects.all()
     footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
-    return render(request, 'Website Policies.html',
+    return render(request, 'Website_Policies.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
 
@@ -235,3 +235,16 @@ def accessibility(request):
     return render(request, 'Accessibility.html',
                   context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
                            'banner': banner})
+
+
+def custom_page_not_found_view(request, exception):
+    return render(request, "errors/404.html", {})
+
+def custom_error_view(request, exception=None):
+    return render(request, "errors/500.html", {})
+
+def custom_permission_denied_view(request, exception=None):
+    return render(request, "errors/403.html", {})
+
+def custom_bad_request_view(request, exception=None):
+    return render(request, "errors/400.html", {})
