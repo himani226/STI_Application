@@ -26,6 +26,6 @@ handler400 = 'sti_app.views.custom_bad_request_view'
 
 urlpatterns = [
     path('', include('sti_app.urls')),
-    path('admin/', admin.site.urls),
+    path('sti_admin_panel/', admin.site.urls),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

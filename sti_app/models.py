@@ -13,16 +13,6 @@ class HeaderMenu(models.Model):
         return self.menu_name
 
 
-# footermenu table has been created to load the data from database
-class FooterMenu(models.Model):
-    menu_name = models.CharField(max_length=200)
-    menu_link = models.CharField(max_length=200, default='#')
-    pub_date = models.DateTimeField(default=datetime.now, blank=True)
-
-    def __str__(self):
-        return self.menu_name
-
-
 # banner table has been created to load the data from database
 class Banner(models.Model):
     banner_title = models.CharField(null=True, max_length=200)
@@ -143,8 +133,7 @@ class IndicatorDefinition(models.Model):
         }
 
 
-class \
-        TechnologyArea(models.Model):
+class TechnologyArea(models.Model):
     technology_area_name = models.CharField(primary_key=True, max_length=200)
     pub_date = models.DateTimeField(default=datetime.now, blank=True)
 

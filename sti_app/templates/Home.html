@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css" />
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css'>
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
      {% block style %}
     {% endblock style %}
 </head>
@@ -36,13 +37,13 @@
                                     <a class="b-button black" href="#">B</a>
                                 </div>
                         </div> |
-                        <a href="">ਪੰਜਾਬੀ</a>&nbsp;&nbsp;<img src="{% static 'images/Polygon 8.png' %}"/>
+                        <a href="">ਪੰਜਾਬੀ</a>&nbsp;&nbsp;<img src="{% static 'images/Home/Polygon 8.png' %}"/>
                     </span>
                 </div>
                 <div class="col-lg-8 col-sm-12 col-md-8">
                     <div class="row">
                         <div class="col-lg-1 col-sm-12 col-md-1 logo">
-                            <img src="{% static 'images/Logo.png' %}" width="100px"/>
+                            <img src="{% static 'images/Home/Logo.png' %}" width="100px"/>
                         </div>
                         <div class="col-lg-11 col-sm-12 col-md-11 header-title" style="font-size:30px">
                             <span>Science, Technology & Innovation Observatory, Punjab</span>
@@ -51,13 +52,13 @@
                 </div>
                     <div class="col-lg-2 col-sm-6 col-md-2 icons">
                     <span>
-                        <a class="" href="#"><img src="{% static 'images/facebook.png' %}"/></a>
-                        <a class="" href="#"><img src="{% static 'images/youtube.png' %}"/></a>
-                        <a class="" href="#"><img src="{% static 'images/twitter.png' %}"/></i></a>
+                        <a class="" href="#"><img src="{% static 'images/Home/facebook.png' %}"/></a>
+                        <a class="" href="#"><img src="{% static 'images/Home/youtube.png' %}"/></a>
+                        <a class="" href="#"><img src="{% static 'images/Home/twitter.png' %}"/></i></a>
                     </span>
                 </div>
                 <div class="col-lg-2 col-sm-6 col-md-2 dst-logo">
-                    <img src="{% static 'images/dst_logo.png' %}" width="150px"/>
+                    <img src="{% static 'images/Home/dst_logo.png' %}" width="150px"/>
                 </div>
             </div>
         </div>
@@ -143,18 +144,18 @@
                          <div class="col-lg-2 col-sm-12 col-md-2">
                          </div>
                          <div class="col-lg-8 col-sm-12 col-md-8 text-center pb-image">
-                            <img src="{% static 'images/punjab_map.png' %}" width="80%" height="80%"/>
+                            <img src="{% static 'images/Home/punjab_map.png' %}" width="80%" height="80%"/>
                              <a href="#"><span class="pb-number pb-number5"><span class="pb-nb-text">Universities </span>
-                                 <img src="{% static 'images/sti_number_5.png' %}" /></span></a><br>
-                             <a href="#"><span class="pb-number pb-number2"><img src="{% static 'images/sti_number_2.png' %}" />
+                                 <img src="{% static 'images/Home/sti_number_5.png' %}" /></span></a><br>
+                             <a href="#"><span class="pb-number pb-number2"><img src="{% static 'images/Home/sti_number_2.png' %}" />
                                  <span class="pb-nb-text">DSIR Recognized R&D Units</span></span></a><br>
                              <a href="#"><span class="pb-number pb-number3"><span class="pb-nb-text">Incubators</span>
-                                 <img src="{% static 'images/sti_number_3.png' %}" /></span></a><br>
-                             <a href="#"><span class="pb-number pb-number4"><img src="{% static 'images/sti_number_4.png' %}"/>
+                                 <img src="{% static 'images/Home/sti_number_3.png' %}" /></span></a><br>
+                             <a href="#"><span class="pb-number pb-number4"><img src="{% static 'images/Home/sti_number_4.png' %}"/>
                                  <span class="pb-nb-text">Center of Excellence</span></span></a><br>
                              <a href="#"><span class="pb-number pb-number1"><span class="pb-nb-text">Institutes of National Importance</span>
-                                 <img src="{% static 'images/sti_number_1.png' %}" /></span></a><br>
-                             <a href="#"><span class="pb-number pb-number6"><img src="{% static 'images/sti_number_6.png' %}"/>
+                                 <img src="{% static 'images/Home/sti_number_1.png' %}" /></span></a><br>
+                             <a href="#"><span class="pb-number pb-number6"><img src="{% static 'images/Home/sti_number_6.png' %}"/>
                                  <span class="pb-nb-text">R&D Institutes </span></span></a>
                          </div>
                          <div class="col-lg-2 col-sm-12 col-md-2">
@@ -266,19 +267,13 @@
                              </div>
                         </div>
                     </div>
-                <div class="col-lg-8 col-sm-12 col-md-8 init-browse text-center">
-                    <div class="text-center">
-                          <span class="dot"></span>
-                          <span class="dot"></span>
-                          <span class="dot"></span>
+                    <div class="col-lg-8 col-sm-12 col-md-8 init-browse text-center">
+                        <a href="{% url 'Spotlight' %}" class="text-decoration-none">Browse all</a>
                     </div>
-                    <a href="#" class="text-decoration-none">Browse all</a>
                 </div>
-            </div>
         </div>
     </div>
-
-         <!-- STI Spotlight ends -->
+    <!-- STI Spotlight ends -->
         {% endblock %}
 <!-- Internal Content Closed-->
 
@@ -306,15 +301,15 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 footer-text text-center">
                     <span class="footer-text-clr">An initiative of</span><br>
-                        <img src="{% static 'images/footer_psct.png' %}" alt=""/><br><span>Punjab State Council for Science & Technology</span> <br><br>
+                        <img src="{% static 'images/Home/footer_psct.png' %}" alt=""/><br><span>Punjab State Council for Science & Technology</span> <br><br>
                     <span class="footer-text-clr">Supported By <br></span>
-                        <img src="{% static 'images/footer_dst.png' %}" alt=""/><br><span>Department of Science & Technology, Government of India</span><br/><br>
+                        <img src="{% static 'images/Home/footer_dst.png' %}" alt=""/><br><span>Department of Science & Technology, Government of India</span><br/><br>
 
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 footer-text footer-menu-collab text-center">
                     <span class="footer-text-clr">In Collaboration with <br></span><span>
-                        <img src="{% static 'images/footer_ctier.png' %}" alt=""/><br>Centre for Technology, Innovation & Economic Research <br><br><br>
-                        <img src="{% static 'images/footer_cdac.png' %}" alt=""/><br>Centre for Development of Advanced Computing</span><br/>
+                        <img src="{% static 'images/Home/footer_ctier.png' %}" alt=""/><br>Centre for Technology, Innovation & Economic Research <br><br><br>
+                        <img src="{% static 'images/Home/footer_cdac.png' %}" alt=""/><br>Centre for Development of Advanced Computing</span><br/>
 
                 </div>
             </div>
@@ -323,7 +318,7 @@
                     <ul class="footer-menu">
                         <li><a class="" href="{% url 'About' %}">About Portal</a></li>|
                         <li><a class="" href="{% url 'Help' %}">Help</a></li>|
-                        <li><a class="" href="{% url 'Feedback' %}">User Feedback</a></li>|
+                        <!--<li><a class="" href="{% url 'Feedback' %}">User Feedback</a></li>|-->
                         <li><a class="" href="{% url 'Accessibility' %}">Accessibility</a></li>|
                         <li><a class="" href="{%url 'Contact' %}">Contact Us</a></li>|
                         <li><a class="" href="{% url 'Sitemap' %}">Sitemap</a></li>|

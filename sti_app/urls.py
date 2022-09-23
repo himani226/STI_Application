@@ -30,5 +30,6 @@ urlpatterns = [
     path(r'Feedback/', views.feedback, name='Feedback'),
     path(r'Sitemap/', views.sitemap, name='Sitemap'),
     path(r'Accessibility/', views.accessibility, name='Accessibility'),
+    path(r'Spotlight/', views.spotlight, name='Spotlight'),
 
 ]

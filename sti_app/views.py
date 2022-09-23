@@ -1,18 +1,14 @@
 import json
-
 from django.http import HttpResponse, response
 from django.shortcuts import render
-
 from sti_app.responses.general_response import (no_success_response,
                                                 success_response)
-
-from sti_app.models import HeaderMenu, FooterMenu, HomeData, Spotlight, Stage, Pillar, Indicator, \
+from sti_app.models import HeaderMenu, HomeData, Spotlight, Stage, Pillar, Indicator, \
     IndicatorDefinition, HomePlanPolicies, HomeSlider, Banner, TechnologyArea, TechnologyAreaDetail, Contributor
 
 
 def index(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     slider = HomeSlider.objects.all()
     home_data = HomeData.objects.all()
     spotlight = Spotlight.objects.all()
@@ -20,27 +16,32 @@ def index(request):
     policies = HomePlanPolicies.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Home.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'slider': slider,
-                           'home_data': home_data, 'spotlight': spotlight, 'framework': framework,
-                           'policies': policies, 'banner': banner})
+                  context={'header_menu_name': header_menu_name,
+                           'slider': slider,
+                           'home_data': home_data,
+                           'spotlight': spotlight,
+                           'framework': framework,
+                           'policies': policies,
+                           'banner': banner})
 
 
 def about(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     contributor = Contributor.objects.all()
-    return render(request, 'About.html', context={ 'header_menu_name': header_menu_name,
-                                                  'footer_menu_name': footer_menu_name, 'banner': banner,'contributor':contributor})
+    return render(request, 'About.html',
+                  context={ 'header_menu_name': header_menu_name,
+                            'banner': banner,
+                            'contributor':contributor})
 
 
 def indicators(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     stage = Stage.objects.all()
     banner = Banner.objects.all()
     return render(request, 'STI_Indicators.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name, 'stage': stage,
+                  context={'header_menu_name': header_menu_name,
+                           'stage': stage,
                            'banner': banner})
 
 
@@ -102,11 +103,10 @@ def indicatorsdef(request):
 
 def technology(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     tech_area = TechnologyArea.objects.all()
     return render(request, 'Technology_Platform.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'tech_area': tech_area,
                            'banner': banner})
 
@@ -131,110 +131,107 @@ def techlist(request):
 
 def incubators(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Incubators.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def framework(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Framework.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def instrumentation(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Instrumentation_Facilities.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def researchers(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Researchers_Network.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def portfolio(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'IP_Portfolio.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def challenges(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Grand_Challenges.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def contact(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Contact.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def help(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Help.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def feedback(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Feedback.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def sitemap(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Sitemap.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def policies(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Website_Policies.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
 
 
 def accessibility(request):
     header_menu_name = HeaderMenu.objects.all()
-    footer_menu_name = FooterMenu.objects.all()
     banner = Banner.objects.all()
     return render(request, 'Accessibility.html',
-                  context={'header_menu_name': header_menu_name, 'footer_menu_name': footer_menu_name,
+                  context={'header_menu_name': header_menu_name,
                            'banner': banner})
+
+def spotlight(request):
+    header_menu_name = HeaderMenu.objects.all()
+    banner = Banner.objects.all()
+    spotlight = Spotlight.objects.all()
+    return render(request, 'Spotlight.html',
+                  context={'header_menu_name': header_menu_name,
+                           'banner': banner,
+                           'spotlight': spotlight})
 
 
 def custom_page_not_found_view(request, exception):

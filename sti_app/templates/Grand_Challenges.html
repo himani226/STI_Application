@@ -13,10 +13,508 @@
             </ol>
         </nav>
      </div>
-</div>
-<div class="container all">
-    <div class="col-lg-12 col-md-12 tech-heading">
-        <h3>Grand Challenges</h3>
+    <div class="container all">
+        <div class="col-lg-12 col-md-12 abt-heading">
+            <h3>Grand Challenges</h3>
+            <p>The Platform provides congenial environment to connect people, curate local challenges, co-develop ideas and facilitate innovative solutions.
+                The platform has been conceptualized to offer dedicated feature to highlight challenges linked with the development priorities &amp; sustainable development
+                goals of the State as well as technological needs of the industry and enterprises, which have been mapped by holding interactive discussions with Administrative Departments
+                and Industries/Industrial Associations. The initiative has also been taken to provide technology based solutions developed by Research Institutes, Universities, Innovators
+                and Startups for addressing identified problems. In future, platform is envisaged to act networking platform to connect technology providers with technology seekers.</p>
+        </div>
     </div>
-</div>
+    <div class="stateChallengesDiv all">
+        <div class="container col-lg-12 col-md-12">
+            <h3 class="all" style="padding:50px 0 20px 0;">State Challenges</h3>
+                <nav id="state-nav">
+                    <div id="nav-tab" class="nav nav-tabs state-nav-tabs" role="tablist">
+                        <button id="nav-agriculture-tab" class="card stateCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-agriculture" aria-controls="nav-agriculture" aria-selected="false">
+                            <img src="{% static 'images/Grand_Challenges/agriculture_icon.png' %}" class="card-img-top" alt="Agriculture">
+                            <div class="card-body challenges-card-body">
+                                <p class="card-text text-center">Agriculture</p>
+                            </div>
+                        </button>
+                        <button id="nav-food-tab" class="card stateCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-food" aria-controls="nav-food" aria-selected="false">
+                            <img src="{% static 'images/Incubators/incub_icon2.png' %}" class="card-img-top" alt="Food Processing">
+                            <div class="card-body challenges-card-body">
+                                <p class="card-text text-center">Food Processing</p>
+                            </div>
+                         </button>
+                        <button id="nav-animal-tab" class="card stateCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-animal" aria-controls="nav-animal" aria-selected="false">
+                            <img src="{% static 'images/Grand_Challenges/animal_icon.png' %}" class="card-img-top" alt="Animal Husbandry">
+                            <div class="card-body challenges-card-body">
+                                <p class="card-text text-center">Animal Husbandry</p>
+                            </div>
+                        </button>
+                        <button id="nav-healthcare-tab" class="card stateCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-healthcare" aria-controls="nav-healthcare" aria-selected="false">
+                            <img src="{% static 'images/Incubators/incub_icon5.png' %}" class="card-img-top" alt="Healthcare">
+                            <div class="card-body challenges-card-body">
+                                <p class="card-text text-center">Healthcare</p>
+                            </div>
+                        </button>
+                        <button id="nav-energy-tab" class="card stateCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-energy" aria-controls="nav-energy" aria-selected="false">
+                            <img src="{% static 'images/Incubators/incub_icon3.png' %}" class="card-img-top" alt="Energy Environment">
+                            <div class="card-body challenges-card-body">
+                                <p class="card-text text-center">Energy Environment & Climate Change</p>
+                            </div>
+                        </button>
+                    </div>
+                </nav>
+                <div id="nav-tabContent" class="grand tab-content">
+                    <div id="nav-agriculture" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-agriculture-tab">
+                        <div class="col-lg-12 col-md-12 state-tab-div">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                <h4 class="state-content">Agriculture Crop Diversification</h4>
+                                 <ul class="state-content">
+                                     <li>Focused Research and Commercial Efforts on Fruits, Flowers, Vegetables, Oil seed for developing viable alternatives and their value addition.</li>
+                                     <li>Tools and Machinery for acceleration of the diversification -maize grain drier, cotton picker, sugarcane harvester, sugarcane trench planter, oilseed drill,
+                                     vegetable picker, garlic planter, potato planter,required</li>
+                                     <li>Revival of Traditional Crops</li>
+                                 </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/crop.jpg' %}" class="agri-images"  alt="Agriculture Crop Diversification">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 state-tab-div all">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/residue.jpg' %}" class="agri-images" alt="Agri-residue Management">
+                                </div>
+                                <div class="col-lg-6 col-md-6 state-content">
+                                <h4>Agri-residue Management</h4>
+                                 <ul>
+                                     <li>Standardization of improved machinery components for pre-processing of straw.</li>
+                                     <li>Scientific management of lechate from biomass storage sites.</li>
+                                     <li>Scientific management of ash generated from combustion of paddy straw based fuels.</li>
+                                     <li>Need to establish to refaction technology for paddy straw</li>
+                                 </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 state-tab-div all">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 state-content">
+                                <h4 class="state-content">Smart Agriculture</h4>
+                                 <ul class="state-content">
+                                     <li>Tech Intervention for farm chemicals, disease surveillance, water & nutrient requirement</li>
+                                     <li>Zinc micro nutrient deficiency most widespread in Punjab</li>
+                                     <li>Nano based micro-nutrients and fertilisers</li>
+                                     <li>Precision Farming</li>
+                                 </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/smart.jpg' %}" class="agri-images"  alt="Smart Agriculture">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 state-tab-div all">
+                            <div class="row ">
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/farm.jpg' %}" class="agri-images"  alt="Farm Mechanization">
+                                </div>
+                                <div class="col-lg-6 col-md-6 state-content">
+                                <h4>Farm Mechanization</h4>
+                                 <ul>
+                                     <li>Refinement/Standardisation/Efficiency Improvement of Farm Equipment.</li>
+                                     <li>Lack of mechanisation in horticulture and vegetable crops.</li>
+                                     <li>Develop Digital Aggregators for renting farm machinery.</li>
+                                     <li>Drone-As-A-Service (DrAAS) in agriculture.</li>
+                                 </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="nav-food" class="tab-pane container fade all" role="tabpanel" aria-labelledby="nav-food-tab">
+                        <div class="col-lg-12 col-md-12 state-tab-div all">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 state-content">
+                                    <h4 class="state-content"> Food Processing</h4>
+                                     <ul class="state-content">
+                                         <li>Linking agri production with agri-processing-inclusion of rural micro-processing units for primary processing and value addition.</li>
+                                         <li>Value addition of waste generated by f&v units</li>
+                                         <li>Alternate viable options for processing of damaged food grains/ under sized legumes & pulses /broken rice.</li>
+                                         <li>Analysis and management of aflatoxin in food products.</li>
+                                         <li>Smart and biodegradable packaging.</li>
+                                         <li>Block chain technology for supply chain management.</li>
+                                     </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/food.jpg' %}"  class="agri-images" alt="Food Processing">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="nav-animal" class="tab-pane container fade all" role="tabpanel" aria-labelledby="nav-animal-tab">
+                        <div class="col-lg-12 col-md-12 state-tab-div all">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 state-content">
+                                    <h4 class="state-content">Animal Husbandry</h4>
+                                     <ul class="state-content">
+                                         <li>Managing heat stress/ reproductive cycle.</li>
+                                         <li>State 60% deficient in green fodder crop (0.1 % against 5% area under fodder) - tech interventions required.</li>
+                                         <li>Precision dairy farming -sensor based monitoring.</li>
+                                         <li>Ai based early disease diagnosis (mastitis) .</li>
+                                         <li>Managing stray cattle - cost effective nutrition,climate resilient housing & breeding using advance techniques.</li>
+                                         <li>Technology for utilization of citrus peel /other food waste into cattle & poultry feed.</li>
+                                         <li>Valorisation of poultry waste.</li>
+                                     </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/animal.jpg' %}" class="agri-images"  alt="Animal Husbandry">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="nav-healthcare" class="tab-pane container fade all" role="tabpanel" aria-labelledby="nav-healthcare-tab">
+                        <div class="col-lg-12 col-md-12 state-tab-div all">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 state-content">
+                                    <h4 class="state-content">Healthcare</h4>
+                                     <ul class="state-content">
+                                         <li>Detection of pre-malignant & malignant lesions (cervical /breast)</li>
+                                         <li>Non-invasive tools –anemia, sugar,</li>
+                                         <li>Ai platform for screening of disorders in public health facilities</li>
+                                         <li>Pregnancy and newborn screening interventions</li>
+                                         <li>Old age health monitoring & care system</li>
+                                     </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/healthcare.jpg' %}"  class="agri-images" alt="Healthcare">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="nav-energy" class="tab-pane container fade all" role="tabpanel" aria-labelledby="nav-energy-tab">
+                        <div class="col-lg-12 col-md-12 state-tab-div all">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 state-content">
+                                    <h4 class="state-content">Air Pollution</h4>
+                                     <ul class="state-content">
+                                         <li>Disposal of ash collected from agro based boilers. R&d need for utilization of fuel combustion by-products.</li>
+                                         <li>Technological interventions for air pollution control measures in plywood and textile & dyeing industrial sector.</li>
+                                         <li>Controlling indoor air pollution in centrally air-conditioned buildings.</li>
+                                     </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/air.jpg' %}" class="agri-images" alt="Environment">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 state-tab-div all">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/water_pollution.jpg' %}" class="agri-images" alt="Solid Waste Management Challenges">
+                                </div>
+                                <div class="col-lg-6 col-md-6 state-content">
+                                     <h4>Water pollution</h4>
+                                      <ul>
+                                         <li>Low cost village sullage water management system</li>
+                                         <li>Reviving of village ponds to recharge underground water</li>
+                                         <li>Develop low cost online monitoring system for monitoring river quality (ai based models for issuing of future alerts)</li>
+                                         <li>Develop & promote industrial technologies requiring less water</li>
+                                         <li>Reuse of treated waste water</li>
+                                         <li>Effective remediation options of waste water (sewage, dairy, textile etc.)</li>
+                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 state-tab-div all">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 state-content">
+                                    <h4 class="state-content">Solid Waste Management Challenges</h4>
+                                     <ul class="state-content">
+                                         <li>Environmental optimization tools for waste collection systems using gis and its extensions</li>
+                                         <li>Technologies for landfill gas recovery</li>
+                                         <li>Innovative biodegradable materials to substitute multi-layered plastics </li>
+                                         <li>Safe disposal measures for batteries and domestic hazardous waste</li>
+                                         <li>Water-based dust suppression systems for c&d sites to minimize particulate mater</li>
+                                     </ul>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/solid_waste.jpg' %}" class="agri-images" alt="Solid Waste Management Challenges">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 state-tab-div all">
+                            <div class="row">
+                                 <div class="col-lg-6 col-md-6">
+                                    <img src="{% static 'images/Grand_Challenges/State/energy.jpg' %}" class="agri-images" alt="Energy">
+                                </div>
+                                <div class="col-lg-6 col-md-6 state-content">
+                                    <h4>Energy</h4>
+                                     <ul>
+                                         <li>Technology for new sources of energy-compressed biogas, manufacturing </li>
+                                         <li>Low cost solar tracking system</li>
+                                         <li>Workable models for cleaning of solar panels</li>
+                                         <li>Introduce scientific processing and treatment of municipal, urban and industrial solid waste to target additional power generation</li>
+                                         <li>Network of e-charging stations</li>
+                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="industryChallengesDiv all">
+        <div class="container col-lg-12 col-md-12 ">
+            <h3 style="padding:20px 0;">Industry Challenges</h3>
+            <nav id="industry-nav">
+                <div id="nav-industry-tab" class="nav nav-tabs industry-nav-tabs" role="tablist">
+                    <button id="nav-bicycle-tab" class="card industryCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-bicycle" aria-controls="nav-bicycle" aria-selected="false">
+                        <img src="{% static 'images/Incubators/incub_icon2.png' %}" class="card-img-top" alt="Bicycle">
+                        <div class="card-body challenges-card-body">
+                            <p class="card-text text-center">Bicycle</p>
+                        </div>
+                    </button>
+                    <button id="nav-forging-tab" class="card industryCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-forging" aria-controls="nav-forging" aria-selected="false">
+                        <img src="{% static 'images/Incubators/incub_icon2.png' %}" class="card-img-top" alt="Forging">
+                        <div class="card-body challenges-card-body">
+                            <p class="card-text text-center">Forging cluster</p>
+                        </div>
+                     </button>
+                    <button id="nav-textile-tab" class="card industryCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-textile" aria-controls="nav-textile" aria-selected="false">
+                        <img src="{% static 'images/Incubators/incub_icon1.png' %}" class="card-img-top" alt="Textile">
+                        <div class="card-body challenges-card-body">
+                            <p class="card-text text-center">Textile & dyeing industry</p>
+                        </div>
+                    </button>
+                    <button id="nav-brick-tab" class="card industryCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-brick" aria-controls="nav-brick" aria-selected="false">
+                        <img src="{% static 'images/Incubators/incub_icon5.png' %}" class="card-img-top" alt="Brick Kilns">
+                        <div class="card-body challenges-card-body">
+                            <p class="card-text text-center">Brick Kilns</p>
+                        </div>
+                    </button>
+                    <button id="nav-steel-tab" class="card industryCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-steel" aria-controls="nav-steel" aria-selected="false">
+                        <img src="{% static 'images/Incubators/incub_icon5.png' %}" class="card-img-top" alt="Steel">
+                        <div class="card-body challenges-card-body">
+                            <p class="card-text text-center">Steel Re-rolling Cluster</p>
+                        </div>
+                    </button>
+                </div>
+            </nav>
+             <div id="nav-industry-tabContent" class="grand tab-content">
+                 <div id="nav-bicycle" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-bicycle-tab">
+                    <div class="col-lg-12 col-md-12 industry-tab-div">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                             <h4 class="state-content">Bicycle Industry</h4>
+                                <p class="state-content">Punjab houses 90% bicycle manufacturing industry of the country and produces 10.50 million bicycles annually</p>
+                                <p class="state-content"><b>Technological up-gradation and R&D Interventions required</b></p>
+                                 <ul class="state-content">
+                                     <li>R&D for import substitution for bicycle industry parts for aluminum and carbon alloy frames, gear shift and disc brakes, twisted spokes and suspension.</li>
+                                     <li>Development of low cost indigenous components.</li>
+                                 </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <img src="{% static 'images/Grand_Challenges/Industry/bicycle.jpg' %}" class="agri-images"  alt="Bicycle">
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div id="nav-forging" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-forging-tab">
+                    <div class="col-lg-12 col-md-12 industry-tab-div all">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 state-content">
+                                <h4 class="state-content">Forging cluster</h4>
+                                <p class="state-content">Around 300 forging units operating in the state and forging of 105 million tons of alloy steel annually</p>
+                                <p class="state-content"><b>Technological up-gradation and R&D Interventions required</b></p>
+                                 <ul class="state-content">
+                                     <li>Oil heating pumping filtration (hpf) unit.</li>
+                                     <li>Waste heat recovery system (whr).</li>
+                                     <li>Automation.</li>
+                                     <li>Refractory & insulation</li>
+                                     <li>Energy efficient burners</li>
+                                 </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <img src="{% static 'images/Grand_Challenges/Industry/forging.jpg' %}" class="agri-images" alt="Forging cluster">
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                 <div id="nav-textile" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-textile-tab">
+                     <div class="col-lg-12 col-md-12 industry-tab-div all">
+                         <div class="row">
+                            <div class="col-lg-6 col-md-6 state-content">
+                                <h4 class="state-content">Textile & dyeing industry</h4>
+                                <p class="state-content">Around 260 textile & dyeing industries operational in Ludhiana</p>
+                                <p class="state-content"><b>Technological up-gradation and R&D Interventions required</b></p>
+                                 <ul class="state-content">
+                                     <li>Technical textiles.</li>
+                                     <li>R&d on indigenous development of specialty fibers.</li>
+                                     <li>High technology polymers for increased used in agro/medical/sports textile etc .</li>
+                                     <li>Effluent management </li>
+                                 </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <img src="{% static 'images/Grand_Challenges/Industry/textile.jpg' %}" class="agri-images" alt="Textile">
+                            </div>
+                        </div>
+                     </div>
+                 </div>
+                 <div id="nav-brick" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-brick-tab">
+                     <div class="col-lg-12 col-md-12 industry-tab-div all">
+                         <div class="row">
+                            <div class="col-lg-6 col-md-6 state-content">
+                                <h4 class="state-content">Brick Kilns</h4>
+                                <p class="state-content">Around 3000 brick kilns producing 1800 crores solid clay bricks annually using coal as fuel for baking of bricks.
+                                    Annual turnover of more than rs.7200 crores. Annual coal consumption of brick sector is 21.6 lakh tonnes (47.5 lakh tonnes equivalent co2 emissions)
+                                    amounting to rs. 2160 crores. Consumption of 3.28 lakh cubic meters of top fertile soil annually
+                                </p>
+                                <p class="state-content"><b>Technological up-gradation and R&D Interventions required</b></p>
+                                 <ul class="state-content">
+                                     <li>Setting up of common facility center for brick sector for carrying out r&d studies, clay testing laboratory, demonstration of state-of-art technology for brick manufacturing and firing.</li>
+                                     <li>Facilitation w.r.t. Setting up of resource efficient brick manufacturing units and related reb manufacturing machinery.</li>
+                                     <li>Support w.r.t. Machinery for clay brick extrusion, there being no machinery manufacturer in punjab and lack of technical support for importing the machinery.</li>
+                                     <li>Pneumatic fuel feeding system for existing high draft kiln technology which can reduce fuel consumption & improve brick quality.</li>
+                                 </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <img src="{% static 'images/Grand_Challenges/Industry/brick.jpg' %}" class="agri-images" alt="Brick Kilns">
+                            </div>
+                        </div>
+                     </div>
+                 </div>
+                 <div id="nav-steel" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-brick-tab">
+                     <div class="col-lg-12 col-md-12 industry-tab-div all">
+                         <div class="row">
+                            <div class="col-lg-6 col-md-6 state-content">
+                                <h4 class="state-content">Steel Re-rolling Cluster</h4>
+                                <p class="state-content">Around 300 mills manufacturing ~ 40 lakh tons of steel bars consuming about 2222 gwh of energy annually
+                                </p>
+                                <p class="state-content"><b>Technological interventions required</b></p>
+                                 <ul class="state-content">
+                                     <li>Design of png based re-heating furnace.</li>
+                                     <li>Energy efficiency in electrical systems.</li>
+                                     <li>High efficiency waste heat recovery system.</li>
+                                 </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <img src="{% static 'images/Grand_Challenges/Industry/steel.jpg' %}" class="agri-images" alt="Steel">
+                            </div>
+                        </div>
+                     </div>
+                 </div>
+             </div>
+            <nav id="industry1-nav">
+                <div id="nav-industry1-tab" class="nav nav-tabs industry-nav-tabs" role="tablist">
+                    <button id="nav-foundry-tab" class="card industryCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-foundry" aria-controls="nav-foundry" aria-selected="false">
+                        <img src="{% static 'images/Incubators/incub_icon5.png' %}" class="card-img-top" alt="Foundry">
+                        <div class="card-body challenges-card-body">
+                            <p class="card-text text-center">Foundry Cluster</p>
+                        </div>
+                    </button>
+                    <button id="nav-agri-implant-tab" class="card industryCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-agri-implant" aria-controls="nav-agri-implant" aria-selected="false">
+                        <img src="{% static 'images/Incubators/incub_icon5.png' %}" class="card-img-top" alt="Agriculture Implements">
+                        <div class="card-body challenges-card-body">
+                            <p class="card-text text-center">Agriculture Implements</p>
+                        </div>
+                    </button>
+                    <button id="nav-leather-tab" class="card industryCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-leather" aria-controls="nav-leather" aria-selected="false">
+                        <img src="{% static 'images/Incubators/incub_icon3.png' %}" class="card-img-top" alt="Leather">
+                        <div class="card-body challenges-card-body">
+                            <p class="card-text text-center">Leather</p>
+                        </div>
+                    </button>
+                    <button id="nav-sports-tab" class="card industryCard" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-sports" aria-controls="nav-sports" aria-selected="false">
+                        <img src="{% static 'images/Incubators/incub_icon3.png' %}" class="card-img-top" alt="Sports Good">
+                        <div class="card-body challenges-card-body">
+                            <p class="card-text text-center">Sports Good</p>
+                        </div>
+                    </button>
+                </div>
+            </nav>
+            <div id="nav-industry1-tabContent" class="grand tab-content">
+                <div id="nav-foundry" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-foundry-tab">
+                    <div class="col-lg-12 col-md-12 industry-tab-div">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <img src="{% static 'images/Grand_Challenges/Industry/foundry.jpg' %}" class="agri-images"  alt="Foundry">
+                            </div>
+                            <div class="col-lg-6 col-md-6 state-content">
+                            <h4>Foundry Cluster</h4>
+                                <p>Punjab is the hub of foundries with around 900 cupola units and 400 induction units operational in state.
+                                    An energy intensive sector having lot of potential for energy and waste minimization</p>
+                                <p><b>R&D Interventions required</b></p>
+                                 <ul>
+                                     <li>Utilization of waste foundry sand</li>
+                                     <li>Exploring improvements in pattern materials for minimizing product rejection rate.</li>
+                                     <li>Png based cupola furnaces</li>
+                                     <li>Automation </li>
+                                 </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                 </div>
+                <div id="nav-agri-implant" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-agri-implant">
+                     <div class="col-lg-12 col-md-12 industry-tab-div all">
+                         <div class="row">
+                             <div class="col-lg-6 col-md-6">
+                                 <img src="{% static 'images/Grand_Challenges/Industry/agriculture_implant.jpg' %}" class="agri-images" alt="Agriculture Implants">
+                             </div>
+                             <div class="col-lg-6 col-md-6 state-content">
+                                <h4>Agriculture Implants</h4>
+                                <p>Highest per capita agriculture implements in India</p>
+                                <p><b>Technological Interventions required</b></p>
+                                 <ul>
+                                     <li>R&D on upgrading metallurgy of wearable parts so as to compete with international companies</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                <div id="nav-leather" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-leather">
+                     <div class="col-lg-12 col-md-12 industry-tab-div all">
+                         <div class="row">
+                             <div class="col-lg-6 col-md-6">
+                                 <img src="{% static 'images/Grand_Challenges/Industry/leather.jpg' %}" class="agri-images" alt="Leather">
+                             </div>
+                             <div class="col-lg-6 col-md-6 state-content">
+                                <h4>Leather Industries</h4>
+                                <p><b>Technological Interventions required</b></p>
+                                 <ul>
+                                     <li>Low cost technology for chromeless tanning </li>
+                                     <li>Chemical free dehairing operations & limited salt consumption/ preservation </li>
+                                     <li>Laser cutting machinery for Leather Industry</li>
+                                     <li>Computer aided design</li>
+                                     <li>Bio based leather </li>
+                                     <li>Effluent Management </li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+                <div id="nav-sports" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-sports">
+                     <div class="col-lg-12 col-md-12 industry-tab-div all">
+                         <div class="row">
+                             <div class="col-lg-6 col-md-6">
+                                 <img src="{% static 'images/Grand_Challenges/Industry/sports.jpg' %}" class="agri-images" alt="Sports Goods">
+                             </div>
+                             <div class="col-lg-6 col-md-6 state-content">
+                                <h4>Sports Goods Sector</h4>
+                                <p>Jalandhar: One of the largest manufacturers of sports goods in India.</p>
+                                <p><b>Technological Interventions required</b></p>
+                                 <ul>
+                                     <li>Nano-based solutions for an added advantage such as high strength and stiffness, durability, reduced weight, abrasion resistance, etc. in sporting equipment</li>
+                                     <li>Automation</li>
+                                     <li>Waste Minimization</li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+{% block javascript %}
+
+
+{% endblock javascript %}

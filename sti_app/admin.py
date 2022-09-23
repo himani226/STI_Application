@@ -1,10 +1,9 @@
 from django.contrib import admin
-from .models import HeaderMenu, FooterMenu, Banner, HomeData, HomeSlider, HomePlanPolicies, Spotlight, \
+from .models import HeaderMenu, Banner, HomeData, HomeSlider, HomePlanPolicies, Spotlight, \
      Stage, Pillar, Indicator, IndicatorDefinition, TechnologyArea, TechnologyAreaDetail, Contributor
 
 # Register your models here.
 admin.site.register(HeaderMenu),
-admin.site.register(FooterMenu),
 admin.site.register(Banner),
 admin.site.register(HomeData),
 admin.site.register(HomeSlider),
