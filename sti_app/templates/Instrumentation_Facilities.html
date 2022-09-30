@@ -22,11 +22,160 @@
             </p>
         </div>
     </div>
-
-
-
-
+    <div class="facilitiesDiv all">
+         <div class="container col-lg-12 col-md-12 all">
+             <h2 style="padding-top:50px;">Facilities</h2>
+             <div class="row">
+                 <nav class="facilities-nav">
+                     <div id="nav-tab" class="nav nav-tabs facilities-nav-tabs" role="tablist">
+                        <button id="nav-equipment-tab" class="text-center facilities-number all" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-equipment" aria-controls="nav-equipment" aria-selected="false">
+                            <p class="all">Equipment Database</p>
+                            <span data-from="0" data-to="400" data-time="2000" class="count1">0</span>
+                            <span>+</span>
+                    </button>
+                    <button id="nav-cif-tab" class="text-center facilities-number all" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-cif" aria-controls="nav-cif" aria-selected="false">
+                        <p class="all">Central Instrumentation Facilities (CIF) in HEIs</p>
+                        <span data-from="0" data-to="15" data-time="4000" class="count2">0</span>
+                        <span>+</span>
+                    </button>
+                    <button id="nav-cfc-tab" class="text-center facilities-number all" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-cfc" aria-controls="nav-cfc" aria-selected="false">
+                        <p class="all">Common Facility Center (CFC) for Manufacturing</p>
+                        <span data-from="0" data-to="10" data-time="3000" class="count3">0</span>
+                        <span>+</span>
+                    </button>
+                        <button id="nav-pilot-tab" class="text-center facilities-number all" role="tab" type="button" data-bs-toggle="tab" data-bs-target="#nav-pilot" aria-controls="nav-pilot" aria-selected="false">
+                        <p class="all">Pilot Scale Facilities</p>
+                        <span data-from="0" data-to="15" data-time="4000" class="count4">0</span>
+                        <span>+</span>
+                    </button>
+                    </div>
+                 </nav>
+                 <div id="nav-tabContent" class="facilities tab-content">
+                     <div id="nav-equipment" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-equipment-tab">
+                         <h3>Equipment Database</h3>
+                         <table class="table table-responsive all">
+                             <thead class="indicator-table-heading">
+                                 <tr>
+                                     <th scope="col">Equipment Name</th>
+                                     <th scope="col">Name of Organization</th>
+                                     <th scope="col">District</th>
+                                 </tr>
+                             </thead>
+                             <tbody class="indi-tbody-a">
+                                {% for equip in equipment %}
+                                <tr>
+                                    <td><a href="{{ equip.equipment_weblink}}">{{equip.equipment_name}}</a></td>
+                                    <td>{{equip.organization_name}}</td>
+                                    <td>{{equip.district}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                         </table>
+                     </div>
+                     <div id="nav-cif" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-cif-tab">
+                         <h3>Central Instrumentation Facilities</h3>
+                         <table class="table table-responsive all">
+                            <thead class="indicator-table-heading">
+                                <tr>
+                                    <th scope="col">Central Instrumentation Facilities (CIF)</th>
+                                    <th scope="col">Name of Institute</th>
+                                    <th scope="col">District</th>
+                                </tr>
+                            </thead>
+                            <tbody class="indi-tbody-a">
+                            {% for cif in central  %}
+                                <tr>
+                                    <td><a href="{{ cif.weblink}}">{{ cif.central_instrumentation_name }}</a></td>
+                                    <td>{{ cif.institute_name }}</td>
+                                    <td>{{ cif.district_name }}</td>
+                                </tr>
+                             {% endfor %}
+                            </tbody>
+                        </table>
+                     </div>
+                    <div id="nav-cfc" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-cfc-tab">
+                        <h3>Common Facility Center</h3>
+                        <table class="table table-responsive all">
+                            <thead class="indicator-table-heading">
+                                <tr>
+                                    <th scope="col">Name of CFC</th>
+                                    <th scope="col">District</th>
+                                </tr>
+                            </thead>
+                            <tbody class="indi-tbody-a">
+                            {% for cfc in manufacturing  %}
+                                <tr>
+                                    <td><a href="{{ cfc.weblink}}">{{ cfc.cfc_name }}</a></td>
+                                    <td>{{ cfc.district }}</td>
+                                </tr>
+                             {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="nav-pilot" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-pilot-tab">
+                        <h3>Pilot Scale Facilities</h3>
+                        <div class="accordion all" id="accordionExample">
+                            {% for pi in pilot  %}
+                                <div class="accordion-item">
+                                     <h2 class="accordion-header" id="heading{{pi.id}}">
+                                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{pi.id}}" aria-expanded="true" aria-controls="collapse{{pi.id}}">
+                                             {{ pi.scale_title}}
+                                         </button>
+                                     </h2>
+                                    <div id="collapse{{pi.id}}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading{{pi.id}}" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body"><p>{{ pi.scale_detail }}</p>
+                                            <p>{{ pi.contact_person }}</p>
+                                            <p>{{ pi.number }}</p>
+                                            <p>{{ pi.email }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                 </div>
+            </div>
+         </div>
+    </div>
 </div>
 
  {% endblock %}
 
+{% block javascript %}
+<script type="text/javascript">
+   (function ($){
+          $.fn.counter = function() {
+            const $this = $(this),
+            numberFrom = parseInt($this.attr('data-from')),
+            numberTo = parseInt($this.attr('data-to')),
+            delta = numberTo - numberFrom,
+            deltaPositive = delta > 0 ? 1 : 0,
+            time = parseInt($this.attr('data-time')),
+            changeTime = 10;
+
+            let currentNumber = numberFrom,
+            value = delta*changeTime/time;
+            var interval1;
+            const changeNumber = () => {
+              currentNumber += value;
+              //checks if currentNumber reached numberTo
+              (deltaPositive && currentNumber >= numberTo) || (!deltaPositive &&currentNumber<= numberTo) ? currentNumber=numberTo : currentNumber;
+              this.text(parseInt(currentNumber));
+              currentNumber == numberTo ? clearInterval(interval1) : currentNumber;
+            }
+
+            interval1 = setInterval(changeNumber,changeTime);
+          }
+        }(jQuery));
+
+        $(document).ready(function(){
+
+          $('.count-up').counter();
+          $('.count1').counter();
+          $('.count2').counter();
+          $('.count3').counter();
+          $('.count4').counter();
+          new WOW().init();
+});
+  </script>
+{% endblock javascript %}

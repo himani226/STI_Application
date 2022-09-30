@@ -644,7 +644,7 @@ tr:nth-child(even) {
     height:100%;
 }
 
-/* GArnd Challenges css */
+/* Grand Challenges css */
 .stateCard:hover, .stateCard.active{
     background-color:#C8EAE1;
     transform: scale(1.1);
@@ -668,6 +668,7 @@ tr:nth-child(even) {
     background-color:#EFEFEF;
     padding-bottom:50px;
 }
+
 .challenges-card-body{
     width:100% !important;
 }
@@ -695,9 +696,70 @@ tr:nth-child(even) {
 }
 
 /* Researchers Network */
-.research_icons{
+.researchersDiv{
+    background-color:#022539;
+    height:800px;
+}
+
+.research_icons h4, .research_icons h5{
+    color:#FFFFFF;
+}
+
+.research_domain{
 
 }
+
+
+.research_domain:hover{
+   /* opacity: .5; */
+    height: 560px;
+    transition: height 1s;
+}
+
+.food{
+    padding-top: 46px;
+}
+
+/* Instrumentation Facilities */
+.facilitiesDiv{
+   background-image: url("/static/images/Facilities/facilities_div.png");
+   background-repeat: no-repeat;
+   background-size: 1920px 450px;
+
+}
+.facilities-nav-tabs{
+    border-bottom: none !important;
+}
+
+.facilities h3{
+     color:#008080;
+}
+
+.facilities-number{
+    background-color:#022539;
+    font-size: 28px;
+    margin-right: 30px;
+    width: 22% !important;
+    font-family:Roboto Light;
+    color:#FFFFFF;
+    height:350px;
+}
+
+.facilities-number:hover, .facilities-number.active{
+      color:#022539;
+      background-color:#FFFFFF;
+      border: 0px !important;
+}
+
+.facilities-number span{
+    color:#F89522;
+    font-size:40px;
+}
+
+.facilities.tab-content{
+    margin:0px !important;
+}
+
 
 /* footer css */
 

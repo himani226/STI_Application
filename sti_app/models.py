@@ -177,3 +177,43 @@ class Contributor(models.Model):
 
     def __str__(self):
         return self.contributor_title
+
+
+class Equipment_db(models.Model):
+    equipment_name = models.CharField(null=True, max_length=200)
+    organization_name = models.CharField(null=True, max_length=200)
+    district = models.CharField(null=True, max_length=200)
+    equipment_weblink = models.CharField(null=True, max_length=200)
+
+    def __str__(self):
+        return self.equipment_name
+    
+
+class Central_Instrumentation(models.Model):
+    central_instrumentation_name=models.CharField(null=True, max_length=200)
+    institute_name=models.CharField(null=True, max_length=200)
+    district_name=models.CharField(null=True, max_length=200)
+    weblink=models.CharField(null=True, max_length=200)
+
+    def __str__(self):
+        return self.central_instrumentation_name
+
+
+class CFC_Manufacturing(models.Model):
+    cfc_name = models.CharField(null=True, max_length=200)
+    district = models.CharField(null=True, max_length=200)
+    weblink = models.CharField(null=True, max_length=200)
+
+    def __str__(self):
+        return self.cfc_name
+
+
+class Pilot_Scale(models.Model):
+    scale_title = models.CharField(null=True, max_length=200)
+    scale_detail = models.TextField(blank=True)
+    contact_person= models.CharField(blank=True,max_length=200)
+    number = models.CharField(blank=True, max_length=200)
+    email = models.EmailField(max_length=200, blank=True)
+
+    def __str__(self):
+        return self.scale_title

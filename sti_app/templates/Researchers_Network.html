@@ -1,7 +1,6 @@
 {% extends 'Home.html' %}
 {% load static %}
-
-<title>{% block title %}Researchers_Network{% endblock %}</title>
+<title>{% block title %}Researchers Network{% endblock %}</title>
 {% block content %}
 <div class="container-fluid">
     <img src="{% static 'images/technology_slide.png' %}" width="100%" height="200px"/>
@@ -9,20 +8,68 @@
         <nav class="container" style="--bs-breadcrumb-divider: '>>';" aria-label="breadcrumb">
             <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{% url 'Home' %}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Researchers_Network</li>
+            <li class="breadcrumb-item active" aria-current="page">Researchers Network</li>
             </ol>
         </nav>
-     </div>
+    </div>
     <div class="container all">
         <div class="col-lg-12 col-md-12 abt-heading">
             <h3>Researchers Network</h3>
-            <p></p>
+            <p>Punjab has large network of research institutions, universities and STI organizations, wherein researchers are
+                working in varied sectoral domains. This platform showcases portfolios of scientist, academicians and
+                researchers working across Punjab for priority research leads, addressing state’s grand challenges, industrial
+                tech. solutions, programs for socio-economic development etc. This digital platform offers easy access to pool
+                of experts for forging partnerships for collaborative programs, sharing research expertise with scholars, Govt.
+                and Industry as well as providing vision for future roadmap development for state of Punjab. The platform also
+                recognizes and applauds the researchers who have excelled in their respective domains at International &
+                National front. The efforts would be made to link this network to researchers’ network at National and Global
+                levels.
+            </p>
+        </div>
+    </div>
+    <div class="researchersDiv">
+        <div class="container research_icons all">
+            <h4 style="padding-top:50px">Researchers/Domains</h4>
+            <div class="col-lg-12 col-md-12 all text-center">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 research_domain">
+                        <img src="{% static 'images/Researchers/agriculture.png' %}" width="100%"/>
+                        <h5 style="padding-top:30px">Agriculture</h5>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                         <div class="row">
+                            <div class="col-lg-12 col-md-12 research_domain">
+                                <img src="{% static 'images/Researchers/manufacturing.png' %}"  width="100%"/>
+                                <h5 style="padding-top:30px">Manufacturing</h5>
+                            </div>
+                            <div class="col-lg-12 col-md-12 all">
+                                <img src="{% static 'images/Researchers/animal.png' %}"  class="animal" width="100%"/>
+                                <h5 style="padding-top:30px">Animal Husbandry</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 ">
+                                <img src="{% static 'images/Researchers/environment.png' %}" width="100%"/>
+                                 <h5 style="padding-top:30px">Environment Energy & Climate Change</h5>
+                            </div>
+                            <div class="col-lg-12 col-md-12 food">
+                                <img src="{% static 'images/Researchers/food.png' %}"  width="100%"/>
+                                 <h5 style="padding-top:30px">Food Processing</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 medical">
+
+                        <img src="{% static 'images/Researchers/medical.png' %}"  class="research_domain" width="100%"/>
+                        <h5 style="padding-top:30px">Healthcare & Pharmaceutical</h5>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-{% endblock %}
-{% block javascript %}
+ {% endblock %}
 
-
-{% endblock javascript %}

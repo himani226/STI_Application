@@ -4,7 +4,8 @@ from django.shortcuts import render
 from sti_app.responses.general_response import (no_success_response,
                                                 success_response)
 from sti_app.models import HeaderMenu, HomeData, Spotlight, Stage, Pillar, Indicator, \
-    IndicatorDefinition, HomePlanPolicies, HomeSlider, Banner, TechnologyArea, TechnologyAreaDetail, Contributor
+    IndicatorDefinition, HomePlanPolicies, HomeSlider, Banner, TechnologyArea, TechnologyAreaDetail, Contributor, \
+    Equipment_db, Central_Instrumentation, Pilot_Scale, CFC_Manufacturing
 
 
 def index(request):
@@ -148,14 +149,23 @@ def framework(request):
 def instrumentation(request):
     header_menu_name = HeaderMenu.objects.all()
     banner = Banner.objects.all()
+    equipment = Equipment_db.objects.all()
+    central = Central_Instrumentation.objects.all()
+    manufacturing = CFC_Manufacturing.objects.all()
+    pilot = Pilot_Scale.objects.all()
     return render(request, 'Instrumentation_Facilities.html',
                   context={'header_menu_name': header_menu_name,
+                           'equipment': equipment,
+                           'central': central,
+                           'manufacturing': manufacturing,
+                           'pilot': pilot,
                            'banner': banner})
 
 
 def researchers(request):
     header_menu_name = HeaderMenu.objects.all()
     banner = Banner.objects.all()
+
     return render(request, 'Researchers_Network.html',
                   context={'header_menu_name': header_menu_name,
                            'banner': banner})
