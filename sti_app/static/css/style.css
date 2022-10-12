@@ -708,12 +708,8 @@ tr:nth-child(even) {
 .research_domain{
 
 }
-
-
 .research_domain:hover{
-   /* opacity: .5; */
-    height: 560px;
-    transition: height 1s;
+    opacity: .5;
 }
 
 .food{

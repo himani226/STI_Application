@@ -53,7 +53,10 @@
                  <div id="nav-tabContent" class="facilities tab-content">
                      <div id="nav-equipment" class="tab-pane fade all" role="tabpanel" aria-labelledby="nav-equipment-tab">
                          <h3>Equipment Database</h3>
-                         <table class="table table-responsive all">
+                         <div style="padding-top:30px;" >
+                             <input type="text" id="equipInput" onkeyup="mySearch()" placeholder="Search for Equipment name" title="name" class="col-lg-6 col-md-6">
+                         </div>
+                         <table id="equipment_table" class="table table-responsive all">
                              <thead class="indicator-table-heading">
                                  <tr>
                                      <th scope="col">Equipment Name</th>
@@ -177,5 +180,24 @@
           $('.count4').counter();
           new WOW().init();
 });
+
+function mySearch() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("equipInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("equipment_table");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
   </script>
 {% endblock javascript %}
