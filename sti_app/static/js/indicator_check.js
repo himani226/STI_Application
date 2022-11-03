@@ -77,6 +77,8 @@ $(document).ready(function(){
                                     var indicator_id = value["id"];
                                     var template = '<div class="col-lg-12 col-md-12 indicator-label text-center"><strong>'+indicator_label+'</strong></div><div class="col-lg-12 col-md-12">'+indicator_def+'</div>';
                                     indicator2.style.display = "flex";
+                                    STI_info.style.display = "none";
+                                    STI_Arch_img.style.display = "none";
                                     $("#indicator2").append(template);
                                     var myDiv = document.getElementById("chart-container");
                                     var highBarChart = document.getElementById("highsecondarychart-container");
